@@ -13,6 +13,18 @@
         zstyle :omz:plugins:ssh-agent lazy yes
       '';
     };
+    history = {
+      extended = true;
+      size =  512 * 1024 * 1025;
+      path = "${config.xdg.dataHome}/zsh/history";
+    };
+    shellAliases = {
+      hmd = "cd /home/ubuntu/cavelab";
+      hmb = "home-manager switch --flake .#cavelab";
+      s = "git status --short";
+      l = "git lg";
+      ".." = "cd ..";
+    };
   };
 }
 
