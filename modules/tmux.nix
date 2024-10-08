@@ -1,5 +1,18 @@
 { pkgs, ... }:
 
+let
+  tokyo-night-tmux = pkgs.tmuxPlugins.mkTmuxPlugin {
+    pluginName = "tokyo-night-tmux";
+    rtpFilePath = "tokyo-night.tmux";
+    version = "1.5.3";
+    src = pkgs.fetchFromGitHub {
+      owner = "janoamaral";
+      repo = "tokyo-night-tmux";
+      rev = "d34f1487b4a644b13d8b2e9a2ee854ae62cc8d0e";
+      hash = "sha256-3rMYYzzSS2jaAMLjcQoKreE0oo4VWF9dZgDtABCUOtY=";
+    };
+  };
+in
 {
   programs.tmux = {
     enable = true;
@@ -11,14 +24,37 @@
     sensibleOnTop = true;
     terminal = "tmux-256color";
     historyLimit = 512 * 1024 * 1024;
+    prefix = "C-a";
+    keyMode = "vi";
 
     plugins = with pkgs.tmuxPlugins;
     [
+      /* For saving Tmux sessions across system restarts. */
+      {
+              plugin = resurrect;
+              extraConfig = ''
+                      set -g @resurrect-strategy-vim 'session'
+                      set -g @resurrect-strategy-nvim 'session'
+                      set -g @resurrect-capture-pane-contents 'on'
+              '';
+      }
+      {
+              plugin = continuum;
+              extraConfig = ''
+                      set -g @continuum-restore 'on'
+                      set -g @continuum-boot 'on'
+                      set -g @continuum-save-interval '10'
+              '';
+      }
       catppuccin
-          yank
-          sensible
-          pain-control
-          battery
+      sensible
+      vim-tmux-navigator /* For easy navigation between Tmux and Neovim panes. */
+      yank
+      tmux-fzf
+      better-mouse-mode
+      tokyo-night-tmux
+      weather
+      net-speed
     ];
 
     extraConfig = ''

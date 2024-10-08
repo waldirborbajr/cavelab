@@ -19,16 +19,6 @@
       path = "${config.xdg.dataHome}/zsh/history";
     };
 
-    shellAliases = {
-      hmd = "cd /home/ubuntu/cavelab";
-      hmb = "home-manager switch --flake .#cavelab";
-      s = "git status --short";
-      l = "git lg";
-      r = "reset";
-      ".." = "cd ..";
-      gg = "lazygit";
-    };
-
     oh-my-zsh = {
       enable = true;
       theme = "lambda";
@@ -37,6 +27,44 @@
         zstyle :omz:plugins:ssh-agent agent-forwarding yes
         zstyle :omz:plugins:ssh-agent lazy yes
       '';
+    };
+
+    plugins = [
+      {
+        name = "zsh-cat-syntax";
+        src = pkgs.fetchFromGitHub {
+          owner = "catppuccin";
+          repo = "zsh-syntax-highlighting/";
+          rev = "06d519c20798f0ebe275fc3a8101841faaeee8ea";
+          sha256 = "sha256-Q7KmwUd9fblprL55W0Sf4g7lRcemnhjh4/v+TacJSfo=";
+        };
+        file = "themes/catppuccin_mocha-zsh-syntax-highlighting.zsh";
+      }
+      {
+        name = "zsh-nix-shell";
+        file = "nix-shell.plugin.zsh";
+        src = pkgs.fetchFromGitHub {
+          owner = "chisui";
+          repo = "zsh-nix-shell";
+          rev = "v0.5.0";
+          sha256 = "0za4aiwwrlawnia4f29msk822rj9bgcygw6a8a6iikiwzjjz0g91";
+        };
+      }
+      {
+        name = "fzf-tab";
+        src = pkgs.zsh-fzf-tab;
+        file = "share/fzf-tab/fzf-tab.zsh";
+      }
+    ];
+
+    shellAliases = {
+      hmd = "cd /home/ubuntu/cavelab";
+      hmb = "home-manager switch --flake .#cavelab";
+      s = "git status --short";
+      l = "git lg";
+      r = "reset";
+      ".." = "cd ..";
+      gg = "lazygit";
     };
 
     # initExtra = ''
