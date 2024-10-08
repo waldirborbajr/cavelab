@@ -48,6 +48,11 @@
     rust-analyzer
     rustfmt
 
+    htop
+    btop
+    bottom
+
+
     # Make zsh as default shell
     (writeShellScriptBin "init_zsh" ''
       command -v zsh | sudo tee -a /etc/shells
