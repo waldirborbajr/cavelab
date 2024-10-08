@@ -1,18 +1,3 @@
-# { ... }:
-# {
-#   programs.git = {
-#     enable = true;
-#     userName = "waldirborbajr";
-#     userEmail = "wborbajr@gmail.com";
-#     extraConfig = {
-#       pull.rebase = true;
-#       push.autoSetupRemote = true;
-#       rebase.autosquash = true;  # automatically squash fixup commits
-#       init.defaultBranch = "main";
-#     };
-#   };
-# }
-
 { config, ... }: {
   programs = {
     gh.enable = true;
@@ -25,6 +10,11 @@
       aliases.prettylog = "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit";
 
       extraConfig = {
+        core = { editor = "nvim"; };
+        rebase = {
+          updateRefs = true;
+          autoSqaush = true;
+        };
         init.defaultBranch = "main";
         core.askPass = ""; # disabled ridiculous ssh gui password prompt
         # not sure exactly what these do, copied from NotAShelf
@@ -37,6 +27,8 @@
         # https://git-scm.com/docs/git-diff#Documentation/git-diff.txt---color-movedltmodegt
         diff.colorMoved = "no";
       };
+
+      ignores = [ "*~" ".DS_Store" ".direnv" ".env.local" ".env" ".rgignore" ];
 
       delta = {
         # sets git's core.pager and interactive.diffFilter

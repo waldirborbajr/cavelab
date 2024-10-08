@@ -41,11 +41,14 @@
 
     nodejs_22
 
-    go
+    go_1_22
     gopls
     gotools
 
-    rustup
+    # rustup
+    cargo
+    rust-analyzer
+    rustfmt
 
     # Make zsh as default shell
     (writeShellScriptBin "init_zsh" ''
