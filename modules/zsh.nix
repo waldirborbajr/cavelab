@@ -9,6 +9,8 @@
     autocd = true;
     syntaxHighlighting.enable = true;
 
+    dotDir = ".config/zsh";
+
     sessionVariables = {
       SHELL = "/home/ubuntu/.nix-profile/bin/zsh";
       ZSH_AUTOSUGGEST_STRATEGY = "history completion";
