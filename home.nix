@@ -52,6 +52,7 @@
     btop
     bottom
 
+    vhs
 
     # Make zsh as default shell
     (writeShellScriptBin "init_zsh" ''
