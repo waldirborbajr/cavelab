@@ -8,9 +8,7 @@
       pull.rebase = true;
       push.autoSetupRemote = true;
       rebase.autosquash = true;  # automatically squash fixup commits
-      init = {
-        defaultBranch = "main";
-      };
+      init.defaultBranch = "main";
     };
   };
 }

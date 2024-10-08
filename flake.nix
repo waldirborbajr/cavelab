@@ -26,6 +26,7 @@
         ./modules/wezterm.nix
         ./modules/zsh.nix
         ./modules/gh.nix
+        ./modules/git.nix
         ./modules/eza.nix
         ./modules/fzf.nix
         ./modules/tmux.nix
