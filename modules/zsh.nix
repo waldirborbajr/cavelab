@@ -18,7 +18,12 @@
 
     history = {
       extended = true;
+      ignoreDups = true;
+      ignoreAllDups = true;
+      ignoreSpace = true;
+      expeireDuplicatesFirst = true;
       size =  512 * 1024 * 1025;
+      save =  512 * 1024 * 1025;
       path = "${config.xdg.dataHome}/zsh/history";
     };
 
@@ -62,7 +67,7 @@
         name = "zsh-syntax-highlighting";
         file = "share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh";
         src = pkgs.zsh-syntax-highlighting;
-      }      
+      }
     ];
 
     shellAliases = {
