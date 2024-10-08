@@ -29,7 +29,6 @@
   home.packages = with pkgs; [
 
     fd
-    yazi
     ripgrep
     bat
     xclip

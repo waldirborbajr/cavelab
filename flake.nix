@@ -33,6 +33,7 @@
         ./modules/tmux.nix
         ./modules/wezterm.nix
         ./modules/zsh.nix
+        ./modules/yazi.nix
       ];
 
         # Optionally use extraSpecialArgs
