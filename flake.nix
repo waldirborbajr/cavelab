@@ -24,7 +24,7 @@
         ./home.nix
         ./modules/eza.nix
         ./modules/fzf.nix
-        ./modules/gh.nix
+        # ./modules/gh.nix
         ./modules/git.nix
         ./modules/neovim.nix
         ./modules/starship.nix
