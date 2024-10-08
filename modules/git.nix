@@ -1,6 +1,5 @@
 { config, ... }: {
   programs = {
-    gh.enable = true;
     git = {
       enable = true;
       userName = "waldirborbajr";

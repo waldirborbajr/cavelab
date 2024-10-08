@@ -39,7 +39,7 @@
 
     nodejs_22
 
-    go_1_22
+    (hiPrio  go_1_23)
     gopls
     gotools
 

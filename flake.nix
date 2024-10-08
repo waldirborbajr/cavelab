@@ -27,6 +27,7 @@
         ./modules/lazygit.nix
         ./modules/zellij.nix
         ./modules/git.nix
+        ./modules/gh.nix
         ./modules/neovim.nix
         ./modules/starship.nix
         ./modules/tmux.nix

@@ -1,20 +1,16 @@
 { pkgs, config, ... }:
 
 {
+  home.packages = with pkgs; [ zsh oh-my-zsh fzf ripgrep direnv ];
   programs.zsh = {
     enable = true;
     enableCompletion = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
 
-    oh-my-zsh = {
-      enable = true;
-      theme = "risto";
-      plugins = [ "sudo" "common-aliases" "mosh" "ssh-agent" ];
-      extraConfig = ''
-        zstyle :omz:plugins:ssh-agent agent-forwarding yes
-        zstyle :omz:plugins:ssh-agent lazy yes
-      '';
+    sessionVariables = {
+      SHELL = "/home/ubuntu/.nix-profile/bin/zsh";
+      ZSH_AUTOSUGGEST_STRATEGY = "history completion";
     };
 
     history = {
@@ -30,6 +26,17 @@
       l = "git lg";
       r = "reset";
       ".." = "cd ..";
+      gg = "lazygit";
+    };
+
+    oh-my-zsh = {
+      enable = true;
+      theme = "lambda";
+      plugins = [ "sudo" "common-aliases" "mosh" "ssh-agent" "git" "fzf"  ];
+      extraConfig = ''
+        zstyle :omz:plugins:ssh-agent agent-forwarding yes
+        zstyle :omz:plugins:ssh-agent lazy yes
+      '';
     };
 
     # initExtra = ''
@@ -70,5 +77,12 @@
     #   . ${pkgs.zsh-nix-shell}/share/zsh-nix-shell/nix-shell.plugin.zsh
     # '';
   };
+
+  programs.direnv = {
+    enable = true;
+    enableZshIntegration = true;
+    nix-direnv.enable = true;
+  };
+
 }
 
