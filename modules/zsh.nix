@@ -21,7 +21,7 @@
       ignoreDups = true;
       ignoreAllDups = true;
       ignoreSpace = true;
-      expeireDuplicatesFirst = true;
+      expireDuplicatesFirst = true;
       size =  512 * 1024 * 1025;
       save =  512 * 1024 * 1025;
       path = "${config.xdg.dataHome}/zsh/history";
