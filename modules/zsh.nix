@@ -6,6 +6,7 @@
     enable = true;
     enableCompletion = true;
     autosuggestion.enable = true;
+    autocd = true;
     syntaxHighlighting.enable = true;
 
     sessionVariables = {
@@ -31,12 +32,12 @@
 
     plugins = [
       {
-        name = "zsh-cat-syntax";
+        name = "catppuccin-zsh-syntax-hightlighting";
         src = pkgs.fetchFromGitHub {
           owner = "catppuccin";
-          repo = "zsh-syntax-highlighting/";
+          repo = "zsh-syntax-highlighting";
           rev = "06d519c20798f0ebe275fc3a8101841faaeee8ea";
-          sha256 = "sha256-Q7KmwUd9fblprL55W0Sf4g7lRcemnhjh4/v+TacJSfo=";
+          sha256 = "1yj916klvzpvwghii7m6qx2ya3p2kx25nydymilvjzbx8z0sdcj3";
         };
         file = "themes/catppuccin_mocha-zsh-syntax-highlighting.zsh";
       }
@@ -55,6 +56,11 @@
         src = pkgs.zsh-fzf-tab;
         file = "share/fzf-tab/fzf-tab.zsh";
       }
+      {
+        name = "zsh-syntax-highlighting";
+        file = "share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh";
+        src = pkgs.zsh-syntax-highlighting;
+      }      
     ];
 
     shellAliases = {
