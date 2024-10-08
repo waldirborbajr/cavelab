@@ -34,8 +34,6 @@
     bat
     xclip
 
-    lazygit
-
     pfetch
     neofetch
 
