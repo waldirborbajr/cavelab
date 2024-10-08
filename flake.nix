@@ -22,14 +22,15 @@
         # the path to your home.nix.
         modules = [
         ./home.nix
-        ./modules/neovim.nix
-        ./modules/wezterm.nix
-        ./modules/zsh.nix
-        ./modules/gh.nix
-        ./modules/git.nix
         ./modules/eza.nix
         ./modules/fzf.nix
+        ./modules/gh.nix
+        ./modules/git.nix
+        ./modules/neovim.nix
+        ./modules/starship.nix
         ./modules/tmux.nix
+        ./modules/wezterm.nix
+        ./modules/zsh.nix
       ];
 
         # Optionally use extraSpecialArgs
