@@ -30,6 +30,7 @@
         ./modules/go.nix
         ./modules/gh.nix
         ./modules/neovim.nix
+        ./modules/rust.nix
         ./modules/starship.nix
         ./modules/tmux.nix
         ./modules/wezterm.nix

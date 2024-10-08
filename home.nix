@@ -38,15 +38,6 @@
 
     nodejs_22
 
-    (hiPrio  go_1_23)
-    gopls
-    gotools
-
-    # rustup
-    cargo
-    rust-analyzer
-    rustfmt
-
     htop
     btop
     bottom
