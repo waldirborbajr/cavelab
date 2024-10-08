@@ -27,7 +27,28 @@
         diff.colorMoved = "no";
       };
 
-      ignores = [ "*~" ".DS_Store" ".direnv" ".env.local" ".env" ".rgignore" ];
+      ignores = [
+        # General
+        ".DS_Store"
+        ".DS_Store?"
+        "Thumbs.db"
+        "desktop.ini"
+        # Temporary Files
+        "*.bak"
+        "*.swp"
+        "*.swo"
+        "*~"
+        # Editors
+        ".idea/"
+        ".iml"
+        # Nix
+        ".direnv/"
+        ".envrc"
+        # Rust
+        "target/"
+        # Node
+        "node_modules/"
+      ];
 
       delta = {
         # sets git's core.pager and interactive.diffFilter

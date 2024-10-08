@@ -1,4 +1,4 @@
-{config, ...}: {
+{pkgs,config, ...}: {
   home.packages = with pkgs; [
     (hiPrio  go_1_23)
     gopls

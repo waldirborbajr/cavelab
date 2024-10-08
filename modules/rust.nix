@@ -1,9 +1,9 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
-    # cargo
+    cargo
     rust-analyzer
     rustfmt
-    rustup
+    # rustup
     sccache
     mdbook
     cargo-watch
