@@ -1,5 +1,19 @@
 { pkgs, config, ... }:
 
+let
+
+  shellAliases = {
+    hmd = "cd /home/ubuntu/cavelab";
+    hmb="home-manager switch --flake .#cavelab";
+    s="git status --short";
+    l="git lg";
+    r="reset";
+    ".."="cd ..";
+    gg="lazygit";
+  };
+
+in
+
 {
   home.packages = with pkgs; [
 
@@ -14,6 +28,7 @@
 
   programs.zsh = {
     enable = true;
+    inherit shellAliases;
     enableCompletion = true;
     autosuggestion.enable = true;
     autocd = true;
@@ -81,15 +96,6 @@
       }
     ];
 
-    shellAliases = {
-      hmd = "cd /home/ubuntu/cavelab";
-      hmb="home-manager switch --flake .#cavelab";
-      s="git status --short";
-      l="git lg";
-      r="reset";
-      ".."="cd ..";
-      gg="lazygit";
-    };
 
     # initExtra = ''
     #   zstyle ':completion:*' matcher-list "" 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
