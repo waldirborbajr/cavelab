@@ -21,16 +21,6 @@
 
     dotDir = ".config/zsh";
 
-    shellAliases = {
-      hmd = "cd /home/ubuntu/cavelab";
-      hmb="home-manager switch --flake .#cavelab";
-      s="git status --short";
-      l="git lg";
-      r="reset";
-      ".."="cd ..";
-      gg="lazygit";
-    };
-
     sessionVariables = {
       # Make zsh as default shell
       SHELL = "/home/ubuntu/.nix-profile/bin/zsh";
@@ -71,6 +61,17 @@
       ];
 
     };
+
+    shellAliases = {
+      hmd = "cd /home/ubuntu/cavelab";
+      hmb="home-manager switch --flake .#cavelab";
+      s="git status --short";
+      l="git lg";
+      r="reset";
+      ".."="cd ..";
+      gg="lazygit";
+    };
+
   };
 
 }
