@@ -35,6 +35,9 @@
       # Make zsh as default shell
       SHELL = "/home/ubuntu/.nix-profile/bin/zsh";
       ZSH_AUTOSUGGEST_STRATEGY = "history completion";
+      EDITOR = "vim";
+      VISUAL = "vim";
+      XDG_CONFIG_HOME = "$HOME/.config";
     };
 
     history = {

@@ -36,6 +36,7 @@
 
     pfetch
     neofetch
+    fastfetch
 
     nodejs_22
 
