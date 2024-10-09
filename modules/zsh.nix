@@ -1,19 +1,5 @@
 { pkgs, config, ... }:
 
-let
-
-  shellAliases = {
-    hmd = "cd /home/ubuntu/cavelab";
-    hmb="home-manager switch --flake .#cavelab";
-    s="git status --short";
-    l="git lg";
-    r="reset";
-    ".."="cd ..";
-    gg="lazygit";
-  };
-
-in
-
 {
   home.packages = with pkgs; [
 
@@ -23,18 +9,27 @@ in
     #   chsh -s $(which zsh)
     # '')
 
-    oh-my-zsh
+    # oh-my-zsh
   ];
 
   programs.zsh = {
     enable = true;
-    inherit shellAliases;
     enableCompletion = true;
     autosuggestion.enable = true;
     autocd = true;
     syntaxHighlighting.enable = true;
 
     dotDir = ".config/zsh";
+
+    shellAliases = {
+      hmd = "cd /home/ubuntu/cavelab";
+      hmb="home-manager switch --flake .#cavelab";
+      s="git status --short";
+      l="git lg";
+      r="reset";
+      ".."="cd ..";
+      gg="lazygit";
+    };
 
     sessionVariables = {
       # Make zsh as default shell
@@ -53,48 +48,77 @@ in
       path = "${config.xdg.dataHome}/zsh/history";
     };
 
-    oh-my-zsh = {
+    prezto = {
       enable = true;
-      theme = "lambda";
-      plugins = [ "sudo" "common-aliases" "mosh" "ssh-agent" "git" "fzf"  ];
-      extraConfig = ''
-        zstyle :omz:plugins:ssh-agent agent-forwarding yes
-        zstyle :omz:plugins:ssh-agent lazy yes
-      '';
+      pmodules = [
+        "archive"
+        "autosuggestions"
+        "environment"
+        "terminal"
+        "editor"
+        "history"
+        "directory"
+        "spectrum"
+        # "fasd"
+        "spectrum"
+        "utility"
+        "ssh"
+        "completion"
+        "git"
+        "osx"
+        "syntax-highlighting"
+        "history-substring-search"
+        "node"
+        # "homebrew"
+        # "haskell"
+        # "ruby"
+        "prompt"
+      ];
+
     };
 
-    plugins = [
-      {
-        name = "catppuccin-zsh-syntax-hightlighting";
-        src = pkgs.fetchFromGitHub {
-          owner = "catppuccin";
-          repo = "zsh-syntax-highlighting";
-          rev = "06d519c20798f0ebe275fc3a8101841faaeee8ea";
-          sha256 = "1yj916klvzpvwghii7m6qx2ya3p2kx25nydymilvjzbx8z0sdcj3";
-        };
-        file = "themes/catppuccin_mocha-zsh-syntax-highlighting.zsh";
-      }
-      {
-        name = "zsh-nix-shell";
-        file = "nix-shell.plugin.zsh";
-        src = pkgs.fetchFromGitHub {
-          owner = "chisui";
-          repo = "zsh-nix-shell";
-          rev = "v0.5.0";
-          sha256 = "0za4aiwwrlawnia4f29msk822rj9bgcygw6a8a6iikiwzjjz0g91";
-        };
-      }
-      {
-        name = "fzf-tab";
-        src = pkgs.zsh-fzf-tab;
-        file = "share/fzf-tab/fzf-tab.zsh";
-      }
-      {
-        name = "zsh-syntax-highlighting";
-        file = "share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh";
-        src = pkgs.zsh-syntax-highlighting;
-      }
-    ];
+    # oh-my-zsh = {
+    #   enable = true;
+    #   theme = "lambda";
+    #   plugins = [ "sudo" "common-aliases" "mosh" "ssh-agent" "git" "fzf"  ];
+    #   extraConfig = ''
+    #     zstyle :omz:plugins:ssh-agent agent-forwarding yes
+    #     zstyle :omz:plugins:ssh-agent lazy yes
+    #   '';
+    # };
+
+    # plugins = [
+    #   {
+    #     name = "catppuccin-zsh-syntax-hightlighting";
+    #     src = pkgs.fetchFromGitHub {
+    #       owner = "catppuccin";
+    #       repo = "zsh-syntax-highlighting";
+    #       rev = "06d519c20798f0ebe275fc3a8101841faaeee8ea";
+    #       sha256 = "1yj916klvzpvwghii7m6qx2ya3p2kx25nydymilvjzbx8z0sdcj3";
+    #     };
+    #     file = "themes/catppuccin_mocha-zsh-syntax-highlighting.zsh";
+    #   }
+    #   {
+    #     name = "zsh-nix-shell";
+    #     file = "nix-shell.plugin.zsh";
+    #     src = pkgs.fetchFromGitHub {
+    #       owner = "chisui";
+    #       repo = "zsh-nix-shell";
+    #       rev = "v0.5.0";
+    #       sha256 = "0za4aiwwrlawnia4f29msk822rj9bgcygw6a8a6iikiwzjjz0g91";
+    #     };
+    #   }
+    #   {
+    #     name = "fzf-tab";
+    #     src = pkgs.zsh-fzf-tab;
+    #     file = "share/fzf-tab/fzf-tab.zsh";
+    #   }
+    #   {
+    #     name = "zsh-syntax-highlighting";
+    #     file = "share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh";
+    #     src = pkgs.zsh-syntax-highlighting;
+    #   }
+    # ];
 
 
     # initExtra = ''
