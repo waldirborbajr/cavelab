@@ -31,6 +31,7 @@
     fd
     ripgrep
     bat
+    direnv
     xclip
 
     pfetch
@@ -43,12 +44,6 @@
     bottom
 
     vhs
-
-    # Make zsh as default shell
-    (writeShellScriptBin "init_zsh" ''
-      command -v zsh | sudo tee -a /etc/shells
-      chsh -s $(which zsh)
-    '')
 
     # discord
     # # Adds the 'hello' command to your environment. It prints a friendly
