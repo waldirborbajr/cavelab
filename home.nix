@@ -3,8 +3,6 @@
  let
 
    locale = "en_US.UTF-8";
-   homedir = builtins.getEnv("HOME");
-   username = builtins.getEnv("USER");
 
  in
 
@@ -14,6 +12,8 @@
   # manage.
   home.username = "ubuntu";
   home.homeDirectory = "/home/ubuntu";
+  # home.username = "${config.home.username}";
+  # home.homeDirectory = "/home/${config.home.username}";
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
