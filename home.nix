@@ -22,6 +22,7 @@
     fzf
     starship
     neovim
+    tmux
 
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
@@ -47,6 +48,7 @@
 
     ".config/starship".source = "${config.home.homeDirectory}/cavelab/config/starship";
     ".config/nix".source =  "${config.home.homeDirectory}/cavelab/config/nix";
+    # ".config/tmux".source = "${config.home.homeDirectory}/cavelab/config/tmux";
 
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a
