@@ -1,5 +1,5 @@
 {
-  description = "CaveLAB Home Manageru";
+  description = "Nix CaveLab from Scratch";
 
   inputs = {
     # Specify the source of Home Manager and Nixpkgs.
@@ -15,28 +15,20 @@
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
     in {
+
+      nix.settings.experimental-features = "nix-command flakes";
+      # home-manager.backupFileExtension = "hm-backup";
+
       homeConfigurations."cavelab" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
 
         # Specify your home configuration modules here, for example,
         # the path to your home.nix.
-        modules = [
-        ./home.nix
-        ./modules/eza.nix
-        ./modules/fzf.nix
-        ./modules/lazygit.nix
-        ./modules/zellij.nix
-        ./modules/git.nix
-        ./modules/go.nix
-        ./modules/gh.nix
-        ./modules/neovim.nix
-        ./modules/rust.nix
-        ./modules/starship.nix
-        ./modules/tmux.nix
-        ./modules/wezterm.nix
-        ./modules/zsh.nix
-        ./modules/yazi.nix
-      ];
+        modules = [ 
+	  ./home.nix 
+	  ./modules/tmux.nix
+	  ./modules/fzf.nix
+	];
 
         # Optionally use extraSpecialArgs
         # to pass through arguments to home.nix

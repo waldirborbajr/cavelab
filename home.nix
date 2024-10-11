@@ -1,19 +1,10 @@
 { config, pkgs, ... }:
 
- let
-
-   locale = "en_US.UTF-8";
-
- in
-
 {
-
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "ubuntu";
   home.homeDirectory = "/home/ubuntu";
-  # home.username = "${config.home.username}";
-  # home.homeDirectory = "/home/${config.home.username}";
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
@@ -27,26 +18,12 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
-
-    fd
-    ripgrep
-    bat
-    direnv
-    xclip
-
-    pfetch
-    neofetch
     fastfetch
+    fzf
+    starship
+    neovim
+    tmux
 
-    nodejs_22
-
-    htop
-    btop
-    bottom
-
-    vhs
-
-    # discord
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
@@ -56,7 +33,6 @@
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
     # # fonts?
     # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
-    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
 
     # # You can also create simple shell scripts directly inside your
     # # configuration. For example, this adds a command 'my-hello' to your
@@ -66,21 +42,14 @@
     # '')
   ];
 
-  ## Unsafe Allo install Unfree Programs
-  nixpkgs.config = { allowUnfree = true; };
-
-  # Allow install Unfree Programs
-  # nixpkgs.config.allowUnfreePredicate =
-  #   pkg: builtins.elem (pkgs.lib.getName pkg) [
-  #     "vagrant"
-  #     "slack"
-  #     "discord"
-  #     "spotify"
-  #   ];
-
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {
+
+    ".config/starship".source = "${config.home.homeDirectory}/cavelab/config/starship";
+    ".config/nix".source =  "${config.home.homeDirectory}/cavelab/config/nix";
+    # ".config/tmux".source = "${config.home.homeDirectory}/cavelab/config/tmux";
+
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a
     # # symlink to the Nix store copy.
@@ -110,8 +79,6 @@
   #  /etc/profiles/per-user/ubuntu/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    LANG = locale;
-    LC_ALL = locale;
     EDITOR = "nvim";
   };
 

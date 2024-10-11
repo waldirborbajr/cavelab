@@ -1,3 +1,3 @@
 #!/usr/bin/env sh
 
-home-manager switch --flake .#cavelab -b BKP
+home-manager switch --impure --flake .#cavelab -b hm-backup
