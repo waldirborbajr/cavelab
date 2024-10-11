@@ -1,5 +1,5 @@
 {
-  description = "Home Manager configuration of ubuntu";
+  description = "Nix CaveLab from Scratch";
 
   inputs = {
     # Specify the source of Home Manager and Nixpkgs.
@@ -15,6 +15,10 @@
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
     in {
+
+      nix.settings.experimental-features = "nix-command flakes";
+      home-manager.backupFileExtension = "hm-backup";
+
       homeConfigurations."cavelab" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
 
