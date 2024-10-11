@@ -17,7 +17,7 @@
     in {
 
       nix.settings.experimental-features = "nix-command flakes";
-      home-manager.backupFileExtension = "hm-backup";
+      # home-manager.backupFileExtension = "hm-backup";
 
       homeConfigurations."cavelab" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
