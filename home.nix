@@ -56,7 +56,7 @@ in
     # # overrides. You can do that directly here, just don't forget the
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
     # # fonts?
-    (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
+    (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; })
 
     # # You can also create simple shell scripts directly inside your
     # # configuration. For example, this adds a command 'my-hello' to your
@@ -139,6 +139,9 @@ in
     XDG_DATA_HOME = "$HOME/.local/share";
     XDG_STATE_HOME = "$HOME/.local/state";
   };
+
+  # ALLOW SOFTWARE WITH UNFREE LICENSE
+  nixpkgs.config.allowUnfree = true;
 
   # Install UnFree programs
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) 

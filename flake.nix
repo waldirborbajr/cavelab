@@ -17,15 +17,17 @@
     in {
 
       nix.settings.experimental-features = "nix-command flakes";
-      # home-manager.backupFileExtension = "hm-backup";
+
+      # ALLOW SOFTWARE WITH UNFREE LICENSE
+      nixpkgs.config.allowUnfree = true;
 
       homeConfigurations."cavelab" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
 
         # Specify your home configuration modules here, for example,
         # the path to your home.nix.
-        modules = [ 
-	  ./home.nix 
+        modules = [
+	  ./home.nix
 	  # ./modules/tmux.nix
 	  ./modules/bat.nix
 	  ./modules/eza.nix
@@ -35,6 +37,7 @@
 	  ./modules/ripgrep.nix
 	  ./modules/starship.nix
 	  ./modules/yazi.nix
+	  ./modules/zoxide.nix
 	  ./modules/zsh.nix
 	];
 
