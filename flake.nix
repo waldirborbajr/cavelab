@@ -28,6 +28,7 @@
 	  ./home.nix 
 	  ./modules/tmux.nix
 	  ./modules/fzf.nix
+	  ./modules/bat.nix
 	  ./modules/eza.nix
 	  ./modules/zsh.nix
 	];

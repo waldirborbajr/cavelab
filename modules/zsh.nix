@@ -3,8 +3,6 @@
 {
    home.packages = with pkgs;
      [
-       zsh
-  #
   #     # Make zsh as default shell
   #     # (writeShellScriptBin "init_zsh" ''
   #     #   command -v zsh | sudo tee -a /etc/shells
@@ -15,7 +13,7 @@
      ];
 
   programs.zsh = {
-    enable = true;
+    enable = false;
     enableCompletion = true;
     autosuggestion.enable = true;
     autocd = true;
