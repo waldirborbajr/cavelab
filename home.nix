@@ -53,17 +53,17 @@ in
     # ".config/tmux".source = "${homeDir}/cavelab/config/tmux";
     # ".config/nix".source =  "${config.home.homeDirectory}/cavelab/config/nix";
 
-    "${config.home.homeDirectory}/wezterm" = {
+    ".config/wezterm" = {
       source = config.lib.file.mkOutOfStoreSymlink
         "~/cavelab/config/wezterm";
       recursive = true;
     };
-    "${config.home.homeDirectory}/tmux" = {
+    ".config/tmux" = {
       source = config.lib.file.mkOutOfStoreSymlink
         "~/cavelab/config/tmux";
       recursive = true;
     };
-    "${config.home.homeDirectory}/nvim" = {
+    ".config/nvim" = {
       source = config.lib.file.mkOutOfStoreSymlink
         "~/cavelab/config/nvim";
       recursive = true;
