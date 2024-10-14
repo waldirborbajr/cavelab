@@ -36,7 +36,7 @@ in
     lazygit
     meld
     mkcert
-    neovim
+    # neovim
     nix-output-monitor
     procs
     sd
