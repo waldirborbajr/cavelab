@@ -141,11 +141,11 @@ in
     XDG_STATE_HOME = "$HOME/.local/state";
   };
 
-  { nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) 
-    [
-      "obsidian"
-    ];
-  };
+  # Install UnFree programs
+  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) 
+   [
+     "obsidian"
+   ];
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
