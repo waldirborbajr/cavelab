@@ -17,6 +17,33 @@ in
     # zsh-vi-mode
   ];
 
+  programs.fzf = {
+    enable = true;
+    enableZshIntegration = true;
+    enableFishIntegration = false;
+    tmux.enableShellIntegration = true;
+    defaultOptions = [
+      "--preview 'bat -p -f {}'"
+      "--height 50%"
+      "--layout=reverse"
+      "--border"
+      "--inline-info"
+    ];
+  };
+
+  programs.zoxide = {
+    enable = true;
+    # enableFishIntegration = true;
+    enableZshIntegration = true;
+  };
+
+  programs.eza = {
+    enable = true;
+    enableZshIntegration = true;
+    git = true;
+    icons = true;
+  };
+
   programs.zsh = {
 
     enable = true;
@@ -68,6 +95,13 @@ in
       syshealth =
         "sudo nala update && sudo rm /var/lib/apt/lists/lock && sudo nala upgrade -y && sudo nala autoremove -y && sudo nala autopurge -y && sudo nala clean && flatpak update -y && flatpak uninstall --unused -y && sudo snap refresh";
       r = "reset";
+      ls = "eza --icons --time-style=iso --git";
+      l = "ls -la";
+      ll = "ls -lgh";
+      la = "ls -aa";
+      lt = "ls -lgh --tree";
+      lta = "lt -a";
+      lla = "ll -aa";
     };
 
     # -----------------------

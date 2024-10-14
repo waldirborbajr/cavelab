@@ -30,14 +30,11 @@
 	  ./home.nix
 	  # ./modules/tmux.nix
 	  ./modules/bat.nix
-	  ./modules/eza.nix
-	  ./modules/fzf.nix
 	  ./modules/lazygit.nix
 	  ./modules/neovim.nix
 	  ./modules/ripgrep.nix
 	  ./modules/starship.nix
 	  ./modules/yazi.nix
-	  ./modules/zoxide.nix
 	  ./modules/zsh.nix
 	];
 
