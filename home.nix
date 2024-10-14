@@ -55,7 +55,7 @@ in
 
     ".config/tmux" = {
       source = config.lib.file.mkOutOfStoreSymlink
-        "${homeDir}/cavelab/config/tmux/";
+        "~/cavelab/config/tmux";
       recursive = true;
     };
     ".config/nvim" = {
