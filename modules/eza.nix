@@ -7,7 +7,7 @@
 
   home.shellAliases = {
     ls = "eza --icons --time-style=iso --git";
-    l = "ls";
+    l = "ls -la";
     ll = "ls -lgh";
     la = "ls -aa";
     lt = "ls -lgh --tree";

@@ -25,13 +25,11 @@ in
   # environment.
   home.packages = with pkgs; [
     bottom # btop  # replacement of htop/nmon
-    btop
     du-dust
     fastfetch
     fd
     findutils
     fx
-    htop
     httpie
     jq # A lightweight and flexible command-line JSON processor
     killall
@@ -40,7 +38,6 @@ in
     mkcert
     neovim
     nix-output-monitor
-    obsidian
     procs
     sd
     tmux
@@ -69,8 +66,6 @@ in
   # plain files is through 'home.file'.
   home.file = {
 
-    # ".config/starship".source = "${homeDir}/cavelab/config/starship";
-    # ".config/tmux".source = "${homeDir}/cavelab/config/tmux";
     # ".config/nix".source =  "${config.home.homeDirectory}/cavelab/config/nix";
 
     ".config/wezterm" = {
@@ -83,11 +78,11 @@ in
         "${config.home.homeDirectory}/cavelab/config/tmux/";
       recursive = true;
     };
-    ".config/nvim" = {
-      source = config.lib.file.mkOutOfStoreSymlink
-        "${config.home.homeDirectory}/cavelab/config/nvim/";
-      recursive = true;
-    };
+    # ".config/nvim" = {
+    #   source = config.lib.file.mkOutOfStoreSymlink
+    #     "${config.home.homeDirectory}/cavelab/config/nvim/";
+    #   recursive = true;
+    # };
 
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a
