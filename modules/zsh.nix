@@ -31,6 +31,17 @@ in
     ];
   };
 
+  programs.bat = {
+    enable = true;
+    config = {
+      theme = "base16";
+      style = "numbers,changes,header,grid";
+      italic-text = "always";
+      pager = "less -FR";
+      map-syntax = [ "h:cpp" ".ignore:.gitignore" ];
+    };
+  };
+
   programs.zoxide = {
     enable = true;
     # enableFishIntegration = true;
@@ -103,6 +114,7 @@ in
       lt = "ls -lgh --tree";
       lta = "lt -a";
       lla = "ll -aa";
+      cat = "bat --paging=never --style=plain";
     };
 
     # Global aliases work anywhere in a command (e.g. `watch k get pods`)
@@ -115,10 +127,10 @@ in
       kccc = "kubectl config current-context";
       kcgc = "kubectl config get-contexts";
       kcuc = "kubectl config use-context";
-      
+
       grep = "rg";
       G    = "|rg";
-    };    
+    };
 
     # -----------------------
     initExtraBeforeCompInit = ''

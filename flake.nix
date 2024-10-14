@@ -29,7 +29,6 @@
         modules = [
 	  ./home.nix
 	  # ./modules/tmux.nix
-	  ./modules/bat.nix
 	  ./modules/lazygit.nix
 	  ./modules/neovim.nix
 	  ./modules/ripgrep.nix
