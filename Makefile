@@ -1,4 +1,5 @@
 
+
 version:
 	git add . && git commit -m "WIP" && git push
 
@@ -10,3 +11,6 @@ update:
 
 gc:
 	nix-store --gc && nix-collect-garbage -d && home-manager expire-generations -2 days
+
+start:
+	nix run home-manager -- switch --flake .#cavelab -b BKP
