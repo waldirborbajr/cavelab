@@ -24,8 +24,28 @@ in
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
+    bottom # btop  # replacement of htop/nmon
+    btop
+    du-dust
     fastfetch
+    fd
+    findutils
+    fx
+    htop
+    httpie
+    jq # A lightweight and flexible command-line JSON processor
+    killall
+    lazygit
+    meld
+    mkcert
     neovim
+    nix-output-monitor
+    obsidian
+    procs
+    sd
+    tmux
+    tree
+    zellij
 
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.

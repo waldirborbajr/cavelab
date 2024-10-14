@@ -32,6 +32,7 @@
 	  ./modules/starship.nix
 	  # ./modules/tmux.nix
 	  ./modules/zsh.nix
+	  ./modules/ripgrep.nix
 	  ./modules/yazi.nix
 	];
 
