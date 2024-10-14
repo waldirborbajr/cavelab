@@ -11,7 +11,7 @@
       "--layout=reverse"
       "--border"
       "--inline-info"
-    ];    
+    ];
   };
   programs.bash.enable = true;
 }

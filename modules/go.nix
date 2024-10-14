@@ -1,4 +1,4 @@
-{pkgs,config, ...}: {
+{ pkgs, config, ... }: {
   programs.go.enable = true;
 
   home.packages = with pkgs; [
@@ -31,7 +31,5 @@
     # GOBIN = "${config.home.sessionVariables.GOPATH}/bin";
   };
 
-  home.sessionPath = [
-    "${config.home.sessionVariables.GOBIN}"
-  ];
+  home.sessionPath = [ "${config.home.sessionVariables.GOBIN}" ];
 }

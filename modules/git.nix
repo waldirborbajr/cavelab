@@ -1,4 +1,4 @@
-{ lib, config, ... }: {
+{ lib, ... }: {
   programs = {
     git = {
       enable = true;
@@ -6,26 +6,8 @@
       userEmail = "wborbajr@gmail.com";
       # userName = config.profile.mainUserDesc;
       # userEmail = config.profile.mainUserEmail;
-      aliases.prettylog = "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit";
-
-      # extraConfig = {
-      #   core = { editor = "nvim"; };
-      #   rebase = {
-      #     updateRefs = true;
-      #     autoSqaush = true;
-      #   };
-      #   init.defaultBranch = "main";
-      #   core.askPass = ""; # disabled ridiculous ssh gui password prompt
-      #   # not sure exactly what these do, copied from NotAShelf
-      #   core.whitespace = "fix,-indent-with-non-tab,trailing-space,cr-at-eol";
-      #
-      #   # shows both your changes, conflicting changes, and original
-      #   merge.conflictstyle = "diff3";
-      #
-      #   # the colors are annoying. Note however that "no" marks moved lines as diffs even if they're unchanged
-      #   # https://git-scm.com/docs/git-diff#Documentation/git-diff.txt---color-movedltmodegt
-      #   diff.colorMoved = "no";
-      # };
+      aliases.prettylog =
+        "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit";
 
       extraConfig = {
         core = {
@@ -54,26 +36,69 @@
       };
 
       ignores = [
-        # General
+        "$RECYCLE.BIN/"
+        "*.bak"
+        "*.cab"
+        "*.lnk"
+        "*.log"
+        "*.msi"
+        "*.msix"
+        "*.msm"
+        "*.msp"
+        "*.stackdump"
+        "*.swo"
+        "*.swp"
+        "*result*"
+        "*~"
+        ".AppleDB"
+        ".AppleDesktop"
+        ".AppleDouble"
         ".DS_Store"
         ".DS_Store?"
-        "Thumbs.db"
-        "desktop.ini"
-        # Temporary Files
-        "*.bak"
-        "*.swp"
-        "*.swo"
-        "*~"
-        # Editors
+        ".DocumentRevisions-V100"
+        ".LSOverride"
+        ".Spotlight-V100"
+        ".TemporaryItems"
+        ".Trash-*"
+        ".Trashes"
+        ".VolumeIcon.icns"
+        "._*"
+        ".apdisk"
+        ".com.apple.timemachine.donotpresent"
+        ".directory"
+        ".direnv"
+        ".direnv/"
+        ".env"
+        ".envrc"
+        ".fseventsd"
+        ".fuse_hidden*"
+        ".idea"
         ".idea/"
         ".iml"
-        # Nix
-        ".direnv/"
-        ".envrc"
-        # Rust
-        "target/"
-        # Node
+        ".nfs*"
+        ".svn"
+        ".vim"
+        ".vscode"
+        "Icon"
+        "Network Trash Folder"
+        "Session.vim"
+        "Session.vim*"
+        "Temporary Items"
+        "Thumbs.db"
+        "Thumbs.db:encryptable"
+        "[Dd]esktop.ini"
+        "desktop.ini"
+        "ehthumbs.db"
+        "ehthumbs_vista.db"
+        "node_modules"
         "node_modules/"
+        "scratch"
+        "tags"
+        "tags*.tmp"
+        "tags*temp"
+        "tags.lock"
+        "target/"
+        "tmp"
       ];
 
       delta = {
@@ -110,49 +135,31 @@
   # enable scrolling in delta's git diff
   home.sessionVariables.DELTA_PAGER = "less -RF";
 
-  # home.shellAliases = {
-  #   ga = "git add";
-  #   gaa = "git add --all";
-  #   gc = "git commit";
-  #   gcm = "git commit -m";
-  #   gca = "git commit --amend";
-  #   gs = "git status";
-  #   gd = "git diff";
-  #   gds = "git diff --staged";
-  #   gls = "git ls-files";
-  #   gl = "git prettylog"; # see below, alternative to "git log"
-  #   gp = "git pull";
-  #   gP = "git push";
-  #   gPf = "git push --force";
-  #   grb = "git rebase";
-  #   gm = "git merge";
-  # };
-
   programs.zsh.shellAliases = lib.mkAfter {
-    "t" = "lazygit";
     "g" = "git";
-    "gs" = "git status";
     "ga" = "git add -A";
-    "gf" = "git fetch";
-    "gp" = "git push";
-    "gl" = "git pull";
-    "glr" = "git pull --rebase";
-    "gc" = "git commit -v";
-    "gca" = "git commit --amend";
-    "gch" = "git commit --amend -C HEAD";
     "gac" = "git commit -av";
     "gb" = "git branch -v";
     "gba" = "git branch -va";
-    "gcp" = "git cherry-pick";
-    "glo" = "git l";
+    "gc" = "git commit -v";
+    "gca" = "git commit --amend";
+    "gcf" = "git clean -f";
+    "gch" = "git commit --amend -C HEAD";
     "gco" = "git checkout";
+    "gcp" = "git cherry-pick";
+    "gd" = "git diff";
+    "gf" = "git fetch";
+    "gl" = "git pull";
+    "glo" = "git l";
+    "glr" = "git pull --rebase";
     "gm" = "git merge";
     "gmt" = "git mergetool --no-prompt";
-    "gd" = "git diff";
+    "gp" = "git push";
     "gr" = "git remote -v";
-    "gcf" = "git clean -f";
     "grh" = "git reset --hard";
     "grhh" = "git reset --hard HEAD";
+    "gs" = "git status";
+    "t" = "lazygit";
   };
 
 }
