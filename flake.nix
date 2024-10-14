@@ -30,6 +30,7 @@
 	  ./modules/bat.nix
 	  ./modules/eza.nix
 	  ./modules/fzf.nix
+	  ./modules/lazygit.nix
 	  ./modules/neovim.nix
 	  ./modules/ripgrep.nix
 	  ./modules/starship.nix
