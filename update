@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+
+nix flake update
+
+home-manager switch --impure --flake .#cavelab -b hm-backup-`date +%Y%m%d%H%M%S`
+
