@@ -11,7 +11,6 @@
 
     plugins = with pkgs.vimPlugins; [
       cmp-nvim-lsp
-      codeium
       luasnip
       lsp-format-nvim
       lsp_signature-nvim
