@@ -25,10 +25,7 @@ in
   # environment.
   home.packages = with pkgs; [
     fastfetch
-    fzf
-    bat
-    starship
-    tmux
+    sqlc
 
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.

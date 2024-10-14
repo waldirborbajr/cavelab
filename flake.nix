@@ -26,10 +26,11 @@
         # the path to your home.nix.
         modules = [ 
 	  ./home.nix 
-	  ./modules/tmux.nix
-	  ./modules/fzf.nix
 	  ./modules/bat.nix
 	  ./modules/eza.nix
+	  ./modules/fzf.nix
+	  ./modules/starship.nix
+	  ./modules/tmux.nix
 	  ./modules/zsh.nix
 	];
 
