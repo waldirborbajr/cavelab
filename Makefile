@@ -1,7 +1,6 @@
-
 version:
-	git add . 
-	git commit -m "WIP" 
+	git add .
+	git commit -m "WIP"
 	git push
 
 switch: version
