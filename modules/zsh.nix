@@ -67,7 +67,6 @@
       hmd = "cd /home/ubuntu/cavelab";
       hmb = "home-manager switch --flake .#cavelab";
       s = "git status --short";
-      l = "git lg";
       r = "reset";
       ".." = "cd ..";
       gg = "lazygit";
