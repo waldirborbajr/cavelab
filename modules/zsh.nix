@@ -7,13 +7,22 @@ let
 in
 
 {
+  home.packages = with pkgs; [
+    # zsh
+    # zsh-autosuggestions
+    # zsh-completions
+    # zsh-history-substring-search
+    # zsh-syntax-highlighting
+    # zsh-powerlevel10k
+    # zsh-vi-mode
+  ];
+
   programs.zsh = {
 
     enable = true;
     autocd = true;
     enableCompletion = true;
     autosuggestion.enable = true;
-    # syntaxHighlighting.enable = true;
     syntaxHighlighting = {
       enable = true;
       highlighters =
@@ -217,7 +226,26 @@ in
 
     # Plugins not natively supported by home-manager.
     # These will git cloned and sourced, so there is little overhead.
-    plugins = with pkgs; [{
+    plugins = with pkgs; [
+      {
+        name = "zsh-autosuggestions";
+        src = pkgs.fetchFromGitHub {
+          owner = "zsh-users";
+          repo = "zsh-autosuggestions";
+          rev = "v0.7.0";
+          sha256 = "1g3pij5qn2j7v7jjac2a63lxd97mcsgw6xq6k5p7835q9fjiid98";
+        };
+      }
+      {
+        name = "zsh-syntax-highlighting";
+        src = pkgs.fetchFromGitHub {
+          owner = "zsh-users";
+          repo = "zsh-syntax-highlighting";
+          rev = "v0.7.1";
+          sha256 = "03r6hpb5fy4yaakqm3lbf4xcvd408r44jgpv4lnzl9asp4sb9qc0";
+        };
+      }
+    {
       name = "zsh-autopair";
       src = fetchFromGitHub {
         owner = "hlissner";
@@ -226,7 +254,8 @@ in
         sha256 = "PXHxPxFeoYXYMOC29YQKDdMnqTO0toyA7eJTSCV6PGE=";
       };
       file = "autopair.zsh";
-    }];
+    }
+  ];
 
   };
 }

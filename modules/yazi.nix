@@ -80,4 +80,8 @@
       };
     };
   };
+
+  home.shellAliases = {
+    y = yazi
+  };
 }

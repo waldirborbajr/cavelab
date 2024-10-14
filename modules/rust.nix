@@ -7,6 +7,7 @@
   home = {
     packages = with pkgs; [
       # rustup
+      clang
       bacon
       cargo
       cargo-asm
