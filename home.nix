@@ -119,7 +119,33 @@ in
   #
   home.sessionVariables = {
     EDITOR = "nvim";
+    VISUAL = "nvim";
+
+    # Language
+    LANG = "en_US.UTF-8";
+    LC_CTYPE = "en_US.UTF-8";
+    LC_ALL = "en_US.UTF-8";
+
+    # Nix
+    # NIXPKGS_ALLOW_UNFREE = "1";
+    # NIXPKGS_ALLOW_INSECURE = "1";
+
+    # Term
+    TERM = "xterm-256color";
+
+    # XDG Setup
+    XDG_CACHE_HOME = "$HOME/.cache";
+    # XDG_CONFIG_DIRS = "/etc/xdg";
+    XDG_CONFIG_HOME = "$HOME/.config";
+    XDG_DATA_HOME = "$HOME/.local/share";
+    XDG_STATE_HOME = "$HOME/.local/state";
   };
+
+  { nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) 
+    [
+      "obsidian"
+    ];
+ }
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
