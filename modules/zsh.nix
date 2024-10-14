@@ -1,4 +1,4 @@
-{ pkgs, config, ... }: 
+{ pkgs, config, ... }:
 
 let
 
@@ -58,8 +58,6 @@ in
       hmg = "home-manager generations";
       syshealth =
         "sudo nala update && sudo rm /var/lib/apt/lists/lock && sudo nala upgrade -y && sudo nala autoremove -y && sudo nala autopurge -y && sudo nala clean && flatpak update -y && flatpak uninstall --unused -y && sudo snap refresh";
-      tmk = "tmux kill-session -a"; # clear clipboard
-      tmks = "tmux kill-server";
       r = "reset";
     };
 
@@ -190,7 +188,7 @@ in
       --ansi \
       --color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
       --color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
-      --color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8 
+      --color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8
       "
 
       eval "$(zoxide init zsh)"

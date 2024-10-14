@@ -83,5 +83,10 @@
         setw -g window-status-current-format "#[fg=#5e81ac,bg=default] #I#[fg=brightwhite,bg=default] #W "
       '';
   };
+
+  home.shellAliases = {
+    tmk = "tmux kill-session -a"; # clear clipboard
+    tmks = "tmux kill-server";
+  };
 }
 
