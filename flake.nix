@@ -32,6 +32,7 @@
 	  ./modules/starship.nix
 	  ./modules/tmux.nix
 	  ./modules/zsh.nix
+	  ./modules/yazi.nix
 	];
 
         # Optionally use extraSpecialArgs
