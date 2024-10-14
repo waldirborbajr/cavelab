@@ -33,7 +33,6 @@ in
     httpie
     jq # A lightweight and flexible command-line JSON processor
     killall
-    lazygit
     meld
     mkcert
     # neovim
@@ -43,6 +42,11 @@ in
     tmux
     tree
     zellij
+
+    # kubectx
+    # kubie
+    # kustomize
+    # k9s
 
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.

@@ -12,5 +12,9 @@
         };
       };
     };
+
+    shellAliases = {
+      gg = "lazygit";
+    };
   };
 }
