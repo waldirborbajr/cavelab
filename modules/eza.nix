@@ -4,6 +4,7 @@
     icons = true;
     enableZshIntegration = true;
   };
+
   home.shellAliases = {
     ls = "eza --icons --time-style=iso --git";
     l = "ls";
