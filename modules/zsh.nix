@@ -47,6 +47,7 @@ in
   programs.zsh = {
 
     enable = true;
+    defaultKeymap = "viins";
     autocd = true;
     enableCompletion = true;
     autosuggestion.enable = true;
@@ -103,6 +104,21 @@ in
       lta = "lt -a";
       lla = "ll -aa";
     };
+
+    # Global aliases work anywhere in a command (e.g. `watch k get pods`)
+    shellGlobalAliases = {
+      vim = "nvim";
+
+      # kubectl
+      k    = "kubectl";
+      kd   = "kubectl describe";
+      kccc = "kubectl config current-context";
+      kcgc = "kubectl config get-contexts";
+      kcuc = "kubectl config use-context";
+      
+      grep = "rg";
+      G    = "|rg";
+    };    
 
     # -----------------------
     initExtraBeforeCompInit = ''
