@@ -1,8 +1,9 @@
 { config, ... }:
 
 {
-  # home.packages = with pkgs;
-  #   [
+   home.packages = with pkgs;
+     [
+       zsh
   #
   #     # Make zsh as default shell
   #     # (writeShellScriptBin "init_zsh" ''
@@ -11,7 +12,7 @@
   #     # '')
   #
   #     # oh-my-zsh
-  #   ];
+     ];
 
   programs.zsh = {
     enable = true;
