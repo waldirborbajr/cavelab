@@ -2,12 +2,70 @@
   programs = {
     git = {
       enable = true;
-      userName = "waldirborbajr";
+      userName = "Waldir Borba Junior";
       userEmail = "wborbajr@gmail.com";
-      # userName = config.profile.mainUserDesc;
-      # userEmail = config.profile.mainUserEmail;
       aliases.prettylog =
         "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit";
+
+      aliases = {
+        a = "add";
+        af = "!git add $(git ls-files -m -o --exclude-standard | sk -m)";
+        b = "branch";
+        br = "branch";
+        c = "commit";
+        ca = "commit --amend";
+        cm = "commit -m";
+        co = "checkout";
+        d = "diff";
+        ds = "diff --staged";
+        edit-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; hx `f`";
+        essa = "push --force";
+        fuck = "commit --amend -m";
+        graph = "log --all --decorate --graph --oneline";
+        hist = "log --pretty=format:\"%Cgreen%h %Creset%cd %Cblue[%cn] %Creset%s%C(yellow)%d%C(reset)\" --graph --date=relative --decorate --all";
+        l = "log";
+        llog = "log --graph --name-status --pretty=format:\"%C(red)%h %C(reset)(%cd) %C(green)%an %Creset%s %C(yellow)%d%Creset\" --date=relative";
+        oops = "checkout --";
+        p = "push";
+        pf = "push --force-with-lease";
+        pl = "!git pull origin $(git rev-parse --abbrev-ref HEAD)";
+        ps = "!git push origin $(git rev-parse --abbrev-ref HEAD)";
+        r = "rebase";
+        s = "status --short";
+        ss = "status";
+        st = "status";
+        sha = "rev-parse origin/main";
+        sm = "switch main";
+      };
+
+      attributes = [
+        "*.c     diff=cpp"
+        "*.h     diff=cpp"
+        "*.c++   diff=cpp"
+        "*.h++   diff=cpp"
+        "*.cpp   diff=cpp"
+        "*.hpp   diff=cpp"
+        "*.cc    diff=cpp"
+        "*.hh    diff=cpp"
+        "*.m     diff=objc"
+        "*.mm    diff=objc"
+        "*.cs    diff=csharp"
+        "*.css   diff=css"
+        "*.html  diff=html"
+        "*.xhtml diff=html"
+        "*.ex    diff=elixir"
+        "*.exs   diff=elixir"
+        "*.go    diff=golang"
+        "*.php   diff=php"
+        "*.pl    diff=perl"
+        "*.py    diff=python"
+        "*.md    diff=markdown"
+        "*.rb    diff=ruby"
+        "*.rake  diff=ruby"
+        "*.rs    diff=rust"
+        "*.lisp  diff=lisp"
+        "*.el    diff=lisp"
+      ];
 
       extraConfig = {
         core = {
@@ -20,19 +78,33 @@
         };
         diff.tool = "meld";
         web.browser = "google-chrome-stable";
-        push.default = "tracking";
-        push.autoSetupRemote = true;
-        pull.rebase = false;
         rebase = {
           updateRefs = true;
           autoSqaush = true;
           autoStash = true;
+        };
+        pull = {
+          ff = "only";
+          rebase=true;
+        };
+        push = {
+          autoSetupRemote = true;
+          default = "tracking";
+        };
+        rebase = {
+          autoSquash = true;
+          autoStash = true;
+        };
+        rerere = {
+          enabled = true;
+          autoupdate = true;
         };
         branch.autosetupmerge = true;
         init.defaultBranch = "main";
         rerere.enabled = true;
         color.ui = true;
         blame.date = "relative";
+	merge.stat = "true";
       };
 
       ignores = [
@@ -134,32 +206,5 @@
 
   # enable scrolling in delta's git diff
   home.sessionVariables.DELTA_PAGER = "less -RF";
-
-  programs.zsh.shellAliases = lib.mkAfter {
-    "g" = "git";
-    "ga" = "git add -A";
-    "gac" = "git commit -av";
-    "gb" = "git branch -v";
-    "gba" = "git branch -va";
-    "gc" = "git commit -v";
-    "gca" = "git commit --amend";
-    "gcf" = "git clean -f";
-    "gch" = "git commit --amend -C HEAD";
-    "gco" = "git checkout";
-    "gcp" = "git cherry-pick";
-    "gd" = "git diff";
-    "gf" = "git fetch";
-    "gl" = "git pull";
-    "glo" = "git l";
-    "glr" = "git pull --rebase";
-    "gm" = "git merge";
-    "gmt" = "git mergetool --no-prompt";
-    "gp" = "git push";
-    "gr" = "git remote -v";
-    "grh" = "git reset --hard";
-    "grhh" = "git reset --hard HEAD";
-    "gs" = "git status";
-    "t" = "lazygit";
-  };
 
 }

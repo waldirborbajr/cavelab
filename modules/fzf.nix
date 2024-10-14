@@ -4,7 +4,8 @@
   programs.fzf = {
     enable = true;
     enableZshIntegration = true;
-    enableFishIntegration = true;
+    enableFishIntegration = false;
+    tmux.enableShellIntegration = true;
     defaultOptions = [
       "--preview 'bat -p -f {}'"
       "--height 50%"
@@ -15,3 +16,4 @@
   };
   # programs.bash.enable = true;
 }
+
