@@ -1,5 +1,11 @@
 { config, pkgs, ... }:
 
+let
+
+  homeDir = config.home.homeDirectory;
+
+in
+
 {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -21,7 +27,6 @@
     fastfetch
     fzf
     starship
-    neovim
     tmux
 
     # # Adds the 'hello' command to your environment. It prints a friendly
@@ -46,8 +51,8 @@
   # plain files is through 'home.file'.
   home.file = {
 
-    ".config/starship".source = "${config.home.homeDirectory}/cavelab/config/starship";
-    ".config/nix".source =  "${config.home.homeDirectory}/cavelab/config/nix";
+    ".config/starship".source = "${homeDir}/cavelab/config/starship";
+    # ".config/nix".source =  "${config.home.homeDirectory}/cavelab/config/nix";
     # ".config/tmux".source = "${config.home.homeDirectory}/cavelab/config/tmux";
 
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in
