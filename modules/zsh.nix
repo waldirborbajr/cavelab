@@ -53,18 +53,9 @@ in
       C-l = "ctrl-l";
       control-l = "clear";
       clean = "clear";
-      hm = "home-manager";
-      hmd = "cd ~/dotfiles/nix-linux/";
-      hmb = "home-manager -f home.nix build";
-      hms = "home-manager -f home.nix switch";
-      hmsf =
-        "home-manager switch --flake ~/dotfiles/nix-linux/home-manager#borba";
+      hmd = "cd ~/cavelab";
       hmp = "home-manager packages";
-      hmu = "nix flake update ~/dotfiles/nix-linux && hms";
       hmg = "home-manager generations";
-      nxu = "nix-channel --update";
-      ngc =
-        "nix-store --gc && nix-collect-garbage -d && home-manager expire-generations '-2 days' && zimfw clean";
       gg = "lazygit";
       syshealth =
         "sudo nala update && sudo rm /var/lib/apt/lists/lock && sudo nala upgrade -y && sudo nala autoremove -y && sudo nala autopurge -y && sudo nala clean && flatpak update -y && flatpak uninstall --unused -y && sudo snap refresh";
