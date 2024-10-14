@@ -1,7 +1,8 @@
 
-
 version:
-	git add . && git commit -m "WIP" && git push
+	git add . 
+	git commit -m "WIP" 
+	git push
 
 switch: version
 	home-manager switch --impure --flake .#cavelab -b hm-backup-`date +%Y%m%d%H%M%S`
