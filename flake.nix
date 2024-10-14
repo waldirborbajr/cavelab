@@ -30,7 +30,7 @@
 	  ./modules/eza.nix
 	  ./modules/fzf.nix
 	  ./modules/starship.nix
-	  ./modules/tmux.nix
+	  # ./modules/tmux.nix
 	  ./modules/zsh.nix
 	  ./modules/yazi.nix
 	];
