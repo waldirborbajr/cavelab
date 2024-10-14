@@ -4,7 +4,6 @@
   home.packages = with pkgs; [
     # (hiPrio go_1_23)
     air
-    iferr
     delve
     go-outline
     go-symbols
@@ -18,8 +17,10 @@
     goreleaser
     gotests
     gotools
+    iferr
     impl
     revive
+    sqlc
   ];
 
   home.sessionVariables = {

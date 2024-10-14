@@ -25,7 +25,7 @@ in
   # environment.
   home.packages = with pkgs; [
     fastfetch
-    sqlc
+    neovim
 
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
@@ -52,6 +52,17 @@ in
     # ".config/starship".source = "${homeDir}/cavelab/config/starship";
     # ".config/tmux".source = "${homeDir}/cavelab/config/tmux";
     # ".config/nix".source =  "${config.home.homeDirectory}/cavelab/config/nix";
+
+    ".config/tmux" = {
+      source = config.lib.file.mkOutOfStoreSymlink
+        "${homeDir}/cavelab/config/tmux/";
+      recursive = true;
+    };
+    ".config/nvim" = {
+      source = config.lib.file.mkOutOfStoreSymlink
+        "${homeDir}/cavelab/config/nvim/";
+      recursive = true;
+    };
 
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a
