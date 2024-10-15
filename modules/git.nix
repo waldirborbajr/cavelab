@@ -1,4 +1,43 @@
 { lib, ... }: {
+
+  programs.lazygit = {
+    enable = true;
+
+    settings = {
+      git = {
+        paging = {
+          colorArg = "always";
+          pager = "delta --paging=never";
+        };
+      };
+    };
+  };
+
+  programs.gh = {
+    enable = true;
+     extensions = [
+      pkgs.gh-dash
+    ];
+    settings = {
+      # version = "1";
+      git_protocol = "ssh";
+      prompt = "enabled";
+      pager = "delta";
+      editor = "nvim";
+      git_protocol = "ssh";
+      aliases = {
+        clone = "repo clone";
+        co = "pr checkout";
+        ga = "dash";
+        inbox = "api notifications --template '{{range .}}{{tablerow .subject.title .subject.url}}{{end}}'";
+        pl = "pr list";
+        pr = "pr create --web";
+        pv = "pr view --web";
+        v = "repo view --web";
+      };
+    };
+  };
+
   programs = {
     git = {
       enable = true;
@@ -104,7 +143,7 @@
         rerere.enabled = true;
         color.ui = true;
         blame.date = "relative";
-	merge.stat = "true";
+        merge.stat = "true";
       };
 
       ignores = [
@@ -206,5 +245,9 @@
 
   # enable scrolling in delta's git diff
   home.sessionVariables.DELTA_PAGER = "less -RF";
+
+  home.shellAliases = {
+    gg = "lazygit";
+  };
 
 }

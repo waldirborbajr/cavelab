@@ -8,6 +8,7 @@ in
 
 {
   home.packages = with pkgs; [
+    ripgrep-all
     # zsh
     # zsh-autosuggestions
     # zsh-completions
@@ -16,6 +17,11 @@ in
     # zsh-powerlevel10k
     # zsh-vi-mode
   ];
+
+  programs.ripgrep = {
+    enable = true;
+    arguments = [ "--hidden" ];
+  };
 
   programs.fzf = {
     enable = true;
