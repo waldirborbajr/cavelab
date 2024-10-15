@@ -197,6 +197,12 @@ in
 
       dotDir = ".config/zsh";
 
+      sessionVariables = {
+        SHELL = "${homeDir}/.nix-profile/bin/zsh";
+        DIRENV_LOG_FORMAT = "";
+        LC_ALL = "en_US.UTF-8";
+      };
+
       initExtra = ''
         export EDITOR=nvim
 
