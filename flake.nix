@@ -39,6 +39,7 @@
           ./modules/btop.nix
           ./modules/git.nix
           ./modules/gpg.nix
+          ./modules/lua.nix
           ./modules/neovim.nix
           ./modules/starship.nix
           ./modules/yazi.nix
