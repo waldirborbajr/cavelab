@@ -90,6 +90,20 @@ in
       enableCompletion = true;
       autosuggestion.enable = true;
 
+      dotDir = ".config/zsh";
+
+      history = {
+        path = "${config.xdg.dataHome}/zsh/history";
+        expireDuplicatesFirst = true;
+        extended = true;
+        ignoreAllDups = true;
+        ignoreDups = true;
+        ignoreSpace = true;
+        save = 512 * 1024 * 1024; # Save more.
+        size = 512 * 1024 * 1024; # Save more.
+        share = true;
+      };
+
       shellAliases = {
         ".." = "cd ..";
         "..." = "cd ../..";
