@@ -57,13 +57,6 @@ in
         "--preview-window=:hidden"
         "--prompt='~ ' --pointer='▶' --marker='✓'"
       ];
-      # defaultOptions = [
-      #   "--preview 'bat -p -f {}'"
-      #   "--height 50%"
-      #   "--layout=reverse"
-      #   "--border"
-      #   "--inline-info"
-      # ];
     };
 
     bat = {
@@ -98,15 +91,20 @@ in
       autosuggestion.enable = true;
 
       shellAliases = {
+        ".." = "cd ..";
+        "..." = "cd ../..";
+        "...." = "cd ../../..";
+        "....." = "cd ../../../..";
+
         ff = "fastfetch";
 
         # git
-        gaa = "git add --all";
-        gcam = "git commit --all --message";
-        gcl = "git clone";
-        gco = "git checkout";
-        ggl = "git pull";
-        ggp = "git push";
+        # gaa = "git add --all";
+        # gcam = "git commit --all --message";
+        # gcl = "git clone";
+        # gco = "git checkout";
+        # ggl = "git pull";
+        # ggp = "git push";
 
         # kubectl
         k = "kubectl";
