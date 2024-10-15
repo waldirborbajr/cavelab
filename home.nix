@@ -1,10 +1,10 @@
 { lib, config, pkgs, ... }:
 
-let
-
-  homeDir = config.home.homeDirectory;
-
-in
+# let
+#
+#   homeDir = config.home.homeDirectory;
+#
+# in
 
 {
 
