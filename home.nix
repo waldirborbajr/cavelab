@@ -24,6 +24,7 @@ in
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
+    # neovim
     bottom # btop  # replacement of htop/nmon
     du-dust
     fastfetch
@@ -35,7 +36,6 @@ in
     killall
     meld
     mkcert
-    # neovim
     nix-output-monitor
     procs
     sd
