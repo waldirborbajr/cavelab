@@ -130,10 +130,6 @@
           autoSetupRemote = true;
           default = "tracking";
         };
-        rebase = {
-          autoSquash = true;
-          autoStash = true;
-        };
         rerere = {
           enabled = true;
           autoupdate = true;
