@@ -136,7 +136,6 @@
         };
         branch.autosetupmerge = true;
         init.defaultBranch = "main";
-        rerere.enabled = true;
         color.ui = true;
         blame.date = "relative";
         merge.stat = "true";
