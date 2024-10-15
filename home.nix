@@ -8,11 +8,6 @@ in
 
 {
 
-  # Set your time zone.
-  # time.timeZone = "Europe/Berlin";
-
-  # home.defaultUserShell = pkgs.fish;
-
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "ubuntu";

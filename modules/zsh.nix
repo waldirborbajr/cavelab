@@ -201,7 +201,7 @@ in
       dotDir = ".config/zsh";
 
       sessionVariables = {
-        SHELL = "${homeDir}/.nix-profile/bin/zsh";
+        SHELL = pkgs.zsh; #"${homeDir}/.nix-profile/bin/zsh";
         DIRENV_LOG_FORMAT = "";
         LC_ALL = "en_US.UTF-8";
       };
