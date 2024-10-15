@@ -18,6 +18,9 @@ in
     # zsh-vi-mode
   ];
 
+  # environment.shells = with pkgs; [ zsh ];
+  # users.defaultUserShell = pkgs.zsh;
+
   programs = {
     oh-my-posh = {
       enable = true;
