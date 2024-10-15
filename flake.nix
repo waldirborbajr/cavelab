@@ -28,7 +28,7 @@
         # the path to your home.nix.
         modules = [
 	  ./home.nix
-	  # ./modules/tmux.nix
+	  ./modules/gpg.nix
 	  ./modules/neovim.nix
 	  ./modules/starship.nix
 	  ./modules/yazi.nix
