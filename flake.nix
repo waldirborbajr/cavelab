@@ -8,9 +8,13 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    noshell = {
+      url = "github:viperML/noshell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { nixpkgs, home-manager, ... }:
+  outputs = { nixpkgs, home-manager, noshell, ... }:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
@@ -27,6 +31,13 @@
         # Specify your home configuration modules here, for example,
         # the path to your home.nix.
         modules = [
+           (
+            { lib, ... }:
+            {
+              home.packages = [ noshell.packages.${system}.default ];
+              xdg.configFile."shell".source = lib.getExe pkgs.nushell;
+            }
+          )
 	  ./home.nix
 	  ./modules/gpg.nix
 	  ./modules/git.nix
