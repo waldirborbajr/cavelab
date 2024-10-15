@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }: {
+{ pkgs, ... }: {
 
   programs.lazygit = {
     enable = true;
@@ -15,9 +15,7 @@
 
   programs.gh = {
     enable = true;
-     extensions = [
-      pkgs.gh-dash
-    ];
+    extensions = [ pkgs.gh-dash ];
     settings = {
       # version = "1";
       # git_protocol = "ssh";
@@ -29,7 +27,8 @@
         clone = "repo clone";
         co = "pr checkout";
         ga = "dash";
-        inbox = "api notifications --template '{{range .}}{{tablerow .subject.title .subject.url}}{{end}}'";
+        inbox =
+          "api notifications --template '{{range .}}{{tablerow .subject.title .subject.url}}{{end}}'";
         pl = "pr list";
         pr = "pr create --web";
         pv = "pr view --web";
@@ -57,13 +56,16 @@
         co = "checkout";
         d = "diff";
         ds = "diff --staged";
-        edit-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; hx `f`";
+        edit-unmerged =
+          "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; hx `f`";
         essa = "push --force";
         fuck = "commit --amend -m";
         graph = "log --all --decorate --graph --oneline";
-        hist = "log --pretty=format:\"%Cgreen%h %Creset%cd %Cblue[%cn] %Creset%s%C(yellow)%d%C(reset)\" --graph --date=relative --decorate --all";
+        hist = ''
+          log --pretty=format:"%Cgreen%h %Creset%cd %Cblue[%cn] %Creset%s%C(yellow)%d%C(reset)" --graph --date=relative --decorate --all'';
         l = "log";
-        llog = "log --graph --name-status --pretty=format:\"%C(red)%h %C(reset)(%cd) %C(green)%an %Creset%s %C(yellow)%d%Creset\" --date=relative";
+        llog = ''
+          log --graph --name-status --pretty=format:"%C(red)%h %C(reset)(%cd) %C(green)%an %Creset%s %C(yellow)%d%Creset" --date=relative'';
         oops = "checkout --";
         p = "push";
         pf = "push --force-with-lease";
@@ -124,7 +126,7 @@
         };
         pull = {
           ff = "only";
-          rebase=true;
+          rebase = true;
         };
         push = {
           autoSetupRemote = true;
@@ -241,8 +243,6 @@
   # enable scrolling in delta's git diff
   home.sessionVariables.DELTA_PAGER = "less -RF";
 
-  home.shellAliases = {
-    gg = "lazygit";
-  };
+  home.shellAliases = { gg = "lazygit"; };
 
 }

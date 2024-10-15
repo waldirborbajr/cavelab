@@ -1,11 +1,5 @@
 { lib, config, pkgs, ... }:
 
-# let
-#
-#   homeDir = config.home.homeDirectory;
-#
-# in
-
 {
 
   # Home Manager needs a bit of information about you and the paths it should
@@ -45,6 +39,7 @@
     sd
     tmux
     tree
+    # wezterm
     zellij
 
     # kubectx
@@ -86,11 +81,11 @@
         "${config.home.homeDirectory}/cavelab/config/tmux/";
       recursive = true;
     };
-    # ".config/nvim" = {
-    #   source = config.lib.file.mkOutOfStoreSymlink
-    #     "${config.home.homeDirectory}/cavelab/config/nvim/";
-    #   recursive = true;
-    # };
+    ".config/nvim" = {
+      source = config.lib.file.mkOutOfStoreSymlink
+        "${config.home.homeDirectory}/cavelab/config/nvim/";
+      recursive = true;
+    };
 
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a
@@ -148,10 +143,8 @@
   nixpkgs.config.allowUnfree = true;
 
   # Install UnFree programs
-  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) 
-   [
-     "obsidian"
-   ];
+  nixpkgs.config.allowUnfreePredicate = pkg:
+    builtins.elem (lib.getName pkg) [ "obsidian" ];
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;

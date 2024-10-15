@@ -31,21 +31,19 @@
         # Specify your home configuration modules here, for example,
         # the path to your home.nix.
         modules = [
-           (
-            { lib, ... }:
-            {
-              home.packages = [ noshell.packages.${system}.default ];
-              xdg.configFile."shell".source = lib.getExe pkgs.nushell;
-            }
-          )
-	  ./home.nix
-	  ./modules/gpg.nix
-	  ./modules/git.nix
-	  ./modules/neovim.nix
-	  ./modules/starship.nix
-	  ./modules/yazi.nix
-	  ./modules/zsh.nix
-	];
+          ({ lib, ... }: {
+            home.packages = [ noshell.packages.${system}.default ];
+            xdg.configFile."shell".source = lib.getExe pkgs.nushell;
+          })
+          ./home.nix
+          ./modules/btop.nix
+          ./modules/git.nix
+          ./modules/gpg.nix
+          ./modules/neovim.nix
+          ./modules/starship.nix
+          ./modules/yazi.nix
+          ./modules/zsh.nix
+        ];
 
         # Optionally use extraSpecialArgs
         # to pass through arguments to home.nix

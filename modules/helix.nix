@@ -1,43 +1,42 @@
-
-{pkgs, ...}:
+{ pkgs, ... }:
 
 {
 
   home = {
     packages = with pkgs; [
-# Nix
+      # Nix
       nil
       nixpkgs-fmt
-# Web
+      # Web
       vscode-langservers-extracted # HTML/CSS/JSON/ESLint language servers
       typescript-language-server
       svelte-language-server
       nodePackages.prettier
       nodePackages.eslint
-# Markdown
+      # Markdown
       marksman
       markdownlint-cli
-# Lua
+      # Lua
       lua-language-server
-# Python
+      # Python
       pyright
       ruff-lsp
-# C#
+      # C#
       csharp-ls
-# C, C++
+      # C, C++
       clang-tools
-# Rust
+      # Rust
       rust-analyzer
       rustfmt
-# SQL
+      # SQL
       sqls
-# Haskell
+      # Haskell
       haskell-language-server
-# Bash
+      # Bash
       bash-language-server
-# TOML
+      # TOML
       taplo
-# Runtimes and Libraries
+      # Runtimes and Libraries
       lldb
       helix
     ];
@@ -57,7 +56,7 @@
           name = "nix";
           auto-format = true;
           formatter.command = "alejandra";
-          language-servers = ["nil"];
+          language-servers = [ "nil" ];
           indent.tab-width = 2;
           indent.unit = " ";
         }
@@ -66,7 +65,7 @@
           auto-format = true;
           indent = {
             tab-width = 2;
-            unit = "\t";
+            unit = "	";
           };
         }
         {
@@ -74,7 +73,7 @@
           auto-format = true;
           indent = {
             tab-width = 2;
-            unit = "\t";
+            unit = "	";
           };
         }
         {
@@ -82,10 +81,7 @@
           auto-format = true;
           soft-wrap.enable = true;
           soft-wrap.wrap-at-text-width = true;
-          language-servers = [
-            "markdown-oxide"
-            "ltex-ls"
-          ];
+          language-servers = [ "markdown-oxide" "ltex-ls" ];
         }
       ];
       language-server = {
@@ -107,10 +103,10 @@
         indent-guides.render = true;
         indent-guides.character = "┊";
         indent-guides.skip-levels = 1;
-        shell = ["zsh" "-c"];
+        shell = [ "zsh" "-c" ];
         scroll-lines = 6;
         completion-trigger-len = 2;
-        text-width = 80;      
+        text-width = 80;
         auto-completion = true;
         auto-format = true;
         completion-replace = true;
@@ -150,13 +146,9 @@
             q = ":reflow";
           };
         };
-        select = {
-          space = {
-            q = ":reflow";
-          };
-        };
+        select = { space = { q = ":reflow"; }; };
         insert = {
-          C-c   = "normal_mode";
+          C-c = "normal_mode";
           "C-[" = "normal_mode";
         };
       };

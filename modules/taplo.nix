@@ -3,7 +3,7 @@ with lib;
 let
   cfg = config.programs.taplo;
 
-  configFormat = pkgs.formats.toml {};
+  configFormat = pkgs.formats.toml { };
 in {
   options.programs.taplo = {
     enable = mkEnableOption "taplo";

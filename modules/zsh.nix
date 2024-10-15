@@ -1,22 +1,17 @@
 { pkgs, config, ... }:
 
-let
-
-  homeDir = config.home.homeDirectory;
-
-in
-
 {
-  home.packages = with pkgs; [
-    ripgrep-all
-    # zsh
-    # zsh-autosuggestions
-    # zsh-completions
-    # zsh-history-substring-search
-    # zsh-syntax-highlighting
-    # zsh-powerlevel10k
-    # zsh-vi-mode
-  ];
+  home.packages = with pkgs;
+    [
+      ripgrep-all
+      # zsh
+      # zsh-autosuggestions
+      # zsh-completions
+      # zsh-history-substring-search
+      # zsh-syntax-highlighting
+      # zsh-powerlevel10k
+      # zsh-vi-mode
+    ];
 
   # environment.shells = with pkgs; [ zsh ];
   # users.defaultUserShell = pkgs.zsh;
@@ -70,7 +65,8 @@ in
               }
               {
                 type = "path";
-                template = "{{ if not .Writable }}<p:error> </>{{ end }}{{ .Path }} ";
+                template =
+                  "{{ if not .Writable }}<p:error> </>{{ end }}{{ .Path }} ";
                 style = "plain";
                 foreground = "p:pink";
                 properties = {
@@ -106,17 +102,14 @@ in
             type = "prompt";
             alignment = "left";
             newline = true;
-            segments = [
-              {
-                type = "kubectl";
-                template = "{{ if eq \"true\" .Env.SHOW_KUBERNETES_INFO_IN_PROMPT }}󱃾 {{ .Context }}::{{ if .Namespace }}{{ .Namespace }}{{ else }}default{{ end }}{{ end }}";
-                style = "plain";
-                foreground = "p:blue";
-                propterties = {
-                  parse_kubeconfig = false;
-                };
-              }
-            ];
+            segments = [{
+              type = "kubectl";
+              template = ''
+                {{ if eq "true" .Env.SHOW_KUBERNETES_INFO_IN_PROMPT }}󱃾 {{ .Context }}::{{ if .Namespace }}{{ .Namespace }}{{ else }}default{{ end }}{{ end }}'';
+              style = "plain";
+              foreground = "p:blue";
+              propterties = { parse_kubeconfig = false; };
+            }];
           }
           {
             type = "prompt";
@@ -333,7 +326,6 @@ in
         zstyle ':fzf-tab:*' switch-group ',' '.'
       '';
 
-
       history = {
         path = "${config.xdg.dataHome}/zsh/history";
         expireDuplicatesFirst = true;
@@ -406,5 +398,5 @@ in
         lt = "eza --tree --level=2 --icons"; # tree
       };
     };
- };
+  };
 }

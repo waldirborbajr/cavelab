@@ -22,13 +22,14 @@ in {
   options.modules.dev.nodejs = { enable = mkEnableOption "nodejs"; };
 
   config = mkIf cfg.enable {
-    home.packages = with pkgs; [ 
-      nodejs-22_x 
-      # bun
-      # nodePackages.typescript-language-server
-      # yarn
-      # nodePackages.typescript
-    ];
+    home.packages = with pkgs;
+      [
+        nodejs-22_x
+        # bun
+        # nodePackages.typescript-language-server
+        # yarn
+        # nodePackages.typescript
+      ];
 
     home.file.".npmrc".source = ./npmrc;
 
