@@ -29,6 +29,7 @@
         modules = [
 	  ./home.nix
 	  ./modules/gpg.nix
+	  ./modules/git.nix
 	  ./modules/neovim.nix
 	  ./modules/starship.nix
 	  ./modules/yazi.nix
