@@ -39,7 +39,7 @@
     sd
     tmux
     tree
-    # wezterm
+    wezterm
     zellij
 
     # kubectx
