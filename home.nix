@@ -37,7 +37,7 @@
     nix-output-monitor
     procs
     sd
-    # tmux
+    tmux
     tree
 
     obsidian
