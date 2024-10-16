@@ -38,9 +38,11 @@
           ./home.nix
           ./modules/btop.nix
           ./modules/git.nix
+          ./modules/go.nix
           ./modules/gpg.nix
           ./modules/lua.nix
           ./modules/neovim.nix
+          ./modules/rust.nix
           ./modules/yazi.nix
           ./modules/zsh.nix
         ];
