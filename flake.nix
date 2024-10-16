@@ -42,7 +42,6 @@
           ./modules/gpg.nix
           ./modules/lua.nix
           ./modules/neovim.nix
-          ./modules/tmux.nix
           ./modules/yazi.nix
           ./modules/zsh.nix
         ];
