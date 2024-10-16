@@ -14,7 +14,8 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager, noshell, ... }:
+  # outputs = { nixpkgs, home-manager, noshell, ... }:
+  outputs = { nixpkgs, home-manager, ... }:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
@@ -31,18 +32,18 @@
         # Specify your home configuration modules here, for example,
         # the path to your home.nix.
         modules = [
-          ({ lib, ... }: {
-            home.packages = [ noshell.packages.${system}.default ];
-            xdg.configFile."shell".source = lib.getExe pkgs.nushell;
-          })
+          # ({ lib, ... }: {
+          #   home.packages = [ noshell.packages.${system}.default ];
+          #   xdg.configFile."shell".source = lib.getExe pkgs.nushell;
+          # })
           ./home.nix
           ./modules/editor/neovim.nix
           ./modules/lang/go.nix
           ./modules/lang/lua.nix
           ./modules/lang/nix.nix
           ./modules/lang/rust.nix
-          ./modules/multiplex/zellij.nix
-          ./modules/terminal/zsh.nix
+          # ./modules/multiplex/zellij.nix
+          # ./modules/terminal/zsh.nix
           ./modules/tools/btop.nix
           ./modules/tools/git.nix
           ./modules/tools/gpg.nix
