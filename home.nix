@@ -115,6 +115,10 @@
   #  /etc/profiles/per-user/ubuntu/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
+
+    TERMINAL = "wezterm";
+    SHELL = "zsh";
+
     EDITOR = "nvim";
     VISUAL = "nvim";
 
