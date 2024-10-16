@@ -43,7 +43,7 @@
           ./modules/lang/lua.nix
           ./modules/lang/nix.nix
           ./modules/lang/rust.nix
-          ./modules/multiplex/zellij.nix
+          # ./modules/multiplex/zellij.nix
           ./modules/terminal/zsh.nix
           ./modules/tools/btop.nix
           ./modules/tools/git.nix

@@ -38,6 +38,7 @@
     procs
     sd
     tmux
+    zellij
     tree
 
     obsidian
@@ -86,6 +87,11 @@
     ".config/nvim" = {
       source = config.lib.file.mkOutOfStoreSymlink
         "${config.home.homeDirectory}/cavelab/config/nvim/";
+      recursive = true;
+    };
+    ".config/zellij" = {
+      source = config.lib.file.mkOutOfStoreSymlink
+        "${config.home.homeDirectory}/cavelab/config/zellij/";
       recursive = true;
     };
 
