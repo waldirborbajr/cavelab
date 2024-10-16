@@ -36,7 +36,6 @@
             xdg.configFile."shell".source = lib.getExe pkgs.nushell;
           })
           ./home.nix
-          # ./modules/starship.nix
           ./modules/btop.nix
           ./modules/git.nix
           ./modules/gpg.nix

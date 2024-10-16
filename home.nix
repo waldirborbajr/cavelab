@@ -117,7 +117,7 @@
   home.sessionVariables = {
 
     # TERMINAL = pkgs.wezterm;
-    TERMINAL = "wezterm";
+    # TERMINAL = "wezterm";
     # SHELL = "zsh";
     SHELL = pkgs.zsh;
 
