@@ -36,12 +36,13 @@
             xdg.configFile."shell".source = lib.getExe pkgs.nushell;
           })
           ./home.nix
+          # ./modules/starship.nix
           ./modules/btop.nix
           ./modules/git.nix
           ./modules/gpg.nix
           ./modules/lua.nix
           ./modules/neovim.nix
-          # ./modules/starship.nix
+          ./modules/tmux.nix
           ./modules/yazi.nix
           ./modules/zsh.nix
         ];
