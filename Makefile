@@ -15,4 +15,4 @@ gc:
 	home-manager expire-generations "-2 days"
 
 start:
-	nix run home-manager -- switch --flake .#cavelab -b BKP
+	nix run home-manager -- switch --flake .#cavelab -b hm-backup-`date +%Y%m%d%H%M%S`
