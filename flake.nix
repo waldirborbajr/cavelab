@@ -41,7 +41,7 @@
           ./modules/gpg.nix
           ./modules/lua.nix
           ./modules/neovim.nix
-          ./modules/starship.nix
+          # ./modules/starship.nix
           ./modules/yazi.nix
           ./modules/zsh.nix
         ];
