@@ -36,7 +36,6 @@
     nix-output-monitor
     procs
     sd
-    tmux
     tree
     # wezterm
     zellij
@@ -75,11 +74,11 @@
         "${config.home.homeDirectory}/cavelab/config/wezterm/";
       recursive = true;
     };
-    ".config/tmux" = {
-      source = config.lib.file.mkOutOfStoreSymlink
-        "${config.home.homeDirectory}/cavelab/config/tmux/";
-      recursive = true;
-    };
+    # ".config/tmux" = {
+    #   source = config.lib.file.mkOutOfStoreSymlink
+    #     "${config.home.homeDirectory}/cavelab/config/tmux/";
+    #   recursive = true;
+    # };
     ".config/nvim" = {
       source = config.lib.file.mkOutOfStoreSymlink
         "${config.home.homeDirectory}/cavelab/config/nvim/";

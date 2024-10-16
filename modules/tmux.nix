@@ -9,7 +9,7 @@
   home.file = {
     ".config/tmux" = {
       source = config.lib.file.mkOutOfStoreSymlink
-        "${config.home.homeDirectory}/cavernalab/config/tmux/";
+        "${config.home.homeDirectory}/cavelab/config/tmux/";
       recursive = true;
     };
 
