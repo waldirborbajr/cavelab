@@ -41,6 +41,10 @@
     tree
     zellij
 
+    obsidian
+    discord
+    spotify
+
     # k9s
     # kubectx
     # kubie
