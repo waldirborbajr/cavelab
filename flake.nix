@@ -36,6 +36,7 @@
           #   home.packages = [ noshell.packages.${system}.default ];
           #   xdg.configFile."shell".source = lib.getExe pkgs.nushell;
           # })
+
           ./home.nix
           ./modules/editor/neovim.nix
           ./modules/lang/go.nix
