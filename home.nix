@@ -149,7 +149,12 @@
   };
 
   # ALLOW SOFTWARE WITH UNFREE LICENSE
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs.config = {
+    allowUnfree = true;
+    allowInsecure = true;
+    allowBroken = true;
+    # allowUnfreePredicate = _: true;
+  };
 
   # Install UnFree programs
   nixpkgs.config.allowUnfreePredicate = pkg:

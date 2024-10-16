@@ -346,6 +346,9 @@
 
         ff = "fastfetch";
 
+        syshealth =
+          "sudo nala update && sudo rm /var/lib/apt/lists/lock && sudo nala upgrade -y && sudo nala autoremove -y && sudo nala autopurge -y && sudo nala clean && flatpak update -y && flatpak uninstall --unused -y && sudo snap refresh";
+
         # git
         # gaa = "git add --all";
         # gcam = "git commit --all --message";
