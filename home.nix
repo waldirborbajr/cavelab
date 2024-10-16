@@ -22,6 +22,7 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
+    # wezterm
     bottom # btop  # replacement of htop/nmon
     du-dust
     fastfetch
@@ -36,14 +37,14 @@
     nix-output-monitor
     procs
     sd
+    tmux
     tree
-    # wezterm
     zellij
 
+    # k9s
     # kubectx
     # kubie
     # kustomize
-    # k9s
 
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
@@ -74,11 +75,11 @@
         "${config.home.homeDirectory}/cavelab/config/wezterm/";
       recursive = true;
     };
-    # ".config/tmux" = {
-    #   source = config.lib.file.mkOutOfStoreSymlink
-    #     "${config.home.homeDirectory}/cavelab/config/tmux/";
-    #   recursive = true;
-    # };
+    ".config/tmux" = {
+      source = config.lib.file.mkOutOfStoreSymlink
+        "${config.home.homeDirectory}/cavelab/config/tmux/";
+      recursive = true;
+    };
     ".config/nvim" = {
       source = config.lib.file.mkOutOfStoreSymlink
         "${config.home.homeDirectory}/cavelab/config/nvim/";

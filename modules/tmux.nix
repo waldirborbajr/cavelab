@@ -1,21 +1,3 @@
-{ config, ... }:
-
-{
-  programs.tmux = {
-    enable = true;
-    # inherit extraConfig;
-  };
-
-  home.file = {
-    ".config/tmux" = {
-      source = config.lib.file.mkOutOfStoreSymlink
-        "${config.home.homeDirectory}/cavelab/config/tmux/";
-      recursive = true;
-    };
-
-  };
-}
-
 # { pkgs, ... }:
 #
 # {
