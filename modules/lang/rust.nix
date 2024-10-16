@@ -7,13 +7,13 @@
   home = {
     packages = with pkgs; [
       # rustup
-      clang
       bacon
       cargo
       cargo-asm
       cargo-audit
       cargo-cache
       cargo-deny
+      cargo-espflash  # For flashing stuff to my esp embedded stuff
       cargo-expand
       cargo-flamegraph
       cargo-fuzz
@@ -51,15 +51,13 @@
     ]);
 
     sessionVariables = {
+      # PATH = "$CARGO_HOME/bin:$PATH";
+      # PKG_CONFIG_PATH = "${pkgs.systemd.dev}/lib/pkgconfig:$PKG_CONFIG_PATH";
+      # RUSTC_WRAPPER = "sccache";
       CARGO_HOME = "${config.xdg.dataHome}/.cargo";
-      CARGO_BIN = "${CARGO_HOME}/bin
-      RUSTC_WRAPPER = "sccache";
-      PKG_CONFIG_PATH = "${pkgs.systemd.dev}/lib/pkgconfig:$PKG_CONFIG_PATH";
       RUSTUP_HOME = "${config.xdg.dataHome}/.rustup";
-      CARGO_HOME = "${config.xdg.dataHome}/.cargo";
-      PATH = "$CARGO_HOME/bin:$PATH";
-      RUST_LOG = "debug";
       RUST_BACKTRACE = 1;
+      RUST_LOG = "debug";
     };
   };
 }

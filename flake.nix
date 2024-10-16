@@ -36,15 +36,16 @@
             xdg.configFile."shell".source = lib.getExe pkgs.nushell;
           })
           ./home.nix
-          ./modules/btop.nix
-          ./modules/git.nix
-          ./modules/go.nix
-          ./modules/gpg.nix
-          ./modules/lua.nix
-          ./modules/neovim.nix
-          ./modules/rust.nix
-          ./modules/yazi.nix
-          ./modules/zsh.nix
+          ./modules/editor/neovim.nix
+          ./modules/lang/go.nix
+          ./modules/lang/lua.nix
+          ./modules/lang/nix.nix
+          ./modules/lang/rust.nix
+          ./modules/terminal/zsh.nix
+          ./modules/tools/btop.nix
+          ./modules/tools/git.nix
+          ./modules/tools/gpg.nix
+          ./modules/tools/yazi.nix
         ];
 
         # Optionally use extraSpecialArgs

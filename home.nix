@@ -149,7 +149,7 @@
 
   # Install UnFree programs
   nixpkgs.config.allowUnfreePredicate = pkg:
-    builtins.elem (lib.getName pkg) [ "obsidian" ];
+    builtins.elem (lib.getName pkg) [ "obsidian" "discord" "spotify" ];
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;

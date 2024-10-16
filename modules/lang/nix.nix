@@ -1,10 +1,11 @@
 { pkgs, ... }: {
   home.packages = with pkgs; [
-    statix
-    vulnix
+    alejandra
     deadnix
     nil
-    nixpkgs-fmt
     nixfmt-classic
+    nixpkgs-fmt
+    statix
+    vulnix
   ];
 }
