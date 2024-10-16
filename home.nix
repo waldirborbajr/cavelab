@@ -39,7 +39,6 @@
     sd
     tmux
     tree
-    zellij
 
     obsidian
     discord
