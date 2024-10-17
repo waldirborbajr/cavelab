@@ -131,9 +131,9 @@
   home.sessionVariables = {
 
     # TERMINAL = pkgs.wezterm;
-    # TERMINAL = "wezterm";
+    TERMINAL = "wezterm";
     # SHELL = pkgs.zsh;
-    # SHELL = "zsh";
+    SHELL = "zsh";
 
     EDITOR = "nvim";
     VISUAL = "nvim";
