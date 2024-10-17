@@ -1,11 +1,22 @@
-{ lib, config, pkgs, ... }:
+# ██╗  ██╗ ██████╗ ███╗   ███╗███████╗    ███╗   ███╗ █████╗ ███╗   ██╗ █████╗  ██████╗ ███████╗██████╗
+#  ██║  ██║██╔═══██╗████╗ ████║██╔════╝    ████╗ ████║██╔══██╗████╗  ██║██╔══██╗██╔════╝ ██╔════╝██╔══██╗
+#  ███████║██║   ██║██╔████╔██║█████╗      ██╔████╔██║███████║██╔██╗ ██║███████║██║  ███╗█████╗  ██████╔╝
+#  ██╔══██║██║   ██║██║╚██╔╝██║██╔══╝      ██║╚██╔╝██║██╔══██║██║╚██╗██║██╔══██║██║   ██║██╔══╝  ██╔══██╗
+#  ██║  ██║╚██████╔╝██║ ╚═╝ ██║███████╗    ██║ ╚═╝ ██║██║  ██║██║ ╚████║██║  ██║╚██████╔╝███████╗██║  ██║
+#  ╚═╝  ╚═╝ ╚═════╝ ╚═╝     ╚═╝╚══════╝    ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚═╝  ╚═╝
+#
+
+{ user, time, lib, config, pkgs, ... }:
 
 {
 
   # Home Manager needs a bit of information about you and the paths it should
-  # manage.
-  home.username = builtins.getEnv "USER";
-  home.homeDirectory = "/home/ubuntu";
+  # manage.V
+  # home.username = "borba";
+  # home.homeDirectory = "/home/ubuntu";
+
+  home.username = user;
+  home.homeDirectory = "/home/${user}";
 
   # home.username = builtins.getEnv "USER";
   # home.homeDirectory = builtins.getEnv "HOME";
