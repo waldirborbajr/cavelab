@@ -132,8 +132,8 @@
 
     # TERMINAL = pkgs.wezterm;
     # SHELL = pkgs.zsh;
-    TERMINAL = "wezterm";
-    SHELL = "zsh";
+    # TERMINAL = "wezterm";
+    # SHELL = "zsh";
 
     EDITOR = "nvim";
     VISUAL = "nvim";
