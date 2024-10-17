@@ -245,7 +245,7 @@
         # --color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8
         # "
 
-        eval "$(zoxide init zsh)"
+        # eval "$(zoxide init zsh)"
       '';
 
       completionInit = ''
