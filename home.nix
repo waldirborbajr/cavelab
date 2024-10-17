@@ -4,8 +4,8 @@
 
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
-  home.username = "borba";
-  home.homeDirectory = "/home/borba";
+  home.username = builtins.getEnv "USER";
+  home.homeDirectory = "/home/ubuntu";
 
   # home.username = builtins.getEnv "USER";
   # home.homeDirectory = builtins.getEnv "HOME";
