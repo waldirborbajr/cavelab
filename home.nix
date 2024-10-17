@@ -15,7 +15,7 @@
   # home.username = "borba";
   # home.homeDirectory = "/home/ubuntu";
 
-  home.username = user;
+  home.username = "${user}";
   home.homeDirectory = "/home/${user}";
 
   # home.username = builtins.getEnv "USER";
