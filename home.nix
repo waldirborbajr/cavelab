@@ -131,8 +131,8 @@
   home.sessionVariables = {
 
     # TERMINAL = pkgs.wezterm;
-    TERMINAL = "wezterm";
     # SHELL = pkgs.zsh;
+    TERMINAL = "wezterm";
     SHELL = "zsh";
 
     EDITOR = "nvim";
@@ -144,7 +144,7 @@
     LC_ALL = "en_US.UTF-8";
 
     # Term
-    # TERM = "xterm-256color";
+    TERM = "xterm-256color";
 
     # XDG Setup
     XDG_CACHE_HOME = "$HOME/.cache";

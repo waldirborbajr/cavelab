@@ -161,6 +161,10 @@
         ll = "eza -bhl --icons --group-directories-first"; # long list
         la = "eza -abhl --icons --group-directories-first"; # all list
         lt = "eza --tree --level=2 --icons"; # tree
+
+        tmc = "clear; tmux clear-history; clear";
+        tmk = "tmux kill-session";
+
       };
 
       completionInit = ''
@@ -242,51 +246,6 @@
       '';
 
       initExtra = ''
-        export EDITOR=nvim
-
-        # if [ -n "$TTY" ]; then
-        #   export GPG_TTY=$(tty)
-        # else
-        #   export GPG_TTY="$TTY"
-        # fi
-        #
-        # # SSH_AUTH_SOCK set to GPG to enable using gpgagent as the ssh agent.
-        # export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
-        # gpgconf --launch gpg-agent
-        #
-        # bindkey -e
-        #
-        # bindkey '^[w' kill-region
-        #
-        # zle_highlight+=(paste:none)
-
-        # setopt appendhistory
-        # setopt sharehistory
-        # setopt hist_ignore_space
-        # setopt hist_ignore_all_dups
-        # setopt hist_save_no_dups
-        # setopt hist_ignore_dups
-        # setopt hist_find_no_dups
-
-        # Force UTF-8
-        export LC_ALL=en_US.UTF-8
-        export LANG=en_US.UTF-8
-
-        # Set fzf options
-        # export FZF_DEFAULT_COMMAND="fd --type f --hidden --exclude .git"
-        # export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND --no-ignore"
-        # export FZF_DEFAULT_OPTS='--bind ctrl-y:preview-up,ctrl-e:preview-down,left:toggle+up,right:toggle+down'
-        # export FZF_DEFAULT_OPTS=" \
-        # --multi \
-        # --cycle \
-        # --reverse \
-        # --bind='ctrl-space:toggle,pgup:preview-up,pgdn:preview-down' \
-        # --ansi \
-        # --color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
-        # --color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
-        # --color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8
-        # "
-
         # eval "$(zoxide init zsh)"
       '';
     };
