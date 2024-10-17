@@ -132,8 +132,8 @@
 
     # TERMINAL = pkgs.wezterm;
     # TERMINAL = "wezterm";
+    # SHELL = pkgs.zsh;
     # SHELL = "zsh";
-    SHELL = pkgs.zsh;
 
     EDITOR = "nvim";
     VISUAL = "nvim";
@@ -143,12 +143,8 @@
     LC_CTYPE = "en_US.UTF-8";
     LC_ALL = "en_US.UTF-8";
 
-    # Nix
-    # NIXPKGS_ALLOW_UNFREE = "1";
-    # NIXPKGS_ALLOW_INSECURE = "1";
-
     # Term
-    TERM = "xterm-256color";
+    # TERM = "xterm-256color";
 
     # XDG Setup
     XDG_CACHE_HOME = "$HOME/.cache";
