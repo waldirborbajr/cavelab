@@ -1,6 +1,6 @@
 version:
 	git add .
-	git commit -m "WIP"
+	git commit -m "$(MSG)"
 	git push
 
 switch: 
