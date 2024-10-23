@@ -1,9 +1,10 @@
 { pkgs, ... }: {
   home.packages = with pkgs; [
-    alejandra
+    # alejandra
+    # nixfmt-classic
     deadnix
     nil
-    nixfmt-classic
+    nixfmt-rfc-style
     nixpkgs-fmt
     statix
     vulnix
