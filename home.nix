@@ -6,7 +6,12 @@
 # ╚═╝  ╚═╝ ╚═════╝ ╚═╝     ╚═╝╚══════╝    ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚═╝  ╚═╝
 #
 
-{ lib, config, pkgs, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
 
 {
 
@@ -80,18 +85,15 @@
     # ".config/nix".source =  "${config.home.homeDirectory}/cavelab/config/nix";
 
     ".config/wezterm" = {
-      source = config.lib.file.mkOutOfStoreSymlink
-        "${config.home.homeDirectory}/cavelab/config/wezterm/";
+      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/cavelab/config/wezterm/";
       recursive = true;
     };
     ".config/tmux" = {
-      source = config.lib.file.mkOutOfStoreSymlink
-        "${config.home.homeDirectory}/cavelab/config/tmux/";
+      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/cavelab/config/tmux/";
       recursive = true;
     };
     ".config/nvim" = {
-      source = config.lib.file.mkOutOfStoreSymlink
-        "${config.home.homeDirectory}/cavelab/config/nvim/";
+      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/cavelab/config/nvim/";
       recursive = true;
     };
     # ".config/zellij" = {
@@ -163,8 +165,13 @@
   };
 
   # Install UnFree programs
-  nixpkgs.config.allowUnfreePredicate = pkg:
-    builtins.elem (lib.getName pkg) [ "obsidian" "discord" "spotify" ];
+  nixpkgs.config.allowUnfreePredicate =
+    pkg:
+    builtins.elem (lib.getName pkg) [
+      "obsidian"
+      "discord"
+      "spotify"
+    ];
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
