@@ -56,6 +56,8 @@
 
     asciinema
 
+    gnupg
+
     obsidian
     discord
     spotify
