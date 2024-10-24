@@ -51,6 +51,9 @@
     # zellij
     tree
 
+    xclip
+    xsel
+
     obsidian
     discord
     spotify
