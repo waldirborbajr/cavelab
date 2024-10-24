@@ -6,6 +6,9 @@ version:
 switch: 
 	home-manager switch --impure --flake .#cavelab -b hm-backup-`date +%Y%m%d%H%M%S`
 
+build: 
+	home-manager build --impure --flake .#cavelab
+
 update:
 	nix flake update
 
