@@ -54,6 +54,8 @@
     xclip
     xsel
 
+    asciinema
+
     obsidian
     discord
     spotify
