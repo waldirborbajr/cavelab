@@ -33,14 +33,13 @@
   # environment.
   home.packages = with pkgs; [
     # wezterm
+    # zellij
     bottom # btop  # replacement of htop/nmon
     du-dust
     fastfetch
     fd
     findutils
     fx
-    httpie
-    jq # A lightweight and flexible command-line JSON processor
     killall
     meld
     mkcert
@@ -48,8 +47,12 @@
     procs
     sd
     tmux
-    # zellij
     tree
+
+    # dev tools
+    httpie
+    jq # A lightweight and flexible command-line JSON processor
+    sqlitebrowser
 
     xclip
     xsel
@@ -58,8 +61,8 @@
 
     gnupg
 
-    obsidian
     discord
+    obsidian
     spotify
 
     # k9s
