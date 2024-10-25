@@ -5,7 +5,7 @@
     stylua
     lua
     sumneko-lua-language-server # Lua.
-    luarocks-nix
+    # luarocks-nix
     luarocks
     # shellcheck
     # shfmt
