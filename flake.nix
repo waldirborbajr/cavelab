@@ -15,11 +15,13 @@
   };
 
   # outputs = { nixpkgs, home-manager, noshell, ... }:
-  outputs = { nixpkgs, home-manager, ... }:
+  outputs =
+    { nixpkgs, home-manager, ... }:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
-    in {
+    in
+    {
 
       nix.settings.experimental-features = "nix-command flakes";
 
@@ -38,13 +40,14 @@
           # })
 
           ./home.nix
+          # ./modules/multiplex/tmux.nix
+          # ./modules/multiplex/zellij.nix
           ./modules/editor/neovim.nix
           ./modules/lang/go.nix
           ./modules/lang/lua.nix
           ./modules/lang/nix.nix
+          ./modules/lang/python.nix
           ./modules/lang/rust.nix
-          # ./modules/multiplex/tmux.nix
-          # ./modules/multiplex/zellij.nix
           ./modules/terminal/zsh.nix
           ./modules/tools/btop.nix
           ./modules/tools/git.nix
