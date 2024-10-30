@@ -1,33 +1,14 @@
+{ pkgs, ... }:
 {
-  config,
-  pkgs,
-  lib,
-  ...
-}:
 
-with lib;
-let
-  cfg = config.modules.dev.nodejs;
-in
-{
-  options.modules.dev.nodejs = {
-    enable = mkEnableOption "nodejs";
-  };
-
-  config = mkIf cfg.enable {
-    home.packages = with pkgs; [
-      nodejs-22_x
-      npm
-      # bun
-      # nodePackages.typescript-language-server
-      # yarn
-      # nodePackages.typescript
+  home = {
+    packages = with pkgs; [
+      nodejs-22
     ];
 
-    home.file.".npmrc".source = ./npmrc;
-
-    home.file.".npmrc".text = ''
-      prefix = ${builtins.getEnv "HOME"}/.npm-packages
-    '';
+    # sessionVariables = {
+    #   UV_CACHE_DIR = "$HOME/.cache/uv/";
+    #   UV_LINK_MODE = "symlink";
+    # };
   };
 }
