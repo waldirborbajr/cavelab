@@ -17,6 +17,7 @@ in
   config = mkIf cfg.enable {
     home.packages = with pkgs; [
       nodejs-22_x
+      npm
       # bun
       # nodePackages.typescript-language-server
       # yarn
