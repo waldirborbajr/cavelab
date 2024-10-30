@@ -46,6 +46,7 @@
           ./modules/lang/go.nix
           ./modules/lang/lua.nix
           ./modules/lang/nix.nix
+          ./modules/lang/nodejs.nix
           ./modules/lang/python.nix
           ./modules/lang/rust.nix
           ./modules/terminal/zsh.nix
