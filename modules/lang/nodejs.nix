@@ -3,7 +3,7 @@
 
   home = {
     packages = with pkgs; [
-      nodejs-22
+      nodejs_22
     ];
 
     # sessionVariables = {
