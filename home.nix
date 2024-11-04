@@ -49,6 +49,8 @@
     tmux
     tree
 
+    direnv
+
     # dev tools
     httpie
     jq # A lightweight and flexible command-line JSON processor
