@@ -42,7 +42,7 @@
           ./home.nix
           # ./modules/multiplex/tmux.nix
           # ./modules/multiplex/zellij.nix
-          # ./modules/devops/docker.nix
+          ./modules/devops/docker.nix
           ./modules/devops/k8s.nix
           ./modules/editor/neovim.nix
           ./modules/lang/go.nix
