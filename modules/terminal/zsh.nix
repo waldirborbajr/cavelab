@@ -2,17 +2,16 @@
 
 {
 
-  home.packages = with pkgs;
-    [
-      ripgrep-all
-      # zsh
-      # zsh-autosuggestions
-      # zsh-completions
-      # zsh-history-substring-search
-      # zsh-syntax-highlighting
-      # zsh-powerlevel10k
-      # zsh-vi-mode
-    ];
+  home.packages = with pkgs; [
+    ripgrep-all
+    # zsh
+    # zsh-autosuggestions
+    # zsh-completions
+    # zsh-history-substring-search
+    # zsh-syntax-highlighting
+    # zsh-powerlevel10k
+    # zsh-vi-mode
+  ];
 
   programs = {
 
@@ -55,7 +54,10 @@
         style = "numbers,changes,header,grid";
         italic-text = "always";
         pager = "less -FR";
-        map-syntax = [ "h:cpp" ".ignore:.gitignore" ];
+        map-syntax = [
+          "h:cpp"
+          ".ignore:.gitignore"
+        ];
       };
     };
 
@@ -108,8 +110,7 @@
 
         ff = "fastfetch";
 
-        syshealth =
-          "sudo nala update && sudo rm /var/lib/apt/lists/lock && sudo nala upgrade -y && sudo nala autoremove -y && sudo nala autopurge -y && sudo nala clean && flatpak update -y && flatpak uninstall --unused -y && sudo snap refresh";
+        syshealth = "sudo nala update && sudo rm /var/lib/apt/lists/lock && sudo nala upgrade -y && sudo nala autoremove -y && sudo nala autopurge -y && sudo nala clean && flatpak update -y && flatpak uninstall --unused -y && sudo snap refresh";
 
         # git
         # gaa = "git add --all";
