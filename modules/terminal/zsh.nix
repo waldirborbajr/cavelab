@@ -148,6 +148,11 @@
         kdsec = "kubectl describe secret";
         kdelsec = "kubectl delete secret";
 
+        # docker
+        dkrallcontainer = "docker rm $(docker ps -aq)";
+        dkrallimages = "docker rmi $(docker images -a -q)";
+        dkremovedang = "docker rmi $(docker images -q --filter 'dangling=true')";
+
         ld = "lazydocker";
         lg = "lazygit";
 
