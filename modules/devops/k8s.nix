@@ -4,11 +4,14 @@
 
   home = {
     packages = with pkgs; [
-      k9s
+      k3d
       # kubectl
       # kubectx
       # kubie
-      minikube
+      # k3s
+      # k9s
+      # kind
+      # minikube
     ];
   };
 
