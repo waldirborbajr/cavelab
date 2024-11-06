@@ -5,7 +5,7 @@
   home = {
     packages = with pkgs; [
       k3d
-      # kubectl
+      kubectl
       # kubectx
       # kubie
       # k3s
