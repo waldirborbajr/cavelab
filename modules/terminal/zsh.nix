@@ -176,6 +176,7 @@
         tmk = "tmux kill-session";
 
         zj = "zellij a -c 'B+ DevOps'";
+        zlcahe = "rm -rf ~/.cache/zellij";
 
       };
 
