@@ -171,6 +171,8 @@
         tmc = "clear; tmux clear-history; clear";
         tmk = "tmux kill-session";
 
+        zj = "zellij a -c 'B+ DevOps'";
+
       };
 
       completionInit = ''
@@ -252,7 +254,11 @@
       '';
 
       initExtra = ''
-        # eval "$(zoxide init zsh)"
+        # Starship initialization
+        eval "$(starship init zsh)"
+
+        # Zoxide initialization
+        eval "$(zoxide init zsh)"
       '';
     };
   };
