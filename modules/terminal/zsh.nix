@@ -25,7 +25,7 @@
       arguments = [ "--hidden" ];
     };
 
-    startship = {
+    starship = {
       enable = true;
     };
 
