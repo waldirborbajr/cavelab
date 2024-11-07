@@ -57,7 +57,7 @@
     tree
     xclip
     xsel
-    zellij
+    # zellij
 
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
@@ -95,10 +95,10 @@
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/cavelab/config/nvim/";
       recursive = true;
     };
-    ".config/zellij" = {
-      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/cavelab/config/zellij/";
-      recursive = true;
-    };
+    # ".config/zellij" = {
+    #   source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/cavelab/config/zellij/";
+    #   recursive = true;
+    # };
 
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a
