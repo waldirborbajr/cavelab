@@ -10,15 +10,15 @@
     # zsh-history-substring-search
     # zsh-syntax-highlighting
     # zsh-powerlevel10k
-    # zsh-vi-mode
+    zsh-vi-mode
   ];
 
   programs = {
 
-    oh-my-posh = {
-      enable = true;
-      useTheme = "catppuccin_frappe";
-    };
+    # oh-my-posh = {
+    #   enable = true;
+    #   useTheme = "catppuccin_frappe";
+    # };
 
     ripgrep = {
       enable = true;
