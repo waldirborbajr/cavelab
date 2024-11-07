@@ -25,6 +25,10 @@
       arguments = [ "--hidden" ];
     };
 
+    startship = {
+      enable = true;
+    };
+
     fzf = {
       enable = true;
       enableZshIntegration = true;
