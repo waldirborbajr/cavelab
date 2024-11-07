@@ -32,45 +32,32 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
+    # nix-output-monitor # Processes output of Nix commands to show helpful and pretty information
+    # tmux
     # wezterm
-    # zellij
+    asciinema # Terminal session recorder and the best companion of asciinema.org
     bottom # btop  # replacement of htop/nmon
-    du-dust
-    fastfetch
+    direnv
+    discord
+    du-dust # du + rust = dust. Like du but more intuitive
+    fastfetch # Like neofetch, but much faster because written in C
     fd
     findutils
-    fx
-    killall
-    meld
-    mkcert
-    nix-output-monitor
-    procs
-    sd
-    tmux
-    tree
-
-    direnv
-
-    # dev tools
-    httpie
+    gnupg
+    httpie # A command line HTTP client whose goal is to make CLI human-friendly
     jq # A lightweight and flexible command-line JSON processor
+    meld # Visual diff and merge tool
+    mkcert
+    obsidian
+    rclone # Command line program to sync files and directories to and from major cloud storage
+    scrcpy # Display and control Android devices over USB or TCP/IP
+    sd
+    spotify
     sqlitebrowser
-
+    tree
     xclip
     xsel
-
-    asciinema
-
-    gnupg
-
-    discord
-    obsidian
-    spotify
-
-    # k9s
-    # kubectx
-    # kubie
-    # kustomize
+    zellij
 
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
@@ -100,19 +87,18 @@
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/cavelab/config/wezterm/";
       recursive = true;
     };
-    ".config/tmux" = {
-      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/cavelab/config/tmux/";
-      recursive = true;
-    };
+    # ".config/tmux" = {
+    #   source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/cavelab/config/tmux/";
+    #   recursive = true;
+    # };
     ".config/nvim" = {
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/cavelab/config/nvim/";
       recursive = true;
     };
-    # ".config/zellij" = {
-    #   source = config.lib.file.mkOutOfStoreSymlink
-    #     "${config.home.homeDirectory}/cavelab/config/zellij/";
-    #   recursive = true;
-    # };
+    ".config/zellij" = {
+      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/cavelab/config/zellij/";
+      recursive = true;
+    };
 
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a
