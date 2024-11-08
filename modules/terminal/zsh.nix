@@ -332,8 +332,8 @@
       };
 
       initExtra = ''
-        # Starship initialization
-        eval "$(starship init zsh)"
+        # # Starship initialization
+        # eval "$(starship init zsh)"
 
         # Zoxide initialization
         eval "$(zoxide init zsh)"
