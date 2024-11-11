@@ -33,7 +33,7 @@
   # environment.
   home.packages = with pkgs; [
     # nix-output-monitor # Processes output of Nix commands to show helpful and pretty information
-    # tmux
+    tmux
     # wezterm
     asciinema # Terminal session recorder and the best companion of asciinema.org
     bottom # btop  # replacement of htop/nmon
@@ -81,16 +81,16 @@
   # plain files is through 'home.file'.
   home.file = {
 
-    # ".config/nix".source =  "${config.home.homeDirectory}/cavelab/config/nix";
+    # ".config/tmux".source = "${config.home.homeDirectory}/cavelab/config/tmux";
 
     ".config/wezterm" = {
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/cavelab/config/wezterm/";
       recursive = true;
     };
-    # ".config/tmux" = {
-    #   source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/cavelab/config/tmux/";
-    #   recursive = true;
-    # };
+    ".config/tmux" = {
+      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/cavelab/config/tmux/";
+      recursive = true;
+    };
     ".config/nvim" = {
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/cavelab/config/nvim/";
       recursive = true;
