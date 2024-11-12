@@ -51,7 +51,7 @@
           read_only_style = "197";
           read_only = "  ";
           format = "[$path]($style)[$read_only]($read_only_style) ";
-          style = "#8ec07c bold";
+          style = "bold yellow";
         };
         character = {
           success_symbol = "[»](bold green)";
@@ -82,18 +82,33 @@
           format = "[\\($hash$tag\\)]($style)";
         };
         git_status = {
-          disabled = false;
-          conflicted = "🏳";
-          untracked = "🤷";
-          stashed = "📦";
-          modified = "📝";
-          staged = "[++\($count\)](green)";
-          up_to_date = "✓";
-          ahead = "⇡\($count\)";
-          diverged = "⇕⇡\($ahead_count\)⇣\($behind_count\)";
-          behind = "⇣\($count\)";
-          style = " bold yellow";
-          format = "[\\[$all_status$ahead_behind\\]]($style)";
+          # disabled = false;
+          # conflicted = "🏳";
+          # untracked = "🤷";
+          # stashed = "📦";
+          # modified = "📝";
+          # staged = "[++\($count\)](green)";
+          # up_to_date = "✓";
+          # ahead = "⇡\($count\)";
+          # diverged = "⇕⇡\($ahead_count\)⇣\($behind_count\)";
+          # behind = "⇣\($count\)";
+          # style = " bold yellow";
+          # format = "[\\[$all_status$ahead_behind\\]]($style)";
+
+          conflicted = "= ";
+          ahead = "⇡×$(count\) ";
+          behind = "⇣×$(count\) ";
+          diverged = "$(ahead_count\)×⇕×$(behind_count\) ";
+          untracked = "?×$(count\) ";
+          stashed = "\\$×$(count\) ";
+          modified = "!×$(count\) ";
+          staged = "+×$(count\) ";
+          renamed = "»×$(count\) ";
+          deleted = "✘×$(count\) ";
+        };
+        golang = {
+          style = "blue";
+          symbol = " ";
         };
         nix_shell = {
           symbol = "❄️";
