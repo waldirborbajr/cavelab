@@ -82,29 +82,29 @@
           format = "[\\($hash$tag\\)]($style)";
         };
         git_status = {
-          # disabled = false;
+          disabled = false;
           # conflicted = "🏳";
           # untracked = "🤷";
           # stashed = "📦";
           # modified = "📝";
           # staged = "[++\($count\)](green)";
-          # up_to_date = "✓";
+          up_to_date = "✓";
           # ahead = "⇡\($count\)";
           # diverged = "⇕⇡\($ahead_count\)⇣\($behind_count\)";
           # behind = "⇣\($count\)";
-          # style = " bold yellow";
-          # format = "[\\[$all_status$ahead_behind\\]]($style)";
+          style = " bold yellow";
+          format = "[\\[$all_status$ahed_behind\\]]($style)";
 
           conflicted = "= ";
-          ahead = "⇡×$(count\) ";
-          behind = "⇣×$(count\) ";
-          diverged = "$(ahead_count\)×⇕×$(behind_count\) ";
-          untracked = "?×$(count\) ";
-          stashed = "\\$×$(count\) ";
-          modified = "!×$(count\) ";
-          staged = "+×$(count\) ";
-          renamed = "»×$(count\) ";
-          deleted = "✘×$(count\) ";
+          ahead = "⇡×($count\) ";
+          behind = "⇣×($count\) ";
+          diverged = "($ahead_count\)×⇕×($behind_count\) ";
+          untracked = "?×($count\) ";
+          stashed = "\\$×($count\) ";
+          modified = "!×($count\) ";
+          staged = "+×($count\) ";
+          renamed = "»×($count\) ";
+          deleted = "✘×($count\) ";
         };
         golang = {
           style = "blue";
@@ -246,9 +246,9 @@
         kdelsec = "kubectl delete secret";
 
         # docker
-        dkrallcontainer = "docker rm $(docker ps -aq)";
-        dkrallimages = "docker rmi $(docker images -a -q)";
-        dkremovedang = "docker rmi $(docker images -q --filter 'dangling=true')";
+        dkrallcontainer = "docker rm ($docker ps -aq)";
+        dkrallimages = "docker rmi ($docker images -a -q)";
+        dkremovedang = "docker rmi ($docker images -q --filter 'dangling=true')";
 
         ld = "lazydocker";
         lg = "lazygit";
@@ -367,10 +367,10 @@
 
       initExtra = ''
         # # Starship initialization
-        # eval "$(starship init zsh)"
+        # eval "($starship init zsh)"
 
         # Zoxide initialization
-        eval "$(zoxide init zsh)"
+        eval "($zoxide init zsh)"
       '';
     };
   };
