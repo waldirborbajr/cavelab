@@ -36,6 +36,7 @@
     tmux
     # wezterm
     asciinema # Terminal session recorder and the best companion of asciinema.org
+    asciiquarium-transparent
     bottom # btop  # replacement of htop/nmon
     direnv
     discord
