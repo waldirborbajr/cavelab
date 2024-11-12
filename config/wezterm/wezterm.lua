@@ -57,17 +57,18 @@ end)
 
 config.color_scheme = 'Catppuccin Macchiato'
 config.window_decorations = 'RESIZE' -- remove window decorations
+config.hide_tab_bar_if_only_one_tab = true
 config.check_for_updates = false
 config.use_fancy_tab_bar = false
 config.tab_bar_at_bottom = false
 config.enable_tab_bar = false
 
-config.window_padding = {
-  left = 4.5,
-  right = 2.5,
-  top = 6.5,
-  bottom = 2.5,
-}
+-- config.window_padding = {
+--   left = 4.5,
+--   right = 2.5,
+--   top = 6.5,
+--   bottom = 2.5,
+-- }
 
 config.default_cursor_style = 'SteadyBar'
 
@@ -93,6 +94,20 @@ config.keys = {
   { key = '{', mods = 'CTRL|SHIFT', action = wezterm.action({ SplitVertical = {} }) },
   { key = '}', mods = 'CTRL|SHIFT', action = wezterm.action({ SplitHorizontal = { domain = 'CurrentPaneDomain' } }) },
   { key = 'Enter', mods = 'CTRL', action = wezterm.action({ SplitHorizontal = { domain = 'CurrentPaneDomain' } }) },
+  {
+    key = 'A',
+    mods = 'CTRL|SHIFT',
+    action = wezterm.action.QuickSelect,
+  },
+  -- Quickly open config file with common macOS keybind
+  {
+    key = ',',
+    mods = 'SUPER',
+    action = wezterm.action.SpawnCommandInNewWindow({
+      cwd = os.getenv('WEZTERM_CONFIG_DIR'),
+      args = { os.getenv('SHELL'), '-c', '$VISUAL $WEZTERM_CONFIG_FILE' },
+    }),
+  },
 }
 
 -- and finally, return the configuration to wezterm
