@@ -41,21 +41,10 @@
         directory = {
           style = "sapphire";
           format = "[ $path ]($style)";
-
           truncation_length = 3;
           read_only = " ";
-          # truncate_to_repo = false;
           truncation_symbol = "…/";
-          # # home_symbol = " ~";
-          # read_only_style = "197";
-          # format = "[$path]($style)[$read_only]($read_only_style) ";
-          # style = "bold yellow";
         };
-        # character = {
-        #   success_symbol = "[»](bold green)";
-        #   error_symbol = "[»](bold green)";
-        #   vicmd_symbol = "[«](bold green)";
-        # };
         character = {
           success_symbol = "[λ](bold green)";
           error_symbol = "[λ](bold red)";
@@ -102,11 +91,6 @@
           format = "[ $symbol( $version) ]($style)";
           detect_files = [ "go.mod" ];
         };
-        # nix_shell = {
-        #   symbol = "❄️";
-        #   style = "bold blue";
-        #   format = "[ $symbol  $name ]($style)";
-        # };
         nix_shell = {
           format = "via [$symbol$state]($style) ";
           impure_msg = "ι";
