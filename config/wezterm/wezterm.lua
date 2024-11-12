@@ -93,7 +93,6 @@ config.keys = {
 
   { key = '{', mods = 'CTRL|SHIFT', action = wezterm.action({ SplitVertical = {} }) },
   { key = '}', mods = 'CTRL|SHIFT', action = wezterm.action({ SplitHorizontal = { domain = 'CurrentPaneDomain' } }) },
-  { key = 'Enter', mods = 'CTRL', action = wezterm.action({ SplitHorizontal = { domain = 'CurrentPaneDomain' } }) },
   {
     key = 'A',
     mods = 'CTRL|SHIFT',
