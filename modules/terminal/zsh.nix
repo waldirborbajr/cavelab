@@ -68,40 +68,21 @@
           style = "bold dimmed green";
           format = "[@$hostname]($style)";
         };
-        git_branch = {
-          style = "bold purple";
-          format = "[ $symbol$branch]($style)";
-        };
         git_commit = {
           only_detached = false;
           tag_disabled = false;
           tag_symbol = ":";
           format = "[\\($hash$tag\\)]($style)";
         };
-        git_status = {
-          disabled = false;
-          # conflicted = "🏳";
-          # untracked = "🤷";
-          # stashed = "📦";
-          # modified = "📝";
-          # staged = "[++\($count\)](green)";
-          up_to_date = "✓";
-          # ahead = "⇡\($count\)";
-          # diverged = "⇕⇡\($ahead_count\)⇣\($behind_count\)";
-          # behind = "⇣\($count\)";
-          style = " bold yellow";
-          format = "[\\[$all_status$ahed_behind\\]]($style)";
+        git_branch = {
+          symbol = "[](black) ";
+          # format =  ' [$symbol$branch(:$remote_branch)]($style)[]';
+          style = "fg:lavender bg:black";
+          format = "  on [$symbol$branch]($style)[](black)r";
+        };
 
-          conflicted = "= ";
-          ahead = "⇡×($count\) ";
-          behind = "⇣×($count\) ";
-          diverged = "($ahead_count\)×⇕×($behind_count\) ";
-          untracked = "?×($count\) ";
-          stashed = "\\$×($count\) ";
-          modified = "!×($count\) ";
-          staged = "+×($count\) ";
-          renamed = "»×($count\) ";
-          deleted = "✘×($count\) ";
+        git_status = {
+          format = " [($all_status$ahead_behind )]($style)";
         };
         golang = {
           style = "blue";
