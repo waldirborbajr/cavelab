@@ -38,11 +38,20 @@
         command_timeout = 50; # It's very noticable and anoying beyond this
         add_newline = false;
         directory = {
+          # truncate_to_repo = false;
+          # truncation_length = 3;
+          # truncation_symbol = "…/";
+          # style = "bold cyan";
+          # format = "[:$path]($style)";
+
+          truncation_length = 3;
           truncate_to_repo = false;
-          truncation_length = 8;
           truncation_symbol = "…/";
-          style = "bold cyan";
-          format = "[:$path]($style)";
+          # home_symbol = " ~";
+          read_only_style = "197";
+          read_only = "  ";
+          format = "[$path]($style)[$read_only]($read_only_style) ";
+          style = "#8ec07c bold";
         };
         character = {
           success_symbol = "[»](bold green)";
