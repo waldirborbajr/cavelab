@@ -236,10 +236,18 @@
         vi = "nvim";
         vim = "nvim";
 
-        ls = "eza --icons always"; # default view
-        ll = "eza -bhl --icons --group-directories-first"; # long list
-        la = "eza -abhl --icons --group-directories-first"; # all list
-        lt = "eza --tree --level=2 --icons"; # tree
+        l = "eza --icons";
+        ls = "eza --icons";
+        ll = "eza -lg --icons --group-directories-first";
+        la = "eza -lag --icons --group-directories-first";
+        lt = "eza -lTg --icons";
+        lt1 = "eza -lTg --level=1 --icons";
+        lt2 = "eza -lTg --level=2 --icons";
+        lt3 = "eza -lTg --level=3 --icons";
+        lta = "eza -lTag --icons";
+        lta1 = "eza -lTag --level=1 --icons";
+        lta2 = "eza -lTag --level=2 --icons";
+        lta3 = "eza -lTag --level=3 --icons";
 
         tmc = "clear; tmux clear-history; clear";
         tmk = "tmux kill-session";
