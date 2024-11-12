@@ -2,6 +2,10 @@
 
 This is my new dotfiles configuration based on NIX. Currently I'm migrating from my old one (https://github.com/waldirborbajr/dotfiles) and refactoring into a new and more modern one based on Nix and Home-Manager.
 
+Feel free to use or copy what you need from this repo.
+
+
+
 ``` url
 https://github.com/DeterminateSystems/nix-installer
 ```
