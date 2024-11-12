@@ -51,10 +51,14 @@
           # format = "[$path]($style)[$read_only]($read_only_style) ";
           # style = "bold yellow";
         };
+        # character = {
+        #   success_symbol = "[»](bold green)";
+        #   error_symbol = "[»](bold green)";
+        #   vicmd_symbol = "[«](bold green)";
+        # };
         character = {
-          success_symbol = "[»](bold green)";
-          error_symbol = "[»](bold green)";
-          vicmd_symbol = "[«](bold green)";
+          success_symbol = "[λ](bold green)";
+          error_symbol = "[λ](bold red)";
         };
         username = {
           disabled = false;
@@ -69,31 +73,45 @@
           style = "bold dimmed green";
           format = "[@$hostname]($style)";
         };
-        git_status.format = "([\($all_status$ahead_behind\)]($style) )";
-        git_status.ahead = "⇡$\{count\}";
-        git_status.behind = "⇣$\{count\}";
-        git_status.diverged = "⇕⇡$\{ahead_count\} ⇣$\{behind_count\}";
-        git_commit = {
-          only_detached = false;
-          tag_disabled = false;
-          tag_symbol = ":";
-          format = "[\\($hash$tag\\)]($style)";
+        git_branch.symbol = " ";
+        git_commit.tag_disabled = false;
+        git_status = {
+          ahead = ''⇡''${count}'';
+          behind = ''⇣''${count}'';
+          diverged = ''⇕⇡''${ahead_count}⇣''${behind_count}'';
+          staged = "+$count";
         };
-        git_branch = {
-          symbol = "(black) ";
-          style = "fg:lavender bg:black";
-          format = " on [$symbol$branch]($style)(black)r";
-        };
+        # git_status.format = "([\($all_status$ahead_behind\)]($style) )";
+        # git_status.ahead = "⇡$\{count\}";
+        # git_status.behind = "⇣$\{count\}";
+        # git_status.diverged = "⇕⇡$\{ahead_count\} ⇣$\{behind_count\}";
+        # git_commit = {
+        #   only_detached = false;
+        #   tag_disabled = false;
+        #   tag_symbol = ":";
+        #   format = "[\\($hash$tag\\)]($style)";
+        # };
+        # git_branch = {
+        #   symbol = "(black) ";
+        #   style = "fg:lavender bg:black";
+        #   format = " on [$symbol$branch]($style)(black)r";
+        # };
         golang = {
           style = "blue";
           symbol = "";
           format = "[ $symbol( $version) ]($style)";
           detect_files = [ "go.mod" ];
         };
+        # nix_shell = {
+        #   symbol = "❄️";
+        #   style = "bold blue";
+        #   format = "[ $symbol  $name ]($style)";
+        # };
         nix_shell = {
-          symbol = "❄️";
-          style = "bold blue";
-          format = "[ $symbol  $name ]($style)";
+          format = "via [$symbol$state]($style) ";
+          impure_msg = "ι";
+          pure_msg = "﻿ρ";
+          symbol = " ";
         };
         cmake.disabled = true;
         python.disabled = true;
