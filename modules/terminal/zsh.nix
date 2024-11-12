@@ -37,6 +37,13 @@
     #   settings = {
     #     command_timeout = 50; # It's very noticable and anoying beyond this
     #     add_newline = false;
+    #     directory = {
+    #       truncate_to_repo = false;
+    #       truncation_length = 8;
+    #       truncation_symbol = "…/";
+    #       style = "bold cyan";
+    #       format = "[:$path]($style)";
+    #     };
     #     character = {
     #       success_symbol = "[»](bold green)";
     #       error_symbol = "[»](bold green)";
@@ -54,13 +61,6 @@
     #       ssh_only = false;
     #       style = "bold dimmed green";
     #       format = "[@$hostname]($style)";
-    #     };
-    #     directory = {
-    #       truncation_length = 10;
-    #       disabled = false;
-    #       truncate_to_repo = false;
-    #       style = "bold cyan";
-    #       format = "[:$path]($style)";
     #     };
     #     git_branch = {
     #       style = "bold purple";
