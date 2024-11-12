@@ -41,12 +41,12 @@
           style = "sapphire";
           format = "[ $path ]($style)";
 
-          # truncation_length = 3;
+          truncation_length = 3;
           # truncate_to_repo = false;
-          # truncation_symbol = "…/";
+          truncation_symbol = "…/";
           # # home_symbol = " ~";
           # read_only_style = "197";
-          # read_only = "  ";
+          read_only = "  ";
           # format = "[$path]($style)[$read_only]($read_only_style) ";
           # style = "bold yellow";
         };
@@ -105,7 +105,9 @@
         };
         golang = {
           style = "blue";
-          symbol = " ";
+          symbol = "";
+          format = "[ $symbol( $version) ]($style)";
+          detect_files = [ "go.mod" ];
         };
         nix_shell = {
           symbol = "❄️";
