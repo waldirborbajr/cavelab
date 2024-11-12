@@ -255,6 +255,8 @@
         zj = "zellij a -c 'B+ DevOps'";
         zlcahe = "rm -rf ~/.cache/zellij";
 
+        aq = "asciiquarium -s";
+
       };
 
       completionInit = ''
