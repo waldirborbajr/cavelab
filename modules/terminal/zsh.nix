@@ -33,10 +33,11 @@
 
     starship = {
       enable = true;
-      enableZshIntegration = true;
+      enableZshIntegration = false;
       settings = {
-        command_timeout = 50; # It's very noticable and anoying beyond this
+        command_timeout = 350; # It's very noticable and anoying beyond this
         add_newline = false;
+        right_format = "$git_branch$git_commit$git_state$git_metrics$git_status$hg_branch$nix_shell$cmd_duration";
         directory = {
           style = "sapphire";
           format = "[ $path ]($style)";
@@ -68,6 +69,10 @@
           style = "bold dimmed green";
           format = "[@$hostname]($style)";
         };
+        git_status.format = "([\($all_status$ahead_behind\)]($style) )";
+        git_status.ahead = "⇡$\{count\}";
+        git_status.behind = "⇣$\{count\}";
+        git_status.diverged = "⇕⇡$\{ahead_count\} ⇣$\{behind_count\}";
         git_commit = {
           only_detached = false;
           tag_disabled = false;
@@ -75,14 +80,9 @@
           format = "[\\($hash$tag\\)]($style)";
         };
         git_branch = {
-          symbol = "[](black) ";
-          # format =  ' [$symbol$branch(:$remote_branch)]($style)[]';
+          symbol = "(black) ";
           style = "fg:lavender bg:black";
-          format = "  on [$symbol$branch]($style)[](black)r";
-        };
-
-        git_status = {
-          format = " [($all_status$ahead_behind )]($style)";
+          format = " on [$symbol$branch]($style)(black)r";
         };
         golang = {
           style = "blue";
@@ -348,6 +348,7 @@
       initExtra = ''
         # # Starship initialization
         # eval "($starship init zsh)"
+        eval "$(${pkgs.starship}/bin/starship init zsh)"
 
         # Zoxide initialization
         eval "($zoxide init zsh)"

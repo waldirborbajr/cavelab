@@ -63,12 +63,17 @@ config.use_fancy_tab_bar = false
 config.tab_bar_at_bottom = false
 config.enable_tab_bar = false
 
--- config.window_padding = {
---   left = 4.5,
---   right = 2.5,
---   top = 6.5,
---   bottom = 2.5,
--- }
+config.adjust_window_size_when_changing_font_size = false
+config.window_close_confirmation = 'NeverPrompt'
+config.harfbuzz_features = { 'calt=0' }
+config.max_fps = 120
+
+config.window_padding = {
+  left = 5,
+  right = 0,
+  top = 5,
+  bottom = 0,
+}
 
 config.default_cursor_style = 'SteadyBar'
 
@@ -77,7 +82,6 @@ config.font_size = 12
 
 config.enable_tab_bar = false
 
-config.window_decorations = 'RESIZE'
 config.window_background_opacity = 0.95
 config.macos_window_background_blur = 10
 
