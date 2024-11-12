@@ -43,11 +43,11 @@
           format = "[ $path ]($style)";
 
           truncation_length = 3;
+          read_only = " ";
           # truncate_to_repo = false;
           truncation_symbol = "…/";
           # # home_symbol = " ~";
           # read_only_style = "197";
-          read_only = "  ";
           # format = "[$path]($style)[$read_only]($read_only_style) ";
           # style = "bold yellow";
         };
@@ -75,27 +75,27 @@
         };
         git_branch.symbol = " ";
         git_commit.tag_disabled = false;
+        # git_status = {
+        #   ahead = ''⇡''${count}'';
+        #   behind = ''⇣''${count}'';
+        #   diverged = ''⇕⇡''${ahead_count}⇣''${behind_count}'';
+        #   staged = "+$count";
+        # };
         git_status = {
-          ahead = ''⇡''${count}'';
-          behind = ''⇣''${count}'';
-          diverged = ''⇕⇡''${ahead_count}⇣''${behind_count}'';
-          staged = "+$count";
+          format = "[](fg:#232526 bg:none)[$all_status $ahead_behind]($style)[](fg:#232526 bg:#232526)[](fg:#67afc1 bg:#232526)[  ](fg:#232526 bg:#67afc1)[](fg:#67afc1 bg:none)";
+          style = "fg:#D4BE98 bg:#232526";
+          conflicted = "=";
+          ahead = "⇡$\{count\}";
+          behind = "⇣$\{count\}";
+          diverged = "⇕⇡$\{ahead_count\}⇣$\{behind_count\}";
+          up_to_date = "";
+          untracked = "?$\{count\}";
+          stashed = "";
+          modified = "!$\{count\}";
+          staged = "+$\{count\}";
+          renamed = "»$\{count\}";
+          deleted = "$\{count\}";
         };
-        # git_status.format = "([\($all_status$ahead_behind\)]($style) )";
-        # git_status.ahead = "⇡$\{count\}";
-        # git_status.behind = "⇣$\{count\}";
-        # git_status.diverged = "⇕⇡$\{ahead_count\} ⇣$\{behind_count\}";
-        # git_commit = {
-        #   only_detached = false;
-        #   tag_disabled = false;
-        #   tag_symbol = ":";
-        #   format = "[\\($hash$tag\\)]($style)";
-        # };
-        # git_branch = {
-        #   symbol = "(black) ";
-        #   style = "fg:lavender bg:black";
-        #   format = " on [$symbol$branch]($style)(black)r";
-        # };
         golang = {
           style = "blue";
           symbol = "";
@@ -115,6 +115,10 @@
         };
         cmake.disabled = true;
         python.disabled = true;
+        aws.symbol = "  ";
+        lua.symbol = " ";
+        rust.symbol = " ";
+        nodejs.symbol = " ";
       };
     };
 
