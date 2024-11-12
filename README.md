@@ -1,5 +1,7 @@
 # Nix CaveLab Home-Manager with Determinate
 
+This is my new dotfiles configuration based on NIX. Currently I'm migrating from my old one (https://github.com/waldirborbajr/dotfiles) and refactoring into a new and more modern one based on Nix and Home-Manager.
+
 ``` url
 https://github.com/DeterminateSystems/nix-installer
 ```
