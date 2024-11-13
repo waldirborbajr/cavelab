@@ -71,7 +71,7 @@
         git_branch.symbol = " ";
         git_commit.tag_disabled = false;
         git_status = {
-          format = "[](fg:#232526 bg:none)[$all_status $ahead_behind]($style)[](fg:#232526 bg:#232526)[](fg:#67afc1 bg:#232526)[   ](fg:#232526 bg:#67afc1)[](fg:#67afc1 bg:none)";
+          format = "[](fg:#232526 bg:none)[$all_status $ahead_behind]($style)[](fg:#232526 bg:#232526)[](fg:#67afc1 bg:#232526)[  ](fg:#232526 bg:#67afc1)[](fg:#67afc1 bg:none)";
           style = "fg:#D4BE98 bg:#232526";
           conflicted = "=";
           ahead = "⇡$\{count\}";
