@@ -39,12 +39,7 @@
         add_newline = false;
         right_format = "$git_branch$git_commit$git_state$git_metrics$git_status$hg_branch$nix_shell$cmd_duration";
         directory = {
-          # style = "sapphire";
-          # format = "[ $path ]($style)";
-          # truncation_length = 3;
           read_only = " ";
-          # truncation_symbol = "…/";
-
           style = "bold fg:dark_blue";
           format = "[$path ]($style)";
           truncation_length = 3;
@@ -76,7 +71,7 @@
         git_branch.symbol = " ";
         git_commit.tag_disabled = false;
         git_status = {
-          format = "[](fg:#232526 bg:none)[$all_status $ahead_behind]($style)[](fg:#232526 bg:#232526)[](fg:#67afc1 bg:#232526)[  ](fg:#232526 bg:#67afc1)[](fg:#67afc1 bg:none)";
+          format = "[](fg:#232526 bg:none)[$all_status $ahead_behind]($style)[](fg:#232526 bg:#232526)[](fg:#67afc1 bg:#232526)[  ] (fg:#232526 bg:#67afc1)[](fg:#67afc1 bg:none)";
           style = "fg:#D4BE98 bg:#232526";
           conflicted = "=";
           ahead = "⇡$\{count\}";
