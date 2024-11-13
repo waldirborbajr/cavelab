@@ -39,11 +39,22 @@
         add_newline = false;
         right_format = "$git_branch$git_commit$git_state$git_metrics$git_status$hg_branch$nix_shell$cmd_duration";
         directory = {
-          style = "sapphire";
-          format = "[ $path ]($style)";
-          truncation_length = 3;
+          # style = "sapphire";
+          # format = "[ $path ]($style)";
+          # truncation_length = 3;
           read_only = " ";
+          # truncation_symbol = "…/";
+
+          style = "bold fg:dark_blue";
+          format = "[$path ]($style)";
+          truncation_length = 3;
           truncation_symbol = "…/";
+          truncate_to_repo = false;
+        };
+        cmd_duration = {
+          min_time = 500;
+          style = "fg:gray";
+          format = "[$duration]($style)";
         };
         character = {
           success_symbol = "[λ](bold green)";
@@ -64,12 +75,6 @@
         };
         git_branch.symbol = " ";
         git_commit.tag_disabled = false;
-        # git_status = {
-        #   ahead = ''⇡''${count}'';
-        #   behind = ''⇣''${count}'';
-        #   diverged = ''⇕⇡''${ahead_count}⇣''${behind_count}'';
-        #   staged = "+$count";
-        # };
         git_status = {
           format = "[](fg:#232526 bg:none)[$all_status $ahead_behind]($style)[](fg:#232526 bg:#232526)[](fg:#67afc1 bg:#232526)[  ](fg:#232526 bg:#67afc1)[](fg:#67afc1 bg:none)";
           style = "fg:#D4BE98 bg:#232526";
@@ -97,10 +102,19 @@
           pure_msg = "﻿ρ";
           symbol = " ";
         };
+        lua = {
+          format = "[$symbol($version )]($style)";
+          symbol = " ";
+        };
+        docker_context = {
+          symbol = " ";
+          style = "fg:#06969";
+          format = "[$symbol]($style) ($path)";
+          detect_extensions = [ "Dockerfile" ];
+        };
         cmake.disabled = true;
         python.disabled = true;
         aws.symbol = "  ";
-        lua.symbol = " ";
         rust.symbol = " ";
         nodejs.symbol = " ";
       };
