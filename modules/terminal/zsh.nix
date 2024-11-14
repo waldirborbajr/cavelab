@@ -32,45 +32,44 @@ in
       enable = true;
       enableZshIntegration = true;
       nix-direnv.enable = true;
+    };
 
-      # starship config
-      starship = {
-        enable = true;
-        settings = {
-          add_newline = false;
-          character = {
-            success_symbol = "[${promptChar}](bright-green)";
-            error_symbol = "[${promptChar}](bright-red)";
-          };
-          golang = {
-            style = "fg:#00ADD8";
-            symbol = "go ";
-          };
-          directory.style = "fg:#d442f5";
-          nix_shell = {
-            pure_msg = "";
-            impure_msg = "";
-            format = "via [$symbol$state]($style) ";
-          };
-          kubernetes = {
-            disabled = false;
-            style = "fg:#326ce5";
-          };
-          terraform = {
-            disabled = false;
-            format = "via [$symbol $version]($style) ";
-            symbol = "🌴";
-          };
-          nodejs = {
-            symbol = "⬡ ";
-          };
-
-          # disabled plugins
-          aws.disabled = true;
-          cmd_duration.disabled = true;
-          gcloud.disabled = true;
-          package.disabled = true;
+    starship = {
+      enable = true;
+      settings = {
+        add_newline = false;
+        character = {
+          success_symbol = "[${promptChar}](bright-green)";
+          error_symbol = "[${promptChar}](bright-red)";
         };
+        golang = {
+          style = "fg:#00ADD8";
+          symbol = "go ";
+        };
+        directory.style = "fg:#d442f5";
+        nix_shell = {
+          pure_msg = "";
+          impure_msg = "";
+          format = "via [$symbol$state]($style) ";
+        };
+        kubernetes = {
+          disabled = false;
+          style = "fg:#326ce5";
+        };
+        terraform = {
+          disabled = false;
+          format = "via [$symbol $version]($style) ";
+          symbol = "🌴";
+        };
+        nodejs = {
+          symbol = "⬡ ";
+        };
+
+        # disabled plugins
+        aws.disabled = true;
+        cmd_duration.disabled = true;
+        gcloud.disabled = true;
+        package.disabled = true;
       };
     };
 
