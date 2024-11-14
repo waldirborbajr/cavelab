@@ -37,7 +37,7 @@
 
     starship = {
       enable = true;
-      enableZshIntegration = false;
+      enableZshIntegration = true;
       settings = {
         command_timeout = 350; # It's very noticable and anoying beyond this
         add_newline = false;
@@ -52,6 +52,14 @@
           "$python"
           "$character"
         ];
+        character = {
+          success_symbol = "[❱](bold green)";
+          error_symbol = "[❱](bold red)";
+          vimcmd_symbol = "[❰](bold green)";
+          vimcmd_replace_one_symbol = "[❰](bold purple)";
+          vimcmd_replace_symbol = "[❰](bold purple)";
+          vimcmd_visual_symbol = "[❰](bold yellow)";
+        };
         directory = {
           read_only = " ";
           style = "bold fg:dark_blue";
@@ -64,10 +72,6 @@
           min_time = 500;
           style = "fg:gray";
           format = "[$duration]($style)";
-        };
-        character = {
-          success_symbol = "[λ](bold green)";
-          error_symbol = "[λ](bold red)";
         };
         username = {
           disabled = false;
@@ -389,7 +393,7 @@
       initExtra = ''
         # # Starship initialization
         # eval "($starship init zsh)"
-        eval "$(${pkgs.starship}/bin/starship init zsh)"
+        # eval "$(${pkgs.starship}/bin/starship init zsh)"
 
         # Zoxide initialization
         eval "($zoxide init zsh)"
