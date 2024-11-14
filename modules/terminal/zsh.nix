@@ -239,9 +239,16 @@
         kdelsec = "kubectl delete secret";
 
         # docker
-        dkrmc = "docker rm $$(docker ps -aq)";
-        dkrmi = "docker rmi $$(docker images -a -q)";
-        dkrmd = "docker rmi $$(docker images -q --filter 'dangling=true')";
+        # d = "docker";
+        # da = "docker ps -a";
+        # di = "docker images";
+        # de = "docker exec -it";
+        # dr = "docker run --rm -it";
+        # drma = "docker stop $(docker ps -aq) && docker rm -f $(docker ps -aq)";
+        # drmi = "di | grep none | awk '{print $3}' | sponge | xargs docker rmi";
+        # dkrmc = "docker rm $(docker ps -aq)";
+        # dkrmi = "docker rmi $(docker images -a -q)";
+        # dkrmd = "docker rmi $(docker images -q --filter 'dangling=true')";
 
         ld = "lazydocker";
         lg = "lazygit";
