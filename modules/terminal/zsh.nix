@@ -34,8 +34,6 @@
     starship = {
       enable = true;
       enableZshIntegration = false;
-      settings = {
-        command_timeout = 350; # It's very noticable and anoying beyond this
         add_newline = false;
         right_format = "$git_branch$git_commit$git_state$git_metrics$git_status$hg_branch$nix_shell$cmd_duration";
         directory = {
@@ -241,9 +239,9 @@
         kdelsec = "kubectl delete secret";
 
         # docker
-        dkrallcontainer = "docker rm ($docker ps -aq)";
-        dkrallimages = "docker rmi ($docker images -a -q)";
-        dkremovedang = "docker rmi ($docker images -q --filter 'dangling=true')";
+        dkrmc = "docker rm $(docker ps -aq)";
+        dkrmi = "docker rmi $(docker images -a -q)";
+        dkrmd = "docker rmi $(docker images -q --filter 'dangling=true')";
 
         ld = "lazydocker";
         lg = "lazygit";
