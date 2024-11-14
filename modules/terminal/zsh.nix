@@ -1,4 +1,9 @@
-{ pkgs, config, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 {
 
   home.packages = with pkgs; [
@@ -33,6 +38,16 @@
     starship = {
       enable = true;
       enableZshIntegration = false;
+      format = lib.concatStrings [
+        "$directory"
+        "$git_branch"
+        "$cmd_duration"
+        "$line_break"
+        "$jobs"
+        "$battery"
+        "$python"
+        "$character"
+      ];
       settings = {
         command_timeout = 350; # It's very noticable and anoying beyond this
         add_newline = false;
@@ -240,7 +255,6 @@
         kdelsec = "kubectl delete secret";
 
         # docker
-        # docker
         d = "docker";
         da = "docker ps -a";
         di = "docker images";
@@ -249,9 +263,13 @@
         drma = "docker stop $(docker ps -aq) && docker rm -f $(docker ps -aq)";
         drmi = "di | grep none | awk '{print $3}' | sponge | xargs docker rmi";
 
-        drmd = "docker rmi $(docker images -q --filter 'dangling=true')";
-        drmc = "docker rm $(docker ps -aq)";
+        # drmd = "docker rmi $(docker images -q --filter 'dangling=true')";
+        # drmc = "docker rm $(docker ps -aq)";
         drmii = "docker rmi $(docker images -a -q)";
+
+        docker_clean = "docker builder prune -a --force";
+        drmd = "docker rmi $(docker images -a --filter=dangling=true -q)";
+        drmc = "docker rm $(docker ps --filter=status=exited --filter=status=created -q)";
 
         ld = "lazydocker";
         lg = "lazygit";
