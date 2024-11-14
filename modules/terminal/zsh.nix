@@ -34,7 +34,7 @@ in
       nix-direnv.enable = true;
 
       # starship config
-      programs.starship = {
+      starship = {
         enable = true;
         settings = {
           add_newline = false;
