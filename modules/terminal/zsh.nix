@@ -431,7 +431,7 @@
         # eval "$(${pkgs.starship}/bin/starship init zsh)"
 
         # Zoxide initialization
-        eval "($zoxide init zsh)"
+        # eval "($zoxide init zsh)"
       '';
     };
   };
