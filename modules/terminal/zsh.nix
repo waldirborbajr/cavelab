@@ -38,20 +38,20 @@
     starship = {
       enable = true;
       enableZshIntegration = false;
-      format = lib.concatStrings [
-        "$directory"
-        "$git_branch"
-        "$cmd_duration"
-        "$line_break"
-        "$jobs"
-        "$battery"
-        "$python"
-        "$character"
-      ];
       settings = {
         command_timeout = 350; # It's very noticable and anoying beyond this
         add_newline = false;
         right_format = "$git_branch$git_commit$git_state$git_metrics$git_status$hg_branch$nix_shell$cmd_duration";
+        format = lib.concatStrings [
+          "$directory"
+          "$git_branch"
+          "$cmd_duration"
+          "$line_break"
+          "$jobs"
+          "$battery"
+          "$python"
+          "$character"
+        ];
         directory = {
           read_only = " ";
           style = "bold fg:dark_blue";
