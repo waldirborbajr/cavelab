@@ -1,17 +1,35 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
 
   programs.lazygit = {
     enable = true;
-
     settings = {
+      gui = {
+        showIcons = true;
+        showFileTree = false;
+        nerdFontsVersion = "3";
+      };
       git = {
         paging = {
-          colorArg = "always";
-          pager = "delta --paging=never";
+          colorArgs = "always";
+          pager = "delta --dark --diff-so-fancy --paging=never --line-numbers";
         };
       };
     };
   };
+
+  # programs.lazygit = {
+  #   enable = true;
+  #
+  #   settings = {
+  #     git = {
+  #       paging = {
+  #         colorArg = "always";
+  #         pager = "delta --paging=never";
+  #       };
+  #     };
+  #   };
+  # };
 
   programs.gh = {
     enable = true;
@@ -27,8 +45,7 @@
         clone = "repo clone";
         co = "pr checkout";
         ga = "dash";
-        inbox =
-          "api notifications --template '{{range .}}{{tablerow .subject.title .subject.url}}{{end}}'";
+        inbox = "api notifications --template '{{range .}}{{tablerow .subject.title .subject.url}}{{end}}'";
         pl = "pr list";
         pr = "pr create --web";
         pv = "pr view --web";
@@ -42,8 +59,7 @@
       enable = true;
       userName = "Waldir Borba Junior";
       userEmail = "wborbajr@gmail.com";
-      aliases.prettylog =
-        "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit";
+      aliases.prettylog = "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit";
 
       aliases = {
         a = "add";
@@ -56,16 +72,13 @@
         co = "checkout";
         d = "diff";
         ds = "diff --staged";
-        edit-unmerged =
-          "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; hx `f`";
+        edit-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; hx `f`";
         essa = "push --force";
         fuck = "commit --amend -m";
         graph = "log --all --decorate --graph --oneline";
-        hist = ''
-          log --pretty=format:"%Cgreen%h %Creset%cd %Cblue[%cn] %Creset%s%C(yellow)%d%C(reset)" --graph --date=relative --decorate --all'';
+        hist = ''log --pretty=format:"%Cgreen%h %Creset%cd %Cblue[%cn] %Creset%s%C(yellow)%d%C(reset)" --graph --date=relative --decorate --all'';
         l = "log";
-        llog = ''
-          log --graph --name-status --pretty=format:"%C(red)%h %C(reset)(%cd) %C(green)%an %Creset%s %C(yellow)%d%Creset" --date=relative'';
+        llog = ''log --graph --name-status --pretty=format:"%C(red)%h %C(reset)(%cd) %C(green)%an %Creset%s %C(yellow)%d%Creset" --date=relative'';
         oops = "checkout --";
         p = "push";
         pf = "push --force-with-lease";
@@ -115,7 +128,9 @@
         };
         delta = {
           enable = true;
-          options = { "navigate" = true; };
+          options = {
+            "navigate" = true;
+          };
         };
         diff.tool = "meld";
         web.browser = "google-chrome-stable";
@@ -243,6 +258,8 @@
   # enable scrolling in delta's git diff
   home.sessionVariables.DELTA_PAGER = "less -RF";
 
-  home.shellAliases = { gg = "lazygit"; };
+  home.shellAliases = {
+    gg = "lazygit";
+  };
 
 }

@@ -84,10 +84,10 @@
 
     # ".config/tmux".source = "${config.home.homeDirectory}/cavelab/config/tmux";
 
-    ".config/wezterm" = {
-      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/cavelab/config/wezterm/";
-      recursive = true;
-    };
+    # ".config/wezterm" = {
+    #   source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/cavelab/config/wezterm/";
+    #   recursive = true;
+    # };
     ".config/tmux" = {
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/cavelab/config/tmux/";
       recursive = true;

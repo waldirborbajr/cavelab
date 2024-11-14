@@ -184,13 +184,11 @@
 
     zsh = {
       enable = true;
-
+      dotDir = ".config/zsh";
+      autosuggestion.enable = true;
+      enableCompletion = true;
       defaultKeymap = "viins";
       autocd = true;
-      enableCompletion = true;
-      autosuggestion.enable = true;
-
-      dotDir = ".config/zsh";
 
       sessionVariables = {
         # SHELL = pkgs.zsh;
@@ -201,15 +199,19 @@
       };
 
       history = {
-        path = "${config.xdg.dataHome}/zsh/history";
         expireDuplicatesFirst = true;
         extended = true;
         ignoreAllDups = true;
         ignoreDups = true;
         ignoreSpace = true;
+        ignorePatterns = [ "*.private*" ];
+
+        # path = "${config.xdg.dataHome}/zsh/history";
+        path = "${config.xdg.cacheHome}/zsh/zsh_history";
+
         save = 512 * 1024 * 1024; # Save more.
         size = 512 * 1024 * 1024; # Save more.
-        share = true;
+        # share = true;
       };
 
       shellAliases = {
@@ -221,14 +223,6 @@
         ff = "fastfetch";
 
         syshealth = "sudo nala update && sudo rm /var/lib/apt/lists/lock && sudo nala upgrade -y && sudo nala autoremove -y && sudo nala autopurge -y && sudo nala clean && flatpak update -y && flatpak uninstall --unused -y && sudo snap refresh";
-
-        # git
-        # gaa = "git add --all";
-        # gcam = "git commit --all --message";
-        # gcl = "git clone";
-        # gco = "git checkout";
-        # ggl = "git pull";
-        # ggp = "git push";
 
         # kubectl
         k = "kubectl";
@@ -307,6 +301,9 @@
         aq = "asciiquarium -s";
 
       };
+
+      initExtraFirst = "";
+      initExtraBeforeCompInit = "";
 
       completionInit = ''
         # Load Zsh modules
@@ -388,9 +385,47 @@
 
       localVariables = {
         TZ = "America/Sao_Paulo";
+        ZVM_VI_INSERT_ESCAPE_BINDKEY = "jk";
+        ZSH_AUTOSUGGEST_STRATEGY = [
+          "history"
+          "completion"
+        ];
       };
 
       initExtra = ''
+
+        function _list_zellij_sessions () {
+          zellij list-sessions 2>/dev/null | sed -e 's/\x1b\[[0-9;]*m//g'
+        }
+
+        function zja() {
+          zj_session=$(_list_zellij_sessions | rg -v '(EXITED -|\(current\))' | awk '{print $1}' | fzf)
+          if [[ -n $zj_session ]]; then
+            wezterm start -- zsh --login -c "zellij attach $session"
+          fi
+        }
+
+        function zjl() {
+          layout=$(fd '.*' "$HOME/.config/zellij/layouts" | xargs -I{} basename {} .kdl | fzf)
+          if [[ -n $layout ]]; then
+            wezterm start -- zsh --login -c "zellij --layout $layout attach -c $layout"
+          fi
+        }
+
+        function zjgc() {
+          sessions=$(_list_zellij_sessions | awk '/EXITED -/ {print $1}' )
+          if [[ -n $sessions ]]; then
+            echo $sessions | xargs -n1 zellij d
+          fi
+        }
+
+        function zjd() {
+          sessions=$(_list_zellij_sessions | awk '{print $1}' | fzf -m)
+          if [[ -n $sessions ]]; then
+            echo $sessions | xargs -n1 zellij d --force
+          fi
+        }
+
         # # Starship initialization
         # eval "($starship init zsh)"
         # eval "$(${pkgs.starship}/bin/starship init zsh)"
