@@ -2,7 +2,6 @@
 {
   programs.alacritty = {
     enable = true;
-    enableZshIntegration = true;
 
     extraConfig =
       # lua
