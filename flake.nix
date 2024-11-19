@@ -43,8 +43,8 @@
           # ./modules/multiplex/tmux.nix
           # ./modules/multiplex/zellij.nix
           # ./modules/devops/docker.nix
-          # ./modules/terminal/wezterm.nix
-          ./modules/terminal/alacritty.nix
+          ./modules/terminal/wezterm.nix
+          # ./modules/terminal/alacritty.nix
           ./modules/devops/k8s.nix
           ./modules/editor/neovim.nix
           ./modules/lang/go.nix
