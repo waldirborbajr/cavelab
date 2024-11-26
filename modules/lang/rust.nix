@@ -29,7 +29,7 @@
         cargo-outdated
         cargo-semver-checks
         cargo-supply-chain
-        # cargo-sweep
+        cargo-sweep
         cargo-udeps
         cargo-vet
         cargo-watch
