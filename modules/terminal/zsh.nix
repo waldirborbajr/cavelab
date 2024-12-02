@@ -279,6 +279,8 @@
         vi = "nvim";
         vim = "nvim";
 
+        rmvim = "rm -rf ~/.local/share/nvim && rm -rf ~/.cache/nvim && rm -rf ~/.local/state/nvim";
+
         l = "eza --icons";
         ls = "eza --icons";
         ll = "eza -lg --icons --group-directories-first";
