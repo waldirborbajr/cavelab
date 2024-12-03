@@ -17,6 +17,10 @@
     zsh-vi-mode
   ];
 
+  home.sessionPath = [
+    "$HOME/development/flutter/bin"
+  ];
+
   programs = {
 
     # oh-my-posh = {
@@ -394,9 +398,9 @@
         ];
       };
 
-      profileExtra = ''
-        export PATH=$HOME/development/flutter/bin/:$PATH
-      '';
+      # profileExtra = ''
+      #   export PATH=$HOME/development/flutter/bin/:$PATH
+      # '';
 
       initExtra = ''
         function _list_zellij_sessions () {
