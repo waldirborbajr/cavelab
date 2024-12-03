@@ -394,8 +394,11 @@
         ];
       };
 
-      initExtra = ''
+      profileExtra = ''
+        export PATH=$HOME/development/flutter/bin/:$PATH
+      '';
 
+      initExtra = ''
         function _list_zellij_sessions () {
           zellij list-sessions 2>/dev/null | sed -e 's/\x1b\[[0-9;]*m//g'
         }
