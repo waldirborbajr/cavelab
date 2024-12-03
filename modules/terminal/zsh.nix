@@ -405,8 +405,8 @@
 
       initExtra = ''
 
-        export ANDROID_HOME=$HOME/development/Android/sdk/
-        export ANDROID_SDK_ROOT=$HOME/development/Android/sdk/
+        export ANDROID_HOME=$HOME/development/Android/Sdk/
+        export ANDROID_SDK_ROOT=$HOME/development/Android/Sdk/
 
         function _list_zellij_sessions () {
           zellij list-sessions 2>/dev/null | sed -e 's/\x1b\[[0-9;]*m//g'
