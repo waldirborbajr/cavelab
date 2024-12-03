@@ -399,9 +399,9 @@
         ];
       };
 
-      # profileExtra = ''
-      #   export PATH=$HOME/development/flutter/bin/:$PATH
-      # '';
+      profileExtra = ''
+        export ANDROID_HOME=$HOME/development/Android/sdk/
+      '';
 
       initExtra = ''
         function _list_zellij_sessions () {
