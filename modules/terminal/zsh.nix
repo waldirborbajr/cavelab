@@ -19,6 +19,7 @@
 
   home.sessionPath = [
     "$HOME/development/flutter/bin"
+    "$HOME/development/android-studio/bin"
   ];
 
   programs = {
