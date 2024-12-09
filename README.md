@@ -15,15 +15,9 @@ curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix 
 ```
 
 ``` sh
-nix run home-manager -- init --switch .
 
-or
+make init
 
-nix run home-manager -- switch  --impure --flake .#cavelab -b hm-backup
-
-or
-
-nix run home-manager --switch --flake github:<user>/cavelab-config@cavelab
 ```
 
 # Nix & home-manager from scratch

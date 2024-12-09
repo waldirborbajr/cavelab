@@ -69,7 +69,10 @@
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
     # # fonts?
     # (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; })
-    pkgs.nerd-fonts.fira-code
+    nerd-fonts.fira-code
+    nerd-fonts.meslo-lg
+    nerd-fonts.inconsolata
+    nerd-fonts.hack
 
     # # You can also create simple shell scripts directly inside your
     # # configuration. For example, this adds a command 'my-hello' to your
@@ -85,10 +88,10 @@
 
     # ".config/tmux".source = "${config.home.homeDirectory}/cavelab/config/tmux";
 
-    # ".config/wezterm" = {
-    #   source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/cavelab/config/wezterm/";
-    #   recursive = true;
-    # };
+    ".config/wezterm" = {
+      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/cavelab/config/wezterm/";
+      recursive = true;
+    };
     ".config/tmux" = {
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/cavelab/config/tmux/";
       recursive = true;
