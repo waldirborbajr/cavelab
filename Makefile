@@ -19,3 +19,6 @@ gc:
 
 start:
 	nix run home-manager -- switch --flake .#cavelab -b hm-backup-`date +%Y%m%d%H%M%S`
+
+init:
+	nix run home-manager -- init --switch .
