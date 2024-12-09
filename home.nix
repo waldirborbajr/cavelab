@@ -38,6 +38,7 @@
     asciinema # Terminal session recorder and the best companion of asciinema.org
     asciiquarium-transparent
     bottom # btop  # replacement of htop/nmon
+    brave
     direnv
     discord
     du-dust # du + rust = dust. Like du but more intuitive
