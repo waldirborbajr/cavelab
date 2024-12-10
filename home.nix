@@ -29,6 +29,8 @@
   # release notes.
   home.stateVersion = "24.11"; # Please read the comment before changing.
 
+  fonts.fontconfig.enable = true; # don't forget fc-cache -f
+
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
@@ -150,6 +152,8 @@
 
     EDITOR = "nvim";
     VISUAL = "nvim";
+
+    NIXPKGS_ALLOW_UNFREE = "1";
 
     # Language
     LANG = "en_US.UTF-8";
