@@ -83,3 +83,10 @@ git diff flake.lock
 home-manager switch --flake .#cavelab -b hm-backup
 nix-store --gc && nix-collect-garbage -d && home-manager expire-generations -2 days
 ```
+
+## Fix auto start zsh
+
+``` sh
+nano ~/.bashrc
+exec /home/borba/.nix-profile/bin/zsh
+```
