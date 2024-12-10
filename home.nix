@@ -71,10 +71,11 @@
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
     # # fonts?
     # (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; })
-    nerd-fonts.fira-code
-    nerd-fonts.meslo-lg
-    nerd-fonts.inconsolata
-    nerd-fonts.hack
+
+    pkgs.nerd-fonts.fira-code
+    pkgs.nerd-fonts.meslo-lg
+    pkgs.nerd-fonts.inconsolata
+    pkgs.nerd-fonts.hack
 
     # # You can also create simple shell scripts directly inside your
     # # configuration. For example, this adds a command 'my-hello' to your

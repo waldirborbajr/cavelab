@@ -16,6 +16,8 @@ curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix 
 
 ``` sh
 
+git clone git@github.com:waldirborbajr/cavelab.git
+
 make init
 
 ```
@@ -84,7 +86,7 @@ home-manager switch --flake .#cavelab -b hm-backup
 nix-store --gc && nix-collect-garbage -d && home-manager expire-generations -2 days
 ```
 
-## Fix auto start zsh
+## Fix zsh auto start
 
 ``` sh
 nano ~/.bashrc

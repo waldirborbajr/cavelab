@@ -10,6 +10,7 @@ return {
   { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity.pack.rust" },
   { import = "astrocommunity.pack.go" },
+  { import = "astrocommunity.pack.nix" },
   { import = "astrocommunity.file-explorer.oil-nvim" },
   { import = "astrocommunity.colorscheme.catppuccin" },
   -- import/override with your plugins folder

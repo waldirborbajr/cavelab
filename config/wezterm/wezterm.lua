@@ -78,7 +78,7 @@ config.window_padding = {
 config.default_cursor_style = "SteadyBar"
 
 config.font = wezterm.font("MesloLGS Nerd Font")
-config.font_size = 12
+config.font_size = 11
 
 config.enable_tab_bar = false
 
