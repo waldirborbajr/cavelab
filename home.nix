@@ -85,6 +85,11 @@
     # '')
   ];
 
+  home.activation.forceUpdateFontConfigCache = lib.hm.dag.entryAfter [ "intallPackages" ] ''
+    echo "Rebuilding font cache"
+    ${pkgs.fontconfig}/bin/fc-cache -rf
+  '';
+
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {
