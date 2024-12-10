@@ -14,6 +14,14 @@ https://github.com/DeterminateSystems/nix-installer
 curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
 ```
 
+## Start from scratch
+
+``` sh
+nix run home-manager -- init --switch .
+
+```
+## Dowload from GIT and start using
+
 ``` sh
 
 git clone git@github.com:waldirborbajr/cavelab.git
