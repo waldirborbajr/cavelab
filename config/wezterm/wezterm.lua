@@ -1,7 +1,7 @@
 -- Pull in the wezterm API
 local wezterm = require("wezterm")
 
-local mux = wezterm.mux
+-- local mux = wezterm.mux
 
 -- This will hold the configuration.
 local config = wezterm.config_builder()
@@ -78,6 +78,7 @@ config.window_padding = {
 config.default_cursor_style = "SteadyBar"
 
 config.font = wezterm.font("MesloLGS Nerd Font")
+-- config.font = wezterm.font("JetBrains Mono") -- MesloLGS Nerd Font")
 config.font_size = 11
 
 config.enable_tab_bar = false

@@ -17,8 +17,6 @@ gc:
 	nix-collect-garbage -d
 	home-manager expire-generations "-2 days"
 
+# Use only at first time
 start:
-	nix run home-manager -- switch --flake .#cavelab -b hm-backup-`date +%Y%m%d%H%M%S`
-
-init:
 	nix run home-manager -- init switch --flake .#cavelab -b hm-backup-`date +%Y%m%d%H%M%S`
