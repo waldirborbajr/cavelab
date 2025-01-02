@@ -307,7 +307,7 @@
 
         aq = "asciiquarium -s";
 
-        xterm="sudo update-alternatives --config x-terminal-emulator";
+        xterm = "sudo update-alternatives --config x-terminal-emulator";
 
       };
 
@@ -407,9 +407,23 @@
 
       initExtra = ''
 
-        export ANDROID_HOME=$HOME/development/Android/Sdk/
+
         export ANDROID_SDK_ROOT=$HOME/development/Android/Sdk/
+        export ANDROID_HOME=$HOME/development/Android/Sdk/
+        # export ANDROID_AVD_HOME=/Volumes/home/VMS/Android-Emulator
+        export PATH=$ANDROID_SDK_ROOT/tools:$PATH
+        export PATH=$ANDROID_SDK_ROOT/tools/bin:$PATH
+        export PATH=$ANDROID_SDK_ROOT/platform-tools:$PATH
+        # \"Android SDK Command-line Tools (latest)\" needs to be installed (See SETUP_MACOS.md)
+        export PATH=$ANDROID_SDK_ROOT/cmdline-tools/latest/bin:$PATH
         export CHROME_EXECUTABLE=/snap/bin/chromium
+
+        export GOPATH=$(mise exec go --command 'go env GOPATH')
+        export GOROOT=$(mise exec go --command 'go env GOROOT')
+        export GOBIN=$(mise exec go --command 'go env GOBIN')
+        export PATH=$PATH:$GOPATH/bin
+        export PATH=$PATH:$GOROOT/bin
+        export PATH=$PATH:$GOBIN
 
         function _list_zellij_sessions () {
           zellij list-sessions 2>/dev/null | sed -e 's/\x1b\[[0-9;]*m//g'

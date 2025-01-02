@@ -1,4 +1,5 @@
-{ pkgs, config, ... }: {
+{ pkgs, config, ... }:
+{
 
   programs.go.enable = true;
 
@@ -24,14 +25,11 @@
     sqlc
   ];
 
-  home.sessionVariables = {
-    GOROOT = "${config.programs.go.package}/share/go";
-    GOPATH = "${config.home.homeDirectory}/go";
-    GOBIN = "${config.home.homeDirectory}/bin";
+  # home.sessionVariables = {
+  #   GOROOT = "${config.programs.go.package}/share/go";
+  #   GOPATH = "${config.home.homeDirectory}/go";
+  #   GOBIN = "${config.home.homeDirectory}/bin";
+  # };
 
-    # GOPATH = "${config.xdg.dataHome}/go";
-    # GOBIN = "${config.home.sessionVariables.GOPATH}/bin";
-  };
-
-  home.sessionPath = [ "${config.home.sessionVariables.GOBIN}" ];
+  # home.sessionPath = [ "${config.home.sessionVariables.GOBIN}" ];
 }
