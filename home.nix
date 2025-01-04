@@ -39,7 +39,6 @@
     # wezterm
     asciinema # Terminal session recorder and the best companion of asciinema.org
     asciiquarium-transparent
-    anydesk
     bottom # btop  # replacement of htop/nmon
     brave
     chromium
