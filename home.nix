@@ -42,7 +42,6 @@
     bottom # btop  # replacement of htop/nmon
     brave
     chromium
-    chirp
     direnv
     discord
     du-dust # du + rust = dust. Like du but more intuitive

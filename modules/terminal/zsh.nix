@@ -424,6 +424,7 @@
         export PATH=$PATH:$GOPATH/bin
         export PATH=$PATH:$GOROOT/bin
         export PATH=$PATH:$GOBIN
+        export PATH=$PATH:$HOME/.local/bin
 
         function _list_zellij_sessions () {
           zellij list-sessions 2>/dev/null | sed -e 's/\x1b\[[0-9;]*m//g'
