@@ -309,6 +309,7 @@
 
         xterm = "sudo update-alternatives --config x-terminal-emulator";
 
+
       };
 
       initExtraFirst = "";
@@ -456,6 +457,10 @@
           if [[ -n $sessions ]]; then
             echo $sessions | xargs -n1 zellij d --force
           fi
+        }
+
+        function chirpinstall() {
+          pipx install --system-site-packages --force "$1"
         }
 
         # # Starship initialization
