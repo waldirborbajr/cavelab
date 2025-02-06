@@ -309,7 +309,6 @@
 
         xterm = "sudo update-alternatives --config x-terminal-emulator";
 
-        ghp = "gh pr list | fzf --preview 'gh pr view {1}'";
 
 
       };
@@ -463,6 +462,10 @@
 
         function chirpinstall() {
           pipx install --system-site-packages --force "$1"
+        }
+
+        function ghpr() {
+          GH_FORCE_TTY=100% gh pr list | fzf --ansi --preview 'GH_FORCE_TTY=100% gh pr view {1}' --preview-window down --header-lines 3 | awk '{print $1}' | xargs gh pr checkout
         }
 
         # # Starship initialization
