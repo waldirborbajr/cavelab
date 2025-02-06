@@ -309,6 +309,8 @@
 
         xterm = "sudo update-alternatives --config x-terminal-emulator";
 
+        ghp = "gh pr list | fzf --preview 'gh pr view {1}'"
+
 
       };
 
