@@ -12,7 +12,6 @@
         # rustup
         bacon
         cargo
-        cargo-asm
         cargo-audit
         cargo-cache
         cargo-deny
@@ -39,7 +38,6 @@
         pkg-config
         rust-analyzer
         rustc
-        rustfilt
         rustfmt
         sccache
         taplo # toml
