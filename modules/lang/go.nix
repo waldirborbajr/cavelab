@@ -23,6 +23,7 @@
     impl
     revive
     sqlc
+    templ 
   ];
 
   # home.sessionVariables = {
