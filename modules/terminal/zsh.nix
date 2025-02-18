@@ -418,7 +418,8 @@
         export PATH=$ANDROID_SDK_ROOT/platform-tools:$PATH
         # \"Android SDK Command-line Tools (latest)\" needs to be installed (See SETUP_MACOS.md)
         export PATH=$ANDROID_SDK_ROOT/cmdline-tools/latest/bin:$PATH
-        export CHROME_EXECUTABLE=/snap/bin/chromium
+        export CHROME_EXECUTABLE=/home/borba/.nix-profile/bin/chromium
+        # export CHROME_EXECUTABLE=/snap/bin/chromium
 
         export GOPATH=$(mise exec go --command 'go env GOPATH')
         export GOROOT=$(mise exec go --command 'go env GOROOT')
