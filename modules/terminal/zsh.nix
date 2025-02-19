@@ -469,6 +469,15 @@
           GH_FORCE_TTY=100% gh pr list | fzf --ansi --preview 'GH_FORCE_TTY=100% gh pr view {1}' --preview-window down --header-lines 3 | awk '{print $1}' | xargs gh pr checkout
         }
 
+        function newfletapp() {
+          mkdir $1
+          cd $1
+          uv init --bare
+          uv add 'flet[all]' --dev
+          uv run flet create
+          source .venv/bin/activate
+        }
+
         # # Starship initialization
         # eval "($starship init zsh)"
         # eval "$(${pkgs.starship}/bin/starship init zsh)"
