@@ -14,7 +14,9 @@
     godef
     gofumpt
     golangci-lint
+    gomod2nix
     gomodifytags
+    gopkgs
     gopls
     goreleaser
     gotests
