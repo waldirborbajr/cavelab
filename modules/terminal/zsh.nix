@@ -92,7 +92,7 @@
           deleted_style = "deleted bold";
         };
 
-        git_status.style = "";
+        # git_status.style = "";
 
         rust = {
           symbol = "";
@@ -504,6 +504,8 @@
         }
 
         function chirpinstall() {
+          cd $HOME/Downloads/
+          wget "$1"
           pipx install --system-site-packages --force "$1"
         }
 

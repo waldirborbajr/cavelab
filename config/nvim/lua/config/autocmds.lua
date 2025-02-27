@@ -12,3 +12,6 @@ vim.api.nvim_create_autocmd("User", {
   pattern = "*",
   command = "setlocal formatoptions-=cro",
 })
+
+autocmd BufReadPost * if line("\'\\"") > 0 && line("\'\\"") <= line("$") | exe "normal! g`\"" | endif
+
