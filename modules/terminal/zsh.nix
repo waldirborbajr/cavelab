@@ -44,97 +44,204 @@
       enable = true;
       enableZshIntegration = true;
       settings = {
-        command_timeout = 350; # It's very noticable and anoying beyond this
-        add_newline = false;
-        right_format = "$git_branch$git_commit$git_state$git_metrics$git_status$hg_branch$nix_shell$cmd_duration";
-        format = lib.concatStrings [
-          "$directory"
-          "$git_branch"
-          "$cmd_duration"
-          "$line_break"
-          "$jobs"
-          "$battery"
-          "$python"
-          "$character"
-        ];
-        character = {
-          success_symbol = "[❱](bold green)";
-          error_symbol = "[❱](bold red)";
-          vimcmd_symbol = "[❰](bold green)";
-          vimcmd_replace_one_symbol = "[❰](bold purple)";
-          vimcmd_replace_symbol = "[❰](bold purple)";
-          vimcmd_visual_symbol = "[❰](bold yellow)";
+         palette = "foo";
+
+        palettes.foo = {
+          mustard = "#af8700";
+          time = "#778485";
+          directory = "#A7A5AB";
+          identity = "#778485";
+          git_branch = "#778485";
+          deleted = "#a05050";
+          added = "#208020";
         };
-        directory = {
-          read_only = " ";
-          style = "bold fg:dark_blue";
-          format = "[$path ]($style)";
-          truncation_length = 3;
-          truncation_symbol = "…/";
-          truncate_to_repo = false;
-        };
-        cmd_duration = {
-          min_time = 500;
-          style = "fg:gray";
-          format = "[$duration]($style)";
-        };
+
+        fill.symbol = " ";
+
         username = {
-          disabled = false;
           show_always = true;
-          style_root = "bold red";
-          style_user = "blue yellow";
+          style_user = "identity bold";
+          style_root = "bright-red bold";
           format = "[$user]($style)";
         };
+
         hostname = {
-          disabled = false;
           ssh_only = false;
-          style = "bold dimmed green";
-          format = "[@$hostname]($style)";
+          ssh_symbol = " 📞";
+          style = "identity bold";
+          format = "@[$hostname]($style)$ssh_symbol ";
         };
-        git_branch.symbol = " ";
-        git_commit.tag_disabled = false;
-        git_status = {
-          format = "[](fg:#232526 bg:none)[$all_status $ahead_behind]($style)[](fg:#232526 bg:#232526)[](fg:#67afc1 bg:#232526)[  ](fg:#232526 bg:#67afc1)[](fg:#67afc1 bg:none)";
-          style = "fg:#D4BE98 bg:#232526";
-          conflicted = "=";
-          ahead = "⇡$\{count\}";
-          behind = "⇣$\{count\}";
-          diverged = "⇕⇡$\{ahead_count\}⇣$\{behind_count\}";
-          up_to_date = "";
-          untracked = "?$\{count\}";
-          stashed = "";
-          modified = "!$\{count\}";
-          staged = "+$\{count\}";
-          renamed = "»$\{count\}";
-          deleted = "$\{count\}";
+
+        directory = {
+          truncation_length = 3;
+          truncate_to_repo = false;
+          format = "[$read_only]($read_only_style)[$path]($style) ";
+          read_only = "🔒 ";
+          style = "directory bold";
         };
-        golang = {
-          style = "blue";
-          symbol = "";
-          format = "[ $symbol( $version) ]($style)";
-          detect_files = [ "go.mod" ];
+
+        git_branch = {
+          style = "git_branch bold";
+          format = "[$symbol$branch(:$remote_branch)]($style) ";
         };
-        nix_shell = {
-          format = "via [$symbol$state]($style) ";
-          impure_msg = "ι";
-          pure_msg = "﻿ρ";
-          symbol = " ";
+
+        git_metrics = {
+          disabled = false;
+          added_style = "added bold";
+          deleted_style = "deleted bold";
         };
-        lua = {
-          format = "[$symbol($version )]($style)";
-          symbol = " ";
+
+        git_status.style = "";
+
+        time = {
+          disabled = false;
+          format = "[$time]($style)";
+          style = "time bold";
         };
-        docker_context = {
-          symbol = " ";
-          style = "fg:#06969";
-          format = "[$symbol]($style) ($path)";
-          detect_extensions = [ "Dockerfile" ];
+
+        cmd_duration = {
+          style = "mustard bold";
+          format = "[$duration]($style) ";
         };
-        cmake.disabled = true;
-        python.disabled = true;
-        aws.symbol = "  ";
-        rust.symbol = " ";
-        nodejs.symbol = " ";
+
+        jobs = {
+          format = "[$number$symbol]($style)";
+          symbol = "⚙ ";
+          style = "mustard bold";
+        };
+
+        format =
+          let
+            who = [
+              "$username"
+              "$hostname"
+              "$directory"
+            ];
+
+            git = [
+              "$git_branch"
+              "$git_state"
+              "$git_status"
+              "$git_metrics"
+            ];
+
+            fill = [ "$fill" ];
+
+            duration = [
+              "$cmd_duration"
+            ];
+
+            time = [
+              "$jobs"
+              "$time"
+            ];
+
+            languages = [
+              "$nix_shell"
+              "$nodejs"
+              "$elixir"
+              "$lua"
+            ];
+
+
+            prompt = [
+              "$line_break"
+              "❯ "
+            ];
+          in
+          lib.concatStrings (who ++ git ++ fill ++ duration ++ languages ++ time ++ prompt);
+
+        # command_timeout = 350; # It's very noticable and anoying beyond this
+        # add_newline = false;
+        # right_format = "$git_branch$git_commit$git_state$git_metrics$git_status$hg_branch$nix_shell$cmd_duration";
+        # format = lib.concatStrings [
+        #   "$directory"
+        #   "$git_branch"
+        #   "$cmd_duration"
+        #   "$line_break"
+        #   "$jobs"
+        #   "$battery"
+        #   "$python"
+        #   "$character"
+        # ];
+        # character = {
+        #   success_symbol = "[❱](bold green)";
+        #   error_symbol = "[❱](bold red)";
+        #   vimcmd_symbol = "[❰](bold green)";
+        #   vimcmd_replace_one_symbol = "[❰](bold purple)";
+        #   vimcmd_replace_symbol = "[❰](bold purple)";
+        #   vimcmd_visual_symbol = "[❰](bold yellow)";
+        # };
+        # directory = {
+        #   read_only = " ";
+        #   style = "bold fg:dark_blue";
+        #   format = "[$path ]($style)";
+        #   truncation_length = 3;
+        #   truncation_symbol = "…/";
+        #   truncate_to_repo = false;
+        # };
+        # cmd_duration = {
+        #   min_time = 500;
+        #   style = "fg:gray";
+        #   format = "[$duration]($style)";
+        # };
+        # username = {
+        #   disabled = false;
+        #   show_always = true;
+        #   style_root = "bold red";
+        #   style_user = "blue yellow";
+        #   format = "[$user]($style)";
+        # };
+        # hostname = {
+        #   disabled = false;
+        #   ssh_only = false;
+        #   style = "bold dimmed green";
+        #   format = "[@$hostname]($style)";
+        # };
+        # git_branch.symbol = " ";
+        # git_commit.tag_disabled = false;
+        # git_status = {
+        #   format = "[](fg:#232526 bg:none)[$all_status $ahead_behind]($style)[](fg:#232526 bg:#232526)[](fg:#67afc1 bg:#232526)[  ](fg:#232526 bg:#67afc1)[](fg:#67afc1 bg:none)";
+        #   style = "fg:#D4BE98 bg:#232526";
+        #   conflicted = "=";
+        #   ahead = "⇡$\{count\}";
+        #   behind = "⇣$\{count\}";
+        #   diverged = "⇕⇡$\{ahead_count\}⇣$\{behind_count\}";
+        #   up_to_date = "";
+        #   untracked = "?$\{count\}";
+        #   stashed = "";
+        #   modified = "!$\{count\}";
+        #   staged = "+$\{count\}";
+        #   renamed = "»$\{count\}";
+        #   deleted = "$\{count\}";
+        # };
+        # golang = {
+        #   style = "blue";
+        #   symbol = "";
+        #   format = "[ $symbol( $version) ]($style)";
+        #   detect_files = [ "go.mod" ];
+        # };
+        # nix_shell = {
+        #   format = "via [$symbol$state]($style) ";
+        #   impure_msg = "ι";
+        #   pure_msg = "﻿ρ";
+        #   symbol = " ";
+        # };
+        # lua = {
+        #   format = "[$symbol($version )]($style)";
+        #   symbol = " ";
+        # };
+        # docker_context = {
+        #   symbol = " ";
+        #   style = "fg:#06969";
+        #   format = "[$symbol]($style) ($path)";
+        #   detect_extensions = [ "Dockerfile" ];
+        # };
+        # cmake.disabled = true;
+        # python.disabled = true;
+        # aws.symbol = "  ";
+        # rust.symbol = " ";
+        # nodejs.symbol = " ";
       };
     };
 
