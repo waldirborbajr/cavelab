@@ -15,6 +15,8 @@ update:
 gc:
 	nix-store --gc
 	nix-collect-garbage -d
+	nix-store --verify --check-contents 
+	nix store optimise
 	home-manager expire-generations "-2 days"
 
 ## ?? -----------------------------------------------------------------------

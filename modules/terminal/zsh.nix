@@ -251,6 +251,7 @@
         ignoreAllDups = true;
         ignoreDups = true;
         ignoreSpace = true;
+        share = true;
         ignorePatterns = [ "*.private*" ];
 
         # path = "${config.xdg.dataHome}/zsh/history";
@@ -470,6 +471,16 @@
         export PATH=$PATH:$GOROOT/bin
         export PATH=$PATH:$GOBIN
         export PATH=$PATH:$HOME/.local/bin
+
+        function cd() {
+          builtin cd $*
+          lsd
+        }
+
+        function mkd() {
+          mkdir $1
+          builtin cd $1
+        }
 
         function _list_zellij_sessions () {
           zellij list-sessions 2>/dev/null | sed -e 's/\x1b\[[0-9;]*m//g'
