@@ -44,7 +44,7 @@
       enable = true;
       enableZshIntegration = true;
       settings = {
-         palette = "foo";
+        palette = "foo";
 
         palettes.foo = {
           mustard = "#af8700";
@@ -86,13 +86,6 @@
           format = "[$symbol$branch(:$remote_branch)]($style) ";
         };
 
-        golang = {
-          style = "blue";
-          symbol = "";
-          format = "[ $symbol( $version) ]($style)";
-          detect_files = [ "go.mod" ];
-        };
-
         git_metrics = {
           disabled = false;
           added_style = "added bold";
@@ -100,6 +93,30 @@
         };
 
         git_status.style = "";
+
+        rust = {
+          symbol = "";
+          style = "bg:#212736";
+          format = "[ $symbol ($version) ]($style)";
+        };
+
+        golang = {
+          symbol = "";
+          style = "bg:#212736";
+          format = "[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)";
+        };
+
+        nix_shell = {
+          symbol = "";
+          style = "bg:#212736";
+          format = "[[ $symbol ($name) ](fg:#769ff0 bg:#212736)]($style)";
+        };
+
+        python = {
+          symbol = "";
+          style = "bg:#212736";
+          format = "[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)";
+        };
 
         time = {
           disabled = false;
@@ -147,7 +164,9 @@
             languages = [
               "$nix_shell"
               "$nodejs"
-              "$elixir"
+              "$golang"
+              "$rust"
+              "$python"
               "$lua"
             ];
 
