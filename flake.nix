@@ -53,8 +53,8 @@
           ./modules/lang/nodejs.nix
           ./modules/lang/python.nix
           ./modules/lang/rust.nix
-          ./modules/terminal/zsh.nix
           ./modules/terminal/nerdfonts.nix
+          ./modules/terminal/zsh.nix
           ./modules/tools/btop.nix
           ./modules/tools/git.nix
           ./modules/tools/gpg.nix

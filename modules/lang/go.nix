@@ -1,7 +1,12 @@
 { pkgs, config, ... }:
 {
 
-  programs.go.enable = true;
+  programs.go = {
+    enable = true;
+    telemetry = {
+      mode = "off";
+    };
+  };
 
   home.packages = with pkgs; [
     # (hiPrio go_1_23)
