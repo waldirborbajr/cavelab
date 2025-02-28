@@ -1,13 +1,17 @@
 { config, pkgs, ...}:
 {
-  fonts.fontconfig.enable = true;
+  fonts.fontconfig.enable = true; # don't forget fc-cache -f
 
-  home.packages = [
-    pkgs.nerd-fonts.fira-code
-    pkgs.nerd-fonts.jetbrains-mono
-    pkgs.powerline-fonts
-    pkgs.nerd-fonts.meslo-lg
-    pkgs.nerd-fonts.inconsolata
-    pkgs.nerd-fonts.hack
+  home.packages = with pkgs; [
+    font-awesome # awesome fonts
+    iconTheme.package
+    material-design-icons # fonts with glyphs
+    nerd-fonts.fira-code
+    nerd-fonts.hack
+    nerd-fonts.inconsolata
+    nerd-fonts.jetbrains-mono
+    nerd-fonts.meslo-lg
+    nerd-fonts.ubuntu-mono
+    powerline-fonts
   ];
 }
