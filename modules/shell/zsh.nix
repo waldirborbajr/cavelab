@@ -522,15 +522,13 @@
 
           URL="$1"
 
-          if [[ $URL =~ chirp-[^/]+-any\.whl ]]; then
-            FILENAME="${BASH_REMATCH[0]}"
+          FILENAME=$(basename "$URL")
 
-            cd $HOME/Downloads/
-            echo "Filename: $FILENAME"
-            
-            curl -O $URL
-            pipx install --system-site-packages --force $FILENAME
-          fi
+          cd $HOME/Downloads/
+          echo "Filename: $FILENAME"
+          
+          curl -O $URL
+          pipx install --system-site-packages --force $FILENAME
         }
 
         function ghpr() {
