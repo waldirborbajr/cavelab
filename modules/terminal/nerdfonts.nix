@@ -4,7 +4,7 @@
 
   home.packages = with pkgs; [
     font-awesome # awesome fonts
-    iconTheme.package
+    # iconTheme.package
     material-design-icons # fonts with glyphs
     nerd-fonts.fira-code
     nerd-fonts.hack
