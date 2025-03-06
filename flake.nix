@@ -54,9 +54,7 @@
           ./modules/lang/python.nix
           ./modules/lang/rust.nix
           ./modules/terminal/nerdfonts.nix
-          # ./modules/shell/zsh.nix
-          ./modules/shell/zsh-2.nix
-          ./modules/shell/zsh-plugins.nix
+          ./modules/shell/zsh.nix
           ./modules/tools/btop.nix
           ./modules/tools/git.nix
           ./modules/tools/gpg.nix
