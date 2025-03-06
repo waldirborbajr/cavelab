@@ -527,7 +527,7 @@
         function fletnew() {
 
           if [[ -z  "$1" ]]; then
-            exit
+            exit 1;
           fi
 
           mkdir $1
