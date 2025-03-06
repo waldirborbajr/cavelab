@@ -525,6 +525,11 @@
         }
 
         function fletnew() {
+
+          if [[ -z  "$1" ]]; then
+            exit
+          fi
+
           mkdir $1
           cd $1
           uv init --bare
