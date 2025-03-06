@@ -525,7 +525,6 @@
           FILENAME=$(basename "$URL")
 
           cd $HOME/Downloads/
-          echo "Filename: $FILENAME"
           
           curl -O $URL
           pipx install --system-site-packages --force $FILENAME
