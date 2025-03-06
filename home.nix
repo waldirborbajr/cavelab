@@ -47,6 +47,7 @@
     fastfetch # Like neofetch, but much faster because written in C
     fd
     findutils
+    lsd
     gnupg
     httpie # A command line HTTP client whose goal is to make CLI human-friendly
     jq # A lightweight and flexible command-line JSON processor
