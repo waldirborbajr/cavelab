@@ -474,7 +474,7 @@
 
         function cd() {
           builtin cd $*
-          lsd
+          ls
         }
 
         function mkd() {
