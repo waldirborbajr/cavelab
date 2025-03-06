@@ -329,18 +329,24 @@
 
         rmvim = "rm -rf ~/.local/share/nvim && rm -rf ~/.cache/nvim && rm -rf ~/.local/state/nvim";
 
-        l = "eza --icons";
-        ls = "eza --icons";
-        ll = "eza -lg --icons --group-directories-first";
-        la = "eza -lag --icons --group-directories-first";
-        lt = "eza -lTg --icons";
-        lt1 = "eza -lTg --level=1 --icons";
-        lt2 = "eza -lTg --level=2 --icons";
-        lt3 = "eza -lTg --level=3 --icons";
-        lta = "eza -lTag --icons";
-        lta1 = "eza -lTag --level=1 --icons";
-        lta2 = "eza -lTag --level=2 --icons";
-        lta3 = "eza -lTag --level=3 --icons";
+        # l = "eza --icons";
+        # ls = "eza --icons";
+        # ll = "eza -lg --icons --group-directories-first";
+        # la = "eza -lag --icons --group-directories-first";
+        # lt = "eza -lTg --icons";
+        # lt1 = "eza -lTg --level=1 --icons";
+        # lt2 = "eza -lTg --level=2 --icons";
+        # lt3 = "eza -lTg --level=3 --icons";
+        # lta = "eza -lTag --icons";
+        # lta1 = "eza -lTag --level=1 --icons";
+        # lta2 = "eza -lTag --level=2 --icons";
+        # lta3 = "eza -lTag --level=3 --icons";
+
+        ls = "lsd";
+        l = "ls -l";
+        la = "ls -a";
+        lla = "ls -la";
+        lt = "ls --tree";
 
         tmc = "clear; tmux clear-history; clear";
         tmk = "tmux kill-session";
@@ -474,7 +480,7 @@
 
         function cd() {
           builtin cd $*
-          ls
+          lsd
         }
 
         function mkd() {
