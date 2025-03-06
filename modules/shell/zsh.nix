@@ -358,8 +358,6 @@
 
         xterm = "sudo update-alternatives --config x-terminal-emulator";
 
-
-
       };
 
       initExtraFirst = "";
