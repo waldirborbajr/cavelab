@@ -519,9 +519,18 @@
         }
 
         function chirpinstall() {
-          cd $HOME/Downloads/
-          wget "$1"
-          pipx install --system-site-packages --force "$1"
+
+          URL="$1"
+
+          if [[ $URL =~ chirp-[^/]+-any\.whl ]]; then
+            FILENAME="${BASH_REMATCH[0]}"
+
+            cd $HOME/Downloads/
+            echo "Filename: $FILENAME"
+            
+            curl -O $URL
+            pipx install --system-site-packages --force $FILENAME
+          fi
         }
 
         function ghpr() {
