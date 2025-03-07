@@ -58,11 +58,29 @@
 
         fill.symbol = " ";
 
+        shell = {
+          format = "[$indicator]($style) ";
+          bash_indicator = "bsh";
+          cmd_indicator = "cmd";
+          elvish_indicator = "esh";
+          fish_indicator = "";
+          ion_indicator = "ion";
+          nu_indicator = "nu";
+          powershell_indicator = "_";
+          style = "white bold";
+          tcsh_indicator = "tsh";
+          unknown_indicator = "mystery shell";
+          xonsh_indicator = "xsh";
+          zsh_indicator = "zsh";
+          disabled = false;
+        };
+
         username = {
+          format = "[$user]($style) ";
           show_always = true;
-          style_user = "identity bold";
-          style_root = "bright-red bold";
-          format = "[$user]($style)";
+          style_root = "red bold bg:0x9A348E";
+          style_user = "yellow bold bg:0x9A348E";
+          disabled = false;
         };
 
         hostname = {
@@ -92,30 +110,67 @@
           deleted_style = "deleted bold";
         };
 
-        # git_status.style = "";
-
         rust = {
-          symbol = "";
-          style = "bg:#212736";
-          format = "[ $symbol ($version) ]($style)";
+          # symbol = "";
+          format = "[$symbol($version )]($style)";
+          version_format = "v$raw";
+          symbol = "🦀 ";
+          style = "bold red bg:0x86BBD8";
+          disabled = false;
+          detect_extensions = ["rs"];
+          detect_files = ["Cargo.toml"];
+          detect_folders = [];
         };
 
         golang = {
-          symbol = "";
-          style = "bg:#212736";
-          format = "[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)";
+          format = "[$symbol($version )]($style)";
+          version_format = "v$raw";
+          symbol = " ";
+          style = "bold cyan bg:0x86BBD8";
+          disabled = false;
+          detect_extensions = ["go"];
+          detect_files = [
+            "go.mod"
+            "go.sum"
+            "glide.yaml"
+            "Gopkg.yml"
+            "Gopkg.lock"
+            ".go-version"
+          ];
+          detect_folders = ["Godeps"];
         };
 
         nix_shell = {
-          symbol = "";
-          style = "bg:#212736";
-          format = "[[ $symbol ($name) ](fg:#769ff0 bg:#212736)]($style)";
+          format = "[$symbol$state( ($name))]($style) ";
+          disabled = false;
+          impure_msg = "[impure](bold red)";
+          pure_msg = "[pure](bold green)";
+          style = "bold blue";
+          symbol = " ";
         };
 
         python = {
           symbol = "";
-          style = "bg:#212736";
-          format = "[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)";
+          format = "[$symbol ($version) (($virtualenv) )]($style)";
+          python_binary = [
+            "python"
+            "python3"
+            "python2"
+          ];
+          # pyenv_version_name = true;
+          style = "yellow bold";
+          disabled = false;
+          detect_extensions = ["py"];
+          detect_files = [
+            "requirements.txt"
+            ".python-version"
+            "pyproject.toml"
+            "Pipfile"
+            "tox.ini"
+            "setup.py"
+            "__init__.py"
+          ];
+          detect_folders = [];
         };
 
         time = {
