@@ -1,46 +1,88 @@
-let pkgs = import <nixpkgs> { config.allowUnfree = true; };
+let
+  # Pin nixpkgs to a specific version for reproducibility
+  pkgs = import (fetchTarball "https://github.com/NixOS/nixpkgs/archive/refs/tags/23.11.tar.gz") {
+    config.allowUnfree = true;
+  };
 in
 pkgs.mkShell {
   buildInputs = with pkgs; [
-    nodejs_21
+    # Use consistent node.js ecosystem
+    nodejs_21  # Fixed attribute name for Node 21
+    
     nodePackages.typescript-language-server
     nodePackages_latest.pnpm
     nodePackages_latest.vue-cli
-    yarn
+
+    # Development essentials
     git
-    zsh
     curl
+    
+    # Additional tools
+    tree
+    jq
+    nodePackages.prettier
   ];
 
-  # avoid terminal issues
+  # Environment variables
   TERM = "xterm";
-
-  # default locale
-  LANG = "en_US.UTF-8";
-  LANGUAGE = "en_US.UTF-8";
+  LANG = "C.UTF-8";      # More universally available
+  LC_ALL = "C.UTF-8";    # Ensure consistent locale
+  NODE_ENV = "development";
 
   shellHook = ''
-    export PATH="$PWD/node_modules/.bin/:$PATH"
+    # Set up project-local node_modules
+    export PATH="$PWD/node_modules/.bin:$PATH"
+    export NODE_PATH="$PWD/node_modules:$NODE_PATH"
 
-    alias setupvue='pnpm i -D tailwindcss@latest postcss@latest autoprefixer@latest @tailwindcss/forms && npx tailwindcss init -p && cp ../tailwind.config.js . && pnpm i --save vue-router@4 vuex@latest && pnpm i'
+    # Create basic .env file if missing
+    if [ ! -f .env ]; then
+      echo "VITE_APP_NAME=My Vue App" > .env
+      echo "Created .env file"
+    fi
 
-    alias nr='pnpm run dev'
-    alias ni='pnpm install'
-    alias nl='pnpm run lint'
+    # Improved aliases
+    alias setupvue='pnpm add -D tailwindcss postcss autoprefixer @tailwindcss/forms && \
+      npx tailwindcss init -p && \
+      pnpm add vue-router@4 vuex@next && \
+      pnpm install'
 
-    alias l='ls -la'
-    alias ll='ls -la'
-    alias ys='yarn serve'
-    alias yr='yarn dev'
-    alias yb='yarn build'
-    alias yp='yarn preview'
+    # Unified package manager commands
+    alias nr='pnpm dev'
+    alias nd='pnpm dev'
+    alias nb='pnpm build'
+    alias nl='pnpm lint'
+    alias nt='pnpm test'
 
+    # Quality of life improvements
+    alias ll='exa -la --group-directories-first --git'
+    alias tree='exa --tree --level=2'
+    alias code='codium .'  # Or 'code .' if using VSCode
+
+    # Shell configuration
+    export HISTSIZE=10000
+    export HISTFILESIZE=50000
+    export HISTCONTROL=ignoreboth
+
+    # Project validation
+    function create-vue-app() {
+      if [ -z "$1" ]; then
+        echo "Usage: create-vue-app <project-name>"
+        return 1
+      fi
+      pnpm create vite "$1" --template vue-ts
+    }
+
+    # Welcome message
+    echo "🛠️ Vue.js Development Environment Ready"
+    echo "📦 Node $(node -v) | PNPM $(pnpm -v)"
     echo ""
-    echo "That's all folks."
+    echo "To create a new project:"
+    echo "  create-vue-app your-project-name"
     echo ""
-    echo "To start a VueJS project type"
-    echo ""
-    echo "pnpm create vite your-vue-app --template vue"
+    echo "Common commands:"
+    echo "  nd - Start dev server"
+    echo "  nb - Build project"
+    echo "  nl - Run linter"
+    echo "  nt - Run tests"
   '';
 }
-
