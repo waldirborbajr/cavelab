@@ -589,7 +589,7 @@
           GH_FORCE_TTY=100% gh pr list | fzf --ansi --preview 'GH_FORCE_TTY=100% gh pr view {1}' --preview-window down --header-lines 3 | awk '{print $1}' | xargs gh pr checkout
         }
 
-        function fletnew() {
+        function venvnew() {
 
           if [[ -z  "$1" ]]; then
             exit 1;
@@ -598,16 +598,16 @@
           mkdir $1
           cd $1
           uv init --bare
-          uv add 'flet[all]' --dev
-          uv run flet create
+          # uv add 'flet[all]' --dev
+          # uv run flet create
           source .venv/bin/activate
         }
 
-        function fleton() {
+        function venvon() {
           source .venv/bin/activate
         }
 
-        function fletoff() {
+        function venvoff() {
           deactivate
         }
 
