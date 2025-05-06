@@ -63,6 +63,7 @@
     tree
     xclip
     xsel
+    whatsapp-for-linux
     # zellij
 
     # # Adds the 'hello' command to your environment. It prints a friendly
