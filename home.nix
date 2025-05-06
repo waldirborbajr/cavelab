@@ -52,7 +52,7 @@
     httpie # A command line HTTP client whose goal is to make CLI human-friendly
     jq # A lightweight and flexible command-line JSON processor
     meld # Visual diff and merge tool
-    mise
+    # mise
     mkcert
     obsidian
     rclone # Command line program to sync files and directories to and from major cloud storage

@@ -415,9 +415,6 @@
 
       };
 
-      initExtraFirst = "";
-      initExtraBeforeCompInit = "";
-
       completionInit = ''
         # Load Zsh modules
         zmodload zsh/zle
@@ -509,8 +506,7 @@
       #   export ANDROID_HOME=$HOME/development/Android/sdk/
       # '';
 
-      initExtra = ''
-
+      initContent= ''
 
         export ANDROID_SDK_ROOT=$HOME/development/Android/Sdk/
         export ANDROID_HOME=$HOME/development/Android/Sdk/
@@ -523,13 +519,15 @@
         export CHROME_EXECUTABLE=/home/borba/.nix-profile/bin/chromium
         # export CHROME_EXECUTABLE=/snap/bin/chromium
 
-        export GOPATH=$(mise exec go --command 'go env GOPATH')
-        export GOROOT=$(mise exec go --command 'go env GOROOT')
-        export GOBIN=$(mise exec go --command 'go env GOBIN')
+        # export GOPATH=$(mise exec go --command 'go env GOPATH')
+        # export GOROOT=$(mise exec go --command 'go env GOROOT')
+        # export GOBIN=$(mise exec go --command 'go env GOBIN')
+
         export PATH=$PATH:$GOPATH/bin
         export PATH=$PATH:$GOROOT/bin
         export PATH=$PATH:$GOBIN
         export PATH=$PATH:$HOME/.local/bin
+        export PATH=$PATH:$HOME/snap/multipass/common/bin
 
         function cd() {
           builtin cd $*
