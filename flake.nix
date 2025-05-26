@@ -54,12 +54,13 @@
           ./modules/lang/nodejs.nix
           ./modules/lang/python.nix
           ./modules/lang/rust.nix
+          ./modules/shell/zsh.nix
           ./modules/terminal/nerdfonts.nix
           ./modules/tools/btop.nix
           ./modules/tools/discord.nix
-          ./modules/tools/http.nix
           ./modules/tools/git.nix
           ./modules/tools/gpg.nix
+          ./modules/tools/http.nix
           ./modules/tools/yazi.nix
         ];
 
