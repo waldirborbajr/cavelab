@@ -23,60 +23,60 @@
     };
 
     programs = {
-      nushell = {
-        enable = false;
-        environmentVariables.TERMINAL = "wezterm";
-        extraConfig = ''
-          $env.config = {
-            show_banner: false,
-            completions: {
-              case_sensitive: false # case-sensitive completions
-              quick: true  # set to false to prevent auto-selecting completions
-              partial: true  # set to false to prevent partial filling of the prompt
-              algorithm: "fuzzy"  # prefix or fuzzy
-            },
-            keybindings: [{
-              name: unix-line-discard
-              modifier: control
-              keycode: char_u
-              mode: [emacs, vi_insert, vi_normal]
-              event: { until: [{edit: cutfromlinestart}] }
-            },
-            {
-              name: insert-file-using-fzf
-              modifier: control
-              keycode: char_t
-              mode: [emacs, vi_insert, vi_normal]
-              event: { send: ExecuteHostCommand, cmd: "commandline edit --insert (fzf)" }
-            },
-            ]
-          } 
-        '';
-        shellAliases = {
-          c = "nvim";
-          cp = "cp -i";
-          grep = "grep --color=auto";
-          mv = "mv -i";
-          g = "git";
-          ga = "git add";
-          gaa = "git add .";
-          gb = "git branch";
-          gc = "git commit";
-          gcm = "git commit --message";
-          gco = "git checkout";
-          gd = "git diff";
-          gi = "git init";
-          gp = "git pull";
-          gs = "git status";
-          nb = "nix-build";
-          nd = "nix develop";
-          nr = "nix run";
-          ns = "nix-shell";
-          nu = "nix-update";
-          wo = "pomodoro 'work'";
-          br = "pomodoro 'break'";
-        };
-      };
+      # nushell = {
+      #   enable = false;
+      #   environmentVariables.TERMINAL = "wezterm";
+      #   extraConfig = ''
+      #     $env.config = {
+      #       show_banner: false,
+      #       completions: {
+      #         case_sensitive: false # case-sensitive completions
+      #         quick: true  # set to false to prevent auto-selecting completions
+      #         partial: true  # set to false to prevent partial filling of the prompt
+      #         algorithm: "fuzzy"  # prefix or fuzzy
+      #       },
+      #       keybindings: [{
+      #         name: unix-line-discard
+      #         modifier: control
+      #         keycode: char_u
+      #         mode: [emacs, vi_insert, vi_normal]
+      #         event: { until: [{edit: cutfromlinestart}] }
+      #       },
+      #       {
+      #         name: insert-file-using-fzf
+      #         modifier: control
+      #         keycode: char_t
+      #         mode: [emacs, vi_insert, vi_normal]
+      #         event: { send: ExecuteHostCommand, cmd: "commandline edit --insert (fzf)" }
+      #       },
+      #       ]
+      #     } 
+      #   '';
+      #   shellAliases = {
+      #     c = "nvim";
+      #     cp = "cp -i";
+      #     grep = "grep --color=auto";
+      #     mv = "mv -i";
+      #     g = "git";
+      #     ga = "git add";
+      #     gaa = "git add .";
+      #     gb = "git branch";
+      #     gc = "git commit";
+      #     gcm = "git commit --message";
+      #     gco = "git checkout";
+      #     gd = "git diff";
+      #     gi = "git init";
+      #     gp = "git pull";
+      #     gs = "git status";
+      #     nb = "nix-build";
+      #     nd = "nix develop";
+      #     nr = "nix run";
+      #     ns = "nix-shell";
+      #     nu = "nix-update";
+      #     wo = "pomodoro 'work'";
+      #     br = "pomodoro 'break'";
+      #   };
+      # };
       zsh = {
         enable = true;
         dotDir = ".config/zsh";
@@ -87,15 +87,15 @@
           bindkey -s ^f "tmux-sessionizer-script\n"
           export PATH=$PATH:~/.local/bin/
           export PATH=/tmp/lazy-lvim/bin:$PATH
-          export PATH="$PATH:/home/redyf/.emacs.d/bin"
-          export PATH="$PATH:/home/redyf/.config/emacs/bin"
-          export PATH="$PATH:/run/current-system/sw/bin/jdtls"
-          export PATH="$PATH:/run/current-system/sw/bin/jdt-language-server"
-          export PATH="$PATH:/etc/profiles/per-user/redyf/bin/flutter"
-          export PATH="$PATH:/home/redyf/Android/Sdk"
-          export PATH="$PATH:/home/redyf/Android/Sdk/platform-tools/"
-          export PATH="$PATH:/home/redyf/Android/Sdk/cmdline-tools/latest/bin"
-          export WINIT_UNIX_BACKEND=x11 neovide
+          # export PATH="$PATH:/home/redyf/.emacs.d/bin"
+          # export PATH="$PATH:/home/redyf/.config/emacs/bin"
+          # export PATH="$PATH:/run/current-system/sw/bin/jdtls"
+          # export PATH="$PATH:/run/current-system/sw/bin/jdt-language-server"
+          # export PATH="$PATH:/etc/profiles/per-user/redyf/bin/flutter"
+          # export PATH="$PATH:/home/redyf/Android/Sdk"
+          # export PATH="$PATH:/home/redyf/Android/Sdk/platform-tools/"
+          # export PATH="$PATH:/home/redyf/Android/Sdk/cmdline-tools/latest/bin"
+          # export WINIT_UNIX_BACKEND=x11 neovide
 
           # Pomodoro script
           declare -A pomo_options
