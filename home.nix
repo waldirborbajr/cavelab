@@ -177,7 +177,7 @@
     pkg:
     builtins.elem (lib.getName pkg) [
       "obsidian"
-      "discord"
+      # "discord"
       "spotify"
     ];
 

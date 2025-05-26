@@ -1,9 +1,10 @@
 {
-  description = "Nix CaveLab from Scratch";
+  description = "Waldir Borba Junior - CaveLab";
 
   inputs = {
     # Specify the source of Home Manager and Nixpkgs.
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    # nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.05";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -59,6 +60,7 @@
           ./modules/tools/git.nix
           ./modules/tools/gpg.nix
           ./modules/tools/yazi.nix
+          ./modules/tools/discord.nix
         ];
 
         # Optionally use extraSpecialArgs
