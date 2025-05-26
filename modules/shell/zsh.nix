@@ -59,7 +59,7 @@
       _comp_options+=(globdots)
     '';
 
-    initExtra = ''
+    initContent = ''
       while read -r option; do
         setopt $option
       done <<-EOF
