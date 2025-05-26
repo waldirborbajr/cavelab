@@ -43,6 +43,7 @@
     starship = {
       enable = true;
       enableZshIntegration = true;
+      scan_timeout = 10;
       settings = {
         palette = "foo";
 
