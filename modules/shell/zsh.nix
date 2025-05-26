@@ -42,8 +42,8 @@
 
     history = {
       path = "${config.xdg.dataHome}/zsh/zsh_history";
-      size = 10000;
-      save = 10000;
+      save = 512 * 1024 * 1024; # Save more.
+      size = 512 * 1024 * 1024; # Save more.
       append = true;
       ignoreDups = true;
       ignoreAllDups = true;
@@ -116,6 +116,35 @@
       inherit (lib) getExe;
       inherit (pkgs) bat ripgrep dust procs;
     in {
+      ".." = "cd ..";
+      "..." = "cd ../..";
+      "...." = "cd ../../..";
+      "....." = "cd ../../../..";
+
+      syshealth = "sudo nala update && sudo rm /var/lib/apt/lists/lock && sudo nala upgrade -y && sudo nala autoremove -y && sudo nala autopurge -y && sudo nala clean && flatpak update -y && flatpak uninstall --unused -y && sudo snap refresh";
+
+      v = "nvim";
+      vi = "nvim";
+      vim = "nvim";
+
+      rmvim = "rm -rf ~/.local/share/nvim && rm -rf ~/.cache/nvim && rm -rf ~/.local/state/nvim";
+
+      ls = "lsd";
+      l = "ls -l";
+      la = "ls -a";
+      lla = "ls -la";
+      lt = "ls --tree";
+
+      tmc = "clear; tmux clear-history; clear";
+      tmk = "tmux kill-session";
+
+      zj = "zellij a -c 'B+ DevOps'";
+      zlcahe = "rm -rf ~/.cache/zellij";
+
+      aq = "asciiquarium -s";
+
+      xterm = "sudo update-alternatives --config x-terminal-emulator";
+
       cat = "${getExe bat} --color=always --theme=base16 --style=plain --paging=never";
       du = "${getExe dust}";
       grep = "${getExe ripgrep}";
