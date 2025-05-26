@@ -45,7 +45,7 @@
     discord
     du-dust # du + rust = dust. Like du but more intuitive
     fastfetch # Like neofetch, but much faster because written in C
-    fd
+    # fd
     findutils
     lsd
     gnupg
@@ -54,7 +54,7 @@
     meld # Visual diff and merge tool
     # mise
     mkcert
-    obsidian
+    # obsidian
     rclone # Command line program to sync files and directories to and from major cloud storage
     scrcpy # Display and control Android devices over USB or TCP/IP
     sd
