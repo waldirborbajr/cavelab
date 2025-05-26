@@ -43,9 +43,9 @@
     starship = {
       enable = true;
       enableZshIntegration = true;
-      scan_timeout = 10;
       settings = {
         palette = "foo";
+        scan_timeout = 10;
 
         palettes.foo = {
           mustard = "#af8700";
