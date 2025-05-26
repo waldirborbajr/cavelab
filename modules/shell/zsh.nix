@@ -53,11 +53,6 @@
       share = true;
     };
 
-    promptInit = ''
-      which starship >/dev/null && eval "$(starship init zsh)"
-      which zoxide >/dev/null && eval "$(zoxide init zsh --cmd cd)"
-    '';
-
     completionInit = ''
       zmodload zsh/complist
       autoload -U compinit; compinit
@@ -115,6 +110,11 @@
 
       zstyle ':completion:*' use-cache on
       zstyle ':completion:*' cache-path "$XDG_CACHE_HOME/zsh/.zcompcache"
+    '';
+
+    promptInit = ''
+      which starship >/dev/null && eval "$(starship init zsh)"
+      which zoxide >/dev/null && eval "$(zoxide init zsh --cmd cd)"
     '';
 
     shellAliases = let
