@@ -13,7 +13,7 @@
     ./jq.nix
     ./ripgrep.nix
     ./starship.nix
-    # ./zoxide.nix
+    ./zoxide.nix
     ./yazi.nix
   ];
 
