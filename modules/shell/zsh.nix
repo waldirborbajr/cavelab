@@ -272,11 +272,11 @@
     #   };
     # };
 
-    zoxide = {
-      enable = true;
-      # enableFishIntegration = true;
-      enableZshIntegration = true;
-    };
+    # zoxide = {
+    #   enable = true;
+    #   # enableFishIntegration = true;
+    #   enableZshIntegration = true;
+    # };
 
     eza = {
       enable = true;

@@ -56,6 +56,7 @@
           ./modules/lang/rust.nix
           ./modules/terminal/nerdfonts.nix
           ./modules/shell/zsh.nix
+          ./modules/shell/zoxide.nix
           ./modules/shell/bat.nix
           ./modules/shell/fzf.nix
           ./modules/tools/btop.nix
