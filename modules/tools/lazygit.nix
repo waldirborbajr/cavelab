@@ -22,7 +22,8 @@
       git = {
         paging = {
           colorArg = "always";
-          externalDiffCommand = "difft";
+          pager = "delta --dark --diff-so-fancy --paging=never --line-numbers";
+          # externalDiffCommand = "difft";
         };
       };
       notARepository = "skip";
