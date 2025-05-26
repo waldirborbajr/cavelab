@@ -42,7 +42,7 @@
     brave
     chromium
     direnv
-    discord
+    # discord
     du-dust # du + rust = dust. Like du but more intuitive
     fastfetch # Like neofetch, but much faster because written in C
     # fd

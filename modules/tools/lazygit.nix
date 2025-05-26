@@ -1,4 +1,9 @@
 { pkgs, ... }: {
+
+  imports = [
+    ./difftastic.nix
+  ];
+
   programs.lazygit = {
     enable = true;
     package = pkgs.lazygit;
