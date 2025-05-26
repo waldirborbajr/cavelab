@@ -53,6 +53,11 @@
       share = true;
     };
 
+    promptInit = ''
+      which starship >/dev/null && eval "$(starship init zsh)"
+      which zoxide >/dev/null && eval "$(zoxide init zsh --cmd cd)"
+    '';
+
     completionInit = ''
       zmodload zsh/complist
       autoload -U compinit; compinit
@@ -144,6 +149,8 @@
       aq = "asciiquarium -s";
 
       xterm = "sudo update-alternatives --config x-terminal-emulator";
+
+      y = "yazi"
 
       cat = "${getExe bat} --color=always --theme=base16 --style=plain --paging=never";
       du = "${getExe dust}";
