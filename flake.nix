@@ -57,6 +57,7 @@
           ./modules/terminal/nerdfonts.nix
           ./modules/tools/btop.nix
           ./modules/tools/discord.nix
+          ./modules/tools/http.nix
           ./modules/tools/git.nix
           ./modules/tools/gpg.nix
           ./modules/tools/yazi.nix
