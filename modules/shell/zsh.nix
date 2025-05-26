@@ -6,13 +6,14 @@
 }:
 {
 
-  # imports = [
+  imports = [
+    ./ripgrep.nix
   #   ./bat.nix
   #   ./fzf.nix
   #   ./starship.nix
   #   ./zoxide.nix
   #   ./zsh.nix
-  # ];
+  ];
 
   home.packages = with pkgs; [
     ripgrep-all
@@ -25,10 +26,10 @@
     zsh-vi-mode
   ];
 
-  home.sessionPath = [
-    "$HOME/development/flutter/bin"
-    "$HOME/development/android-studio/bin"
-  ];
+  # home.sessionPath = [
+  #   "$HOME/development/flutter/bin"
+  #   "$HOME/development/android-studio/bin"
+  # ];
 
   programs = {
 
