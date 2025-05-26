@@ -150,7 +150,7 @@
 
       xterm = "sudo update-alternatives --config x-terminal-emulator";
 
-      y = "yazi"
+      y = "yazi";
 
       cat = "${getExe bat} --color=always --theme=base16 --style=plain --paging=never";
       du = "${getExe dust}";
