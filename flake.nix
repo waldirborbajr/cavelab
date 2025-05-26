@@ -56,6 +56,7 @@
           ./modules/lang/rust.nix
           ./modules/terminal/nerdfonts.nix
           ./modules/shell/zsh.nix
+          ./modules/shell/bat.nix
           ./modules/tools/btop.nix
           ./modules/tools/git.nix
           ./modules/tools/gpg.nix
