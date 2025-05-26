@@ -1,13 +1,8 @@
-{
-  pkgs,
-  lib,
-  config,
-  ...
-}: {
-  options = {
-    fd.enable = lib.mkEnableOption "Enable fd module";
-  };
-  config = lib.mkIf config.fd.enable {
-    home.packages = with pkgs; [fd];
+{ pkgs, ... }: {
+  programs.fd = {
+    enable = true;
+    package = pkgs.fd;
+    ignores = [ ".git" "node_modules" ];
+    hidden = true;
   };
 }

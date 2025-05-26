@@ -1,5 +1,5 @@
 {
-  programs.fzf = {
+  programs.dircolors = {
     enable = true;
     enableZshIntegration = true;
   };
