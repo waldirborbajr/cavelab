@@ -29,10 +29,10 @@
     #   useTheme = "robbyrussell";
     # };
 
-    ripgrep = {
-      enable = true;
-      arguments = [ "--hidden" ];
-    };
+    # ripgrep = {
+    #   enable = true;
+    #   arguments = [ "--hidden" ];
+    # };
 
     direnv = {
       enable = true;
