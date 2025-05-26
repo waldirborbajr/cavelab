@@ -4,19 +4,19 @@
   pkgs,
   ...
 }: {
-  # imports = [
-  #   ./bat.nix
-  #   ./exa.nix
-  #   ./eza.nix
-  #   ./fd.nix
-  #   ./fzf.nix
-  #   ./jq.nix
-  #   ./ripgrep.nix
-  #   ./starship.nix
-  #   ./zoxide.nix
-  #   ./yazi.nix
-  # ];
-  #
+  imports = [
+    ./bat.nix
+    ./exa.nix
+    ./eza.nix
+    ./fd.nix
+    ./fzf.nix
+    ./jq.nix
+    ./ripgrep.nix
+    ./starship.nix
+    ./zoxide.nix
+    ./yazi.nix
+  ];
+
   programs.zsh = {
     enable = true;
     dotDir = ".config/zsh";
