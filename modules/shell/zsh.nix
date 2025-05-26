@@ -40,201 +40,201 @@
       nix-direnv.enable = true;
     };
 
-    starship = {
-      enable = true;
-      enableZshIntegration = true;
-      settings = {
-        palette = "foo";
-        scan_timeout = 10;
-
-        palettes.foo = {
-          mustard = "#af8700";
-          time = "#778485";
-          directory = "#A7A5AB";
-          identity = "#778485";
-          git_branch = "#778485";
-          deleted = "#a05050";
-          added = "#208020";
-        };
-
-        fill.symbol = " ";
-
-        shell = {
-          format = "[$indicator]($style) ";
-          bash_indicator = "bsh";
-          cmd_indicator = "cmd";
-          elvish_indicator = "esh";
-          fish_indicator = "";
-          ion_indicator = "ion";
-          nu_indicator = "nu";
-          powershell_indicator = "_";
-          style = "white bold";
-          tcsh_indicator = "tsh";
-          unknown_indicator = "mystery shell";
-          xonsh_indicator = "xsh";
-          zsh_indicator = "zsh";
-          disabled = false;
-        };
-
-        username = {
-          format = "[$user]($style) ";
-          show_always = true;
-          style_root = "red bold bg:0x9A348E";
-          style_user = "yellow bold bg:0x9A348E";
-          disabled = false;
-        };
-
-        hostname = {
-          ssh_only = false;
-          ssh_symbol = " 📞";
-          style = "identity bold";
-          format = "@[$hostname]($style)$ssh_symbol ";
-        };
-
-        directory = {
-          truncation_length = 3;
-          truncation_symbol = ".../";
-          truncate_to_repo = false;
-          format = "[$read_only]($read_only_style)[$path]($style) ";
-          read_only = "🔒 ";
-          style = "directory bold";
-        };
-
-        git_branch = {
-          style = "git_branch bold";
-          format = "[$symbol$branch(:$remote_branch)]($style) ";
-        };
-
-        git_metrics = {
-          disabled = false;
-          added_style = "added bold";
-          deleted_style = "deleted bold";
-        };
-
-        rust = {
-          # symbol = "";
-          format = "[$symbol($version )]($style)";
-          version_format = "v$raw";
-          symbol = "🦀 ";
-          style = "bold red bg:0x86BBD8";
-          disabled = false;
-          detect_extensions = ["rs"];
-          detect_files = ["Cargo.toml"];
-          detect_folders = [];
-        };
-
-        golang = {
-          format = "[$symbol($version )]($style)";
-          version_format = "v$raw";
-          symbol = " ";
-          style = "bold cyan bg:0x86BBD8";
-          disabled = false;
-          detect_extensions = ["go"];
-          detect_files = [
-            "go.mod"
-            "go.sum"
-            "glide.yaml"
-            "Gopkg.yml"
-            "Gopkg.lock"
-            ".go-version"
-          ];
-          detect_folders = ["Godeps"];
-        };
-
-        nix_shell = {
-          format = "[$symbol$state( ($name))]($style) ";
-          disabled = false;
-          impure_msg = "[impure](bold red)";
-          pure_msg = "[pure](bold green)";
-          style = "bold blue";
-          symbol = " ";
-        };
-
-        python = {
-          symbol = "";
-          format = "[$symbol ($version) (($virtualenv) )]($style)";
-          python_binary = [
-            "python"
-            "python3"
-            "python2"
-          ];
-          # pyenv_version_name = true;
-          style = "yellow bold";
-          disabled = false;
-          detect_extensions = ["py"];
-          detect_files = [
-            "requirements.txt"
-            ".python-version"
-            "pyproject.toml"
-            "Pipfile"
-            "tox.ini"
-            "setup.py"
-            "__init__.py"
-          ];
-          detect_folders = [];
-        };
-
-        time = {
-          disabled = false;
-          format = "[$time]($style)";
-          style = "time bold";
-        };
-
-        cmd_duration = {
-          style = "mustard bold";
-          format = "[$duration]($style) ";
-        };
-
-        jobs = {
-          format = "[$number$symbol]($style)";
-          symbol = "⚙ ";
-          style = "mustard bold";
-        };
-
-        format =
-          let
-            who = [
-              "$username"
-              "$hostname"
-              "$directory"
-            ];
-
-            git = [
-              "$git_branch"
-              "$git_state"
-              "$git_status"
-              "$git_metrics"
-            ];
-
-            fill = [ "$fill" ];
-
-            duration = [
-              "$cmd_duration"
-            ];
-
-            time = [
-              "$jobs"
-              "$time"
-            ];
-
-            languages = [
-              "$nix_shell"
-              "$nodejs"
-              "$golang"
-              "$rust"
-              "$python"
-              "$lua"
-            ];
-
-
-            prompt = [
-              "$line_break"
-              "❯ "
-            ];
-          in
-          lib.concatStrings (who ++ git ++ fill ++ duration ++ languages ++ time ++ prompt);
-      };
-    };
+    # starship = {
+    #   enable = true;
+    #   enableZshIntegration = true;
+    #   settings = {
+    #     palette = "foo";
+    #     scan_timeout = 10;
+    #
+    #     palettes.foo = {
+    #       mustard = "#af8700";
+    #       time = "#778485";
+    #       directory = "#A7A5AB";
+    #       identity = "#778485";
+    #       git_branch = "#778485";
+    #       deleted = "#a05050";
+    #       added = "#208020";
+    #     };
+    #
+    #     fill.symbol = " ";
+    #
+    #     shell = {
+    #       format = "[$indicator]($style) ";
+    #       bash_indicator = "bsh";
+    #       cmd_indicator = "cmd";
+    #       elvish_indicator = "esh";
+    #       fish_indicator = "";
+    #       ion_indicator = "ion";
+    #       nu_indicator = "nu";
+    #       powershell_indicator = "_";
+    #       style = "white bold";
+    #       tcsh_indicator = "tsh";
+    #       unknown_indicator = "mystery shell";
+    #       xonsh_indicator = "xsh";
+    #       zsh_indicator = "zsh";
+    #       disabled = false;
+    #     };
+    #
+    #     username = {
+    #       format = "[$user]($style) ";
+    #       show_always = true;
+    #       style_root = "red bold bg:0x9A348E";
+    #       style_user = "yellow bold bg:0x9A348E";
+    #       disabled = false;
+    #     };
+    #
+    #     hostname = {
+    #       ssh_only = false;
+    #       ssh_symbol = " 📞";
+    #       style = "identity bold";
+    #       format = "@[$hostname]($style)$ssh_symbol ";
+    #     };
+    #
+    #     directory = {
+    #       truncation_length = 3;
+    #       truncation_symbol = ".../";
+    #       truncate_to_repo = false;
+    #       format = "[$read_only]($read_only_style)[$path]($style) ";
+    #       read_only = "🔒 ";
+    #       style = "directory bold";
+    #     };
+    #
+    #     git_branch = {
+    #       style = "git_branch bold";
+    #       format = "[$symbol$branch(:$remote_branch)]($style) ";
+    #     };
+    #
+    #     git_metrics = {
+    #       disabled = false;
+    #       added_style = "added bold";
+    #       deleted_style = "deleted bold";
+    #     };
+    #
+    #     rust = {
+    #       # symbol = "";
+    #       format = "[$symbol($version )]($style)";
+    #       version_format = "v$raw";
+    #       symbol = "🦀 ";
+    #       style = "bold red bg:0x86BBD8";
+    #       disabled = false;
+    #       detect_extensions = ["rs"];
+    #       detect_files = ["Cargo.toml"];
+    #       detect_folders = [];
+    #     };
+    #
+    #     golang = {
+    #       format = "[$symbol($version )]($style)";
+    #       version_format = "v$raw";
+    #       symbol = " ";
+    #       style = "bold cyan bg:0x86BBD8";
+    #       disabled = false;
+    #       detect_extensions = ["go"];
+    #       detect_files = [
+    #         "go.mod"
+    #         "go.sum"
+    #         "glide.yaml"
+    #         "Gopkg.yml"
+    #         "Gopkg.lock"
+    #         ".go-version"
+    #       ];
+    #       detect_folders = ["Godeps"];
+    #     };
+    #
+    #     nix_shell = {
+    #       format = "[$symbol$state( ($name))]($style) ";
+    #       disabled = false;
+    #       impure_msg = "[impure](bold red)";
+    #       pure_msg = "[pure](bold green)";
+    #       style = "bold blue";
+    #       symbol = " ";
+    #     };
+    #
+    #     python = {
+    #       symbol = "";
+    #       format = "[$symbol ($version) (($virtualenv) )]($style)";
+    #       python_binary = [
+    #         "python"
+    #         "python3"
+    #         "python2"
+    #       ];
+    #       # pyenv_version_name = true;
+    #       style = "yellow bold";
+    #       disabled = false;
+    #       detect_extensions = ["py"];
+    #       detect_files = [
+    #         "requirements.txt"
+    #         ".python-version"
+    #         "pyproject.toml"
+    #         "Pipfile"
+    #         "tox.ini"
+    #         "setup.py"
+    #         "__init__.py"
+    #       ];
+    #       detect_folders = [];
+    #     };
+    #
+    #     time = {
+    #       disabled = false;
+    #       format = "[$time]($style)";
+    #       style = "time bold";
+    #     };
+    #
+    #     cmd_duration = {
+    #       style = "mustard bold";
+    #       format = "[$duration]($style) ";
+    #     };
+    #
+    #     jobs = {
+    #       format = "[$number$symbol]($style)";
+    #       symbol = "⚙ ";
+    #       style = "mustard bold";
+    #     };
+    #
+    #     format =
+    #       let
+    #         who = [
+    #           "$username"
+    #           "$hostname"
+    #           "$directory"
+    #         ];
+    #
+    #         git = [
+    #           "$git_branch"
+    #           "$git_state"
+    #           "$git_status"
+    #           "$git_metrics"
+    #         ];
+    #
+    #         fill = [ "$fill" ];
+    #
+    #         duration = [
+    #           "$cmd_duration"
+    #         ];
+    #
+    #         time = [
+    #           "$jobs"
+    #           "$time"
+    #         ];
+    #
+    #         languages = [
+    #           "$nix_shell"
+    #           "$nodejs"
+    #           "$golang"
+    #           "$rust"
+    #           "$python"
+    #           "$lua"
+    #         ];
+    #
+    #
+    #         prompt = [
+    #           "$line_break"
+    #           "❯ "
+    #         ];
+    #       in
+    #       lib.concatStrings (who ++ git ++ fill ++ duration ++ languages ++ time ++ prompt);
+    #   };
+    # };
 
     # fzf = {
     #   enable = true;
