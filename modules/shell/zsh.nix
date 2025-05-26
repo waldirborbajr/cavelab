@@ -6,13 +6,13 @@
 }:
 {
 
-  imports = [
-    ./bat.nix
-    ./fzf.nix
-    ./starship.nix
-    ./zoxide.nix
-    ./zsh.nix
-  ];
+  # imports = [
+  #   ./bat.nix
+  #   ./fzf.nix
+  #   ./starship.nix
+  #   ./zoxide.nix
+  #   ./zsh.nix
+  # ];
 
   home.packages = with pkgs; [
     ripgrep-all
