@@ -169,7 +169,7 @@
       bloat = "nix path-info -Sh /run/current-system";
       repair = "nix-store --verify --check-contents --repair";
 
-      eval "$(zoxide init zsh)"
+      eval "$(zoxide init zsh)";
     };
 
     plugins = with pkgs; [
