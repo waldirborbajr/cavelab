@@ -54,11 +54,6 @@
           ./modules/lang/nodejs.nix
           ./modules/lang/python.nix
           ./modules/lang/rust.nix
-          ./modules/shell/bat.nix
-          ./modules/shell/fzf.nix
-          ./modules/shell/starship.nix
-          ./modules/shell/zoxide.nix
-          ./modules/shell/zsh.nix
           ./modules/terminal/nerdfonts.nix
           ./modules/tools/btop.nix
           ./modules/tools/discord.nix
