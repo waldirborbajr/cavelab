@@ -61,7 +61,6 @@
           ./modules/tools/git.nix
           ./modules/tools/gpg.nix
           ./modules/tools/http.nix
-          ./modules/tools/yazi.nix
         ];
 
         # Optionally use extraSpecialArgs
