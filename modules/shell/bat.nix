@@ -1,8 +1,8 @@
 {
   programs.bat = {
     enable = true;
+    enableZshIntegration = true;
     config = {
-      inherit (defaults) pager;
       color = "always";
       style = "changes";
     };
