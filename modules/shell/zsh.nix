@@ -71,6 +71,11 @@
     # shellInit = ''
     #   eval "$(zoxide init zsh)"
     # '';
+
+    interactiveShellInit = ''
+      # Initialize homebrew
+      eval (/opt/homebrew/bin/brew shellenv)
+    '';
     
     initContent = ''
 
