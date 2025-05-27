@@ -6,7 +6,6 @@
 }: {
   imports = [
     ./bat.nix
-    # ./exa.nix
     ./eza.nix
     ./fd.nix
     ./fzf.nix

@@ -4,23 +4,61 @@
 
   programs.starship = {
     enable = true;
+    enableZshIntegration = true;
     settings = {
       character = {
         success_symbol = "[›](bold green)";
         error_symbol = "[›](bold red)";
+        vimcmd_symbol = "[λ](green)";
       };
 
+      # git_status = {
+      #   deleted = "✗";
+      #   modified = "✶";
+      #   staged = "✓";
+      #   stashed = "≡";
+      # };
+      git_branch = {
+        symbol = "󰘬 ";
+        format = "[$symbol $branch]($style) ";
+        truncation_length = 4;
+        truncation_symbol = "…/";
+        style = "purple";
+      };
       git_status = {
-        deleted = "✗";
-        modified = "✶";
-        staged = "✓";
-        stashed = "≡";
+        format = "[$all_status$ahead_behind]($style) ";
+        style = "bold green";
+        conflicted = "=";
+        up_to_date = "󰄬 ";
+        untracked = "? ";
+        ahead = "⇡\${count}";
+        diverged = "⇕⇡\${ahead_count}⇣\${behind_count}";
+        behind = "⇣\${count}";
+        stashed = "󰏗 ";
+        modified = "M ";
+        staged = "[++\\($count\\)](green)";
+        renamed = " ";
+        deleted = " ";
+        disabled = true;
       };
 
       nix_shell = {
         symbol = " ";
         heuristic = true;
       };
+
+      container = ss " 󰏖" "yellow dimmed";
+      python = ss "" "yellow";
+      nodejs = ss " " "yellow";
+      lua = ss "󰢱 " "blue";
+      rust = ss "" "red";
+      java = ss " " "red";
+      c = ss " " "blue";
+      golang = ss "" "blue";
+      docker_context = ss " " "blue";
+
+      nix_shell = ss "@devshell" "blue";
+
     };
   };
 
