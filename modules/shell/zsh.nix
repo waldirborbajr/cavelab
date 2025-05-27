@@ -68,10 +68,11 @@
       _comp_options+=(globdots)
     '';
 
+    shellInit = ''
+      eval "$(zoxide init zsh)"
+    '';
+    
     initContent = ''
-
-      # which zoxide >/dev/null && eval "$(zoxide init zsh --cmd cd)"
-      eval "$(${config.package}/bin/zoxide init zsh --cnd cdi)"
 
       while read -r option; do
         setopt $option
