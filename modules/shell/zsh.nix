@@ -68,6 +68,9 @@
       _comp_options+=(globdots)
     '';
 
+
+    interactiveShellInit = '''';
+
     initContent = ''
 
       # which starship >/dev/null && eval "$(starship init zsh)"
