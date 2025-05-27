@@ -69,6 +69,10 @@
     '';
 
     initContent = ''
+
+      # which zoxide >/dev/null && eval "$(zoxide init zsh --cmd cd)"
+      eval "$(${cfg.package}/bin/zoxide init zsh --cnd cdi)"
+
       while read -r option; do
         setopt $option
       done <<-EOF
