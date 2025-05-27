@@ -69,8 +69,8 @@
     '';
 
 
-    interactiveShellInit = '''';
-
+    initExtra = '''';
+ 
     initContent = ''
 
       # which starship >/dev/null && eval "$(starship init zsh)"
