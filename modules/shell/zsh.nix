@@ -68,15 +68,6 @@
       _comp_options+=(globdots)
     '';
 
-    # shellInit = ''
-    #   eval "$(zoxide init zsh)"
-    # '';
-
-    interactiveShellInit = ''
-      # Initialize homebrew
-      eval (/opt/homebrew/bin/brew shellenv)
-    '';
-    
     initContent = ''
 
       while read -r option; do
