@@ -68,9 +68,9 @@
       _comp_options+=(globdots)
     '';
 
-    shellInit = ''
-      eval "$(zoxide init zsh)"
-    '';
+    # shellInit = ''
+    #   eval "$(zoxide init zsh)"
+    # '';
     
     initContent = ''
 
