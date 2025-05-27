@@ -68,14 +68,12 @@
       _comp_options+=(globdots)
     '';
 
-
-    initExtra = '''';
- 
-    initContent = ''
-
+    initExtra = ''
       # which starship >/dev/null && eval "$(starship init zsh)"
       which zoxide >/dev/null && eval "$(zoxide init zsh --cmd cd)"
-
+    '';
+ 
+    initContent = ''
       while read -r option; do
         setopt $option
       done <<-EOF
