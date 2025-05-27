@@ -70,6 +70,9 @@
 
     initContent = ''
 
+      # which starship >/dev/null && eval "$(starship init zsh)"
+      which zoxide >/dev/null && eval "$(zoxide init zsh --cmd cd)"
+
       while read -r option; do
         setopt $option
       done <<-EOF
