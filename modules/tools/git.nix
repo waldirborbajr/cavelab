@@ -3,51 +3,16 @@
 
   imports = [
     ./lazygit.nix
+    ./gh.nix
   ];
 
-  # programs.lazygit = {
-  #   enable = true;
-  #   settings = {
-  #     gui = {
-  #       showIcons = true;
-  #       showFileTree = false;
-  #       nerdFontsVersion = "3";
-  #     };
-  #     git = {
-  #       paging = {
-  #         colorArgs = "always";
-  #         pager = "delta --dark --diff-so-fancy --paging=never --line-numbers";
-  #       };
-  #     };
-  #   };
-  # };
-
-  programs.gh = {
-    enable = true;
-    extensions = [ pkgs.gh-dash ];
-    settings = {
-      prompt = "enabled";
-      pager = "delta";
-      editor = "nvim";
-      git_protocol = "ssh";
-      aliases = {
-        clone = "repo clone";
-        co = "pr checkout";
-        ga = "dash";
-        inbox = "api notifications --template '{{range .}}{{tablerow .subject.title .subject.url}}{{end}}'";
-        pl = "pr list";
-        pr = "pr create --web";
-        pv = "pr view --web";
-        v = "repo view --web";
-      };
-    };
-  };
 
   programs = {
     git = {
       enable = true;
       userName = "Waldir Borba Junior";
-      userEmail = "wborbajr@gmail.com";
+      userEmail = "wborbajr" + "@" + "gmail" + "." + "com";
+
       aliases.prettylog = "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit";
 
       aliases = {
