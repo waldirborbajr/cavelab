@@ -168,6 +168,8 @@
       bloat = "nix path-info -Sh /run/current-system";
       repair = "nix-store --verify --check-contents --repair";
 
+      reboot = "systemctl reboot";
+
     };
 
     plugins = with pkgs; [

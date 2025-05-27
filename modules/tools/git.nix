@@ -13,10 +13,10 @@
       userName = "Waldir Borba Junior";
       userEmail = "wborbajr" + "@" + "gmail" + "." + "com";
 
-      signing = {
-        format = "ssh";
-        signByDefault = true;
-      };
+      # signing = {
+      #   format = "ssh";
+      #   signByDefault = true;
+      # };
 
       delta = {
         enable = true;
