@@ -39,6 +39,16 @@
       searchDownKey = ["^[[B"];
     };
 
+    dirHashes = {
+      dl = "$HOME/Downloads";
+      docs = "$HOME/Documents";
+      wks = "$HOME/wks";
+      cav = "$HOME/cavelab";
+      pics = "$HOME/Pictures";
+      vids = "$HOME/Videos";
+      nixpkgs = "$HOME/Documents/code/git/nixpkgs";
+    };
+
     history = {
       path = "${config.xdg.dataHome}/zsh/zsh_history";
       save = 512 * 1024 * 1024; # Save more.
@@ -59,9 +69,6 @@
     '';
 
     initContent = ''
-      which starship >/dev/null && eval "$(starship init zsh)"
-      which zoxide >/dev/null && eval "$(zoxide init zsh --cmd cd)"
-
       while read -r option; do
         setopt $option
       done <<-EOF
@@ -92,26 +99,39 @@
       # Ztyle pattern
       # :completion:<function>:<completer>:<command>:<argument>:<tag>
 
+      # case insensitive tab completion
       zstyle ':completion:*' completer _complete _ignored _approximate
-      zstyle ':completion:*' complete true
-      zstyle ':completion:*' complete-options true
-      zstyle ':completion:*' file-sort modification
-      zstyle ':completion:*' group-name '''
-      zstyle ':completion:*' keep-prefix true
-      zstyle ':completion:*' list-colors ''${(s.:.)LS_COLORS}
+      zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
       zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
       zstyle ':completion:*' menu select
+      zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
       zstyle ':completion:*' verbose true
 
-      zstyle ':completion:*:default' list-prompt '%S%M matches%s'
-      zstyle ':completion:*:corrections' format '%F{yellow}!- %d (errors: %e) -!%f'
-      zstyle ':completion:*:descriptions' format '%F{blue}-- %D %d --%f'
-      zstyle ':completion:*:messages' format ' %F{purple} -- %d --%f'
-      zstyle ':completion:*:warnings' format ' %F{red}-- no matches found --%f'
-      zstyle ':completion:*:*:-command-:*:*' group-order aliases builtins functions commands
-
+      # use cache for completions
       zstyle ':completion:*' use-cache on
       zstyle ':completion:*' cache-path "$XDG_CACHE_HOME/zsh/.zcompcache"
+      _comp_options+=(globdots)
+
+      # zstyle ':completion:*' completer _complete _ignored _approximate
+      # zstyle ':completion:*' complete true
+      # zstyle ':completion:*' complete-options true
+      # zstyle ':completion:*' file-sort modification
+      # zstyle ':completion:*' group-name '''
+      # zstyle ':completion:*' keep-prefix true
+      # zstyle ':completion:*' list-colors ''${(s.:.)LS_COLORS}
+      # zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+      # zstyle ':completion:*' menu select
+      # zstyle ':completion:*' verbose true
+      #
+      # zstyle ':completion:*:default' list-prompt '%S%M matches%s'
+      # zstyle ':completion:*:corrections' format '%F{yellow}!- %d (errors: %e) -!%f'
+      # zstyle ':completion:*:descriptions' format '%F{blue}-- %D %d --%f'
+      # zstyle ':completion:*:messages' format ' %F{purple} -- %d --%f'
+      # zstyle ':completion:*:warnings' format ' %F{red}-- no matches found --%f'
+      # zstyle ':completion:*:*:-command-:*:*' group-order aliases builtins functions commands
+      #
+      # zstyle ':completion:*' use-cache on
+      # zstyle ':completion:*' cache-path "$XDG_CACHE_HOME/zsh/.zcompcache"
     '';
 
     shellAliases = let
