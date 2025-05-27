@@ -1,7 +1,6 @@
 {
   programs.gh = {
     enable = true;
-    extensions = [ pkgs.gh-dash ];
     settings = {
       prompt = "enabled";
       pager = "delta";
