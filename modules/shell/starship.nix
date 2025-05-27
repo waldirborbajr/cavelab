@@ -42,10 +42,10 @@
         disabled = true;
       };
 
-      nix_shell = {
-        symbol = " ";
-        heuristic = true;
-      };
+      # nix_shell = {
+      #   symbol = " ";
+      #   heuristic = true;
+      # };
 
       container = ss " 󰏖" "yellow dimmed";
       python = ss "" "yellow";
