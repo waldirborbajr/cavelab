@@ -69,6 +69,19 @@
     '';
 
     initContent = ''
+
+      function chirpinstall() {
+
+        URL="$1"
+
+        FILENAME=$(basename "$URL")
+
+        cd $HOME/Downloads/
+        
+        curl -O $URL
+        pipx install --system-site-packages --force $FILENAME
+      }
+
       # which starship >/dev/null && eval "$(starship init zsh)"
       which zoxide >/dev/null && eval "$(zoxide init zsh --cmd cd)"
 
@@ -194,18 +207,6 @@
 
       reboot = "systemctl reboot";
 
-
-      function chirpinstall() {
-
-        URL="$1"
-
-        FILENAME=$(basename "$URL")
-
-        cd $HOME/Downloads/
-        
-        curl -O $URL
-        pipx install --system-site-packages --force $FILENAME
-      }
 
     };
 
