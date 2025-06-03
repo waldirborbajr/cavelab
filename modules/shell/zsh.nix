@@ -194,6 +194,19 @@
 
       reboot = "systemctl reboot";
 
+
+      function chirpinstall() {
+
+        URL="$1"
+
+        FILENAME=$(basename "$URL")
+
+        cd $HOME/Downloads/
+        
+        curl -O $URL
+        pipx install --system-site-packages --force $FILENAME
+      }
+
     };
 
     plugins = with pkgs; [
