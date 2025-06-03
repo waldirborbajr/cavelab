@@ -159,6 +159,7 @@
       la = "ls -a";
       lla = "ls -la";
       lt = "ls --tree";
+      ll = "ls -larth";
 
       tmc = "clear; tmux clear-history; clear";
       tmk = "tmux kill-session";
