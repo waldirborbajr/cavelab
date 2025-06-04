@@ -9,22 +9,29 @@
   };
 
   home.packages = with pkgs; [
-    # (hiPrio go_1_23)
-    air
+
+# Go debugger
     delve
+# Language server
+    gopls
+# Formatting
+    golines
+# Formatting (goimports)
+    gotools
+# Linting
+    golangci-lint
+    golangci-lint-langserver
+
+    air
     go-outline
     go-symbols
-    go-tools # staticcheck
     gocode-gomod
     godef
     gofumpt
-    golangci-lint
     gomodifytags
     gopkgs
-    gopls
     goreleaser
     gotests
-    gotools
     iferr
     impl
     revive
@@ -32,11 +39,13 @@
     templ 
   ];
 
-  # home.sessionVariables = {
+  home.sessionVariables = {
+    GOPATH = "$XDG_DATA_HOME/go";
+    GOBIN = "${GOPATH}/bin";
   #   GOROOT = "${config.programs.go.package}/share/go";
   #   GOPATH = "${config.home.homeDirectory}/go";
   #   GOBIN = "${config.home.homeDirectory}/bin";
-  # };
+  };
 
-  # home.sessionPath = [ "${config.home.sessionVariables.GOBIN}" ];
+  home.sessionPath = [ "${config.home.sessionVariables.GOBIN}" ];
 }
