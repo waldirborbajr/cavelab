@@ -4,7 +4,7 @@
 
 local map = LazyVim.safe_keymap_set
 
-map("n", "<leader>zc", ":CopilotChatToggle<CR>", { desc = "Toggle Copilot Chat" })
+map("n", "<leader>zc", ":CopilotChat<CR>", { desc = "Copilot Chat" })
 map("v", "<leader>ze", ":CopilotChatExplain<CR>", { desc = "Explain Code" })
 map("v", "<leader>zr", ":CopilotChatReview<CR>", { desc = "Review Code" })
 map("v", "<leader>zf", ":CopilotChatFix<CR>", { desc = "Fix Code Issues" })
