@@ -40,9 +40,9 @@
   ];
 
   home.sessionVariables = {
-    GOPATH = "$XDG_DATA_HOME/go";
+    GOPATH = "$HOME/go";
     # GOBIN = "${GOPATH}/bin";
-    GOBIN = "$XDG_DATA_HOME/go/bin";
+    GOBIN = "$HOME/go/bin";
 
   #   GOROOT = "${config.programs.go.package}/share/go";
   #   GOPATH = "${config.home.homeDirectory}/go";
