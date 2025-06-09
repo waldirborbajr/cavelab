@@ -22,6 +22,11 @@ channel-update:
 	nix-channel --update
 	home-manager switch
 
+channel-rollback:
+	nix-env --uninstall home-manager
+	nix-shell -p home-manager --run "home-manager --version"
+	home-manager switch
+
 gc:
 	nix-store --gc
 	nix-collect-garbage -d
