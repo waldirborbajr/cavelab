@@ -100,3 +100,16 @@ nix-store --gc && nix-collect-garbage -d && home-manager expire-generations -2 d
 nano ~/.bashrc
 exec /home/borba/.nix-profile/bin/zsh
 ```
+
+
+WiFI
+
+sudo nala update
+sudo apt-get purge bcmwl-kernel-source
+sudo nala install firmware-b43-installer
+
+reboot
+
+lspci -nn | grep Network
+
+
