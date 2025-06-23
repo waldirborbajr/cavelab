@@ -40,7 +40,6 @@
     bottom # btop  # replacement of htop/nmon
     brave
     chromium
-    code-cursor
     direnv
     # discord
     du-dust # du + rust = dust. Like du but more intuitive
