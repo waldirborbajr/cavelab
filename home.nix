@@ -63,7 +63,7 @@
     tree
     xclip
     xsel
-    zellij
+    # zellij
     yaak
 
     # # Adds the 'hello' command to your environment. It prints a friendly

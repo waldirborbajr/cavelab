@@ -42,7 +42,7 @@
 
           ./home.nix
           # ./modules/multiplex/tmux.nix
-          # ./modules/multiplex/zellij.nix
+          ./modules/multiplex/zellij.nix
           # ./modules/devops/docker.nix
           # ./modules/terminal/wezterm.nix
           # ./modules/terminal/alacritty.nix
