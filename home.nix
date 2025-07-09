@@ -53,6 +53,7 @@
     meld # Visual diff and merge tool
     # mise
     mkcert
+    ngrok
     # obsidian
     rclone # Command line program to sync files and directories to and from major cloud storage
     scrcpy # Display and control Android devices over USB or TCP/IP
@@ -62,7 +63,7 @@
     tree
     xclip
     xsel
-    # zellij
+    zellij
     yaak
 
     # # Adds the 'hello' command to your environment. It prints a friendly
