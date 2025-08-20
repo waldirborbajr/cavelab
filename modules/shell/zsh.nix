@@ -50,7 +50,7 @@
     };
 
     history = {
-      path = "${config.xdg.dataHome}/zsh/zsh_history";
+      path = "${config.xdg.configHome}/zsh/zsh_history";
       save = 512 * 1024 * 1024; # Save more.
       size = 512 * 1024 * 1024; # Save more.
       append = true;
@@ -59,7 +59,7 @@
       ignoreSpace = true;
       expireDuplicatesFirst = true;
       extended = true;
-      share = true;
+      share =false;
     };
 
     completionInit = ''

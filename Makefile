@@ -4,7 +4,7 @@ version:
 	git push
 
 switch: 
-	home-manager switch --impure --flake .#cavelab -b hm-backup-`date +%Y%m%d%H%M%S`
+	home-manager switch --update --impure --flake .#cavelab -b hm-backup-`date +%Y%m%d%H%M%S`
 
 build: 
 	home-manager build --impure --flake .#cavelab
@@ -19,8 +19,10 @@ channel-unstable:
 	nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
 
 channel-update:
+	nix-store --verify --check-contents
 	nix-channel --update
-	home-manager switch
+	nix-env -u
+	home-manager switch --update
 
 channel-rollback:
 	nix-env --uninstall home-manager
