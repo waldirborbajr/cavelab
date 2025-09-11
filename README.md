@@ -104,6 +104,7 @@ exec /home/borba/.nix-profile/bin/zsh
 
 WiFI
 
+```sh
 sudo nala update
 sudo apt-get purge bcmwl-kernel-source
 sudo nala install firmware-b43-installer
@@ -111,5 +112,5 @@ sudo nala install firmware-b43-installer
 reboot
 
 lspci -nn | grep Network
-
+```
 
