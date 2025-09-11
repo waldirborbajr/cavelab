@@ -51,3 +51,9 @@
 - Fonte: **JetBrains Mono** (com fallback para Nerd Font + Emoji)  
 - FPS: até **120** (animações suaves)  
 - Tab bar aparece apenas quando houver mais de uma tab  
+
+## Make wezterm as default terminal
+
+```sh
+sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator /usr/bin/wezterm 50
+```
